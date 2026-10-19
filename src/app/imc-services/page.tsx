@@ -119,6 +119,30 @@ export default function ServicesPage() {
             );
           })}
         </div>
+
+        {/* Authentic Request Quote CTA */}
+        <div className="bg-gradient-to-r from-black via-neutral-900 to-neutral-800 rounded-3xl p-8 sm:p-12 text-white border border-neutral-800 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="space-y-2 max-w-2xl">
+            <span className="text-cummins-red text-xs font-bold uppercase tracking-wider">
+              {language === "en" ? "IMC Services" : "خدمات IMC"}
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-white">
+              {language === "en" ? "Request A Quote" : "طلب عرض أسعار"}
+            </h3>
+            <p className="text-neutral-300 text-sm leading-relaxed">
+              {language === "en"
+                ? "The Genuine Cummins parts that you buy from a Cummins distributor or authorized dealer are built to our exact standards, meeting or exceeding original specifications on your QSK engine."
+                : "قطع غيار كومنز الأصلية التي تشتريها من الموزع المعتمد مصممة ومصنعة وفقاً لأعلى معايير الجودة لتلبي أو تتجاوز المواصفات القياسية لمحركك."}
+            </p>
+          </div>
+          <Link
+            href="/contact"
+            className="shrink-0 px-8 py-3.5 bg-cummins-red hover:bg-cummins-red-dark text-white rounded-xl text-xs font-bold uppercase tracking-wider shadow-lg shadow-red-600/30 transition-all flex items-center gap-2"
+          >
+            <span>{language === "en" ? "Request Quote" : "اطلب عرض سعر"}</span>
+            <ArrowRight className={`w-4 h-4 ${isRtl ? "rotate-180" : ""}`} />
+          </Link>
+        </div>
       </div>
     </div>
   );

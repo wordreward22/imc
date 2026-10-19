@@ -6,12 +6,10 @@ import Link from "next/link";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/data/translations";
-import { useQuote } from "@/context/QuoteContext";
 
 export const HeroSlider: React.FC = () => {
   const { language, isRtl } = useLanguage();
   const t = translations[language];
-  const { openQuote } = useQuote();
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -22,10 +20,10 @@ export const HeroSlider: React.FC = () => {
       subtitle: t.slider1Subtitle,
       title: t.slider1Title,
       description: t.slider1Desc,
-      cta1Text: t.exploreProducts,
-      cta1Href: "/power-generation",
-      cta2Text: t.getQuote,
-      cta2Action: () => openQuote(),
+      cta1Text: t.aboutUs,
+      cta1Href: "/about",
+      cta2Text: t.contactUs,
+      cta2Href: "/contact",
     },
     {
       id: 2,
@@ -33,7 +31,7 @@ export const HeroSlider: React.FC = () => {
       subtitle: t.slider2Subtitle,
       title: t.slider2Title,
       description: t.slider2Desc,
-      cta1Text: t.service,
+      cta1Text: t.imcServicesTitle,
       cta1Href: "/imc-services",
       cta2Text: t.contactUs,
       cta2Href: "/contact",
@@ -111,21 +109,14 @@ export const HeroSlider: React.FC = () => {
                     </Link>
                   )}
 
-                  {slide.cta2Action ? (
-                    <button
-                      onClick={slide.cta2Action}
-                      className="px-7 py-3.5 bg-black/50 hover:bg-black/70 text-white border border-white/30 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition-colors duration-200"
-                    >
-                      <span>{slide.cta2Text}</span>
-                    </button>
-                  ) : slide.cta2Href ? (
+                  {slide.cta2Href && (
                     <Link
                       href={slide.cta2Href}
                       className="px-7 py-3.5 bg-black/50 hover:bg-black/70 text-white border border-white/30 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition-colors duration-200"
                     >
                       <span>{slide.cta2Text}</span>
                     </Link>
-                  ) : null}
+                  )}
                 </div>
               </div>
             </div>
@@ -152,7 +143,7 @@ export const HeroSlider: React.FC = () => {
       </div>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-6 left-1/2 -tranneutral-x-1/2 z-20 flex items-center gap-2.5">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2.5">
         {slides.map((_, idx) => (
           <button
             key={idx}

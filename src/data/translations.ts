@@ -62,12 +62,12 @@ export const translations = {
     customerDriven: "IMC Always Customer Driven",
 
     // Services
-    servicesSubtitle: "IMC Services",
-    servicesHeadline: "Reliable & Certified Cummins Support",
+    servicesSubtitle: "High Quality Services",
+    servicesHeadline: "Always Customer Driven",
     fieldServiceDesc: "Reliable field service options for Cummins generators, providing prompt response, expert diagnosis, preventive maintenance, on-site repairs, and technical support to ensure optimal performance and minimize downtime.",
-    serviceContractsDesc: "Service contracts for Cummins generators deliver peace of mind through scheduled maintenance, priority response, on-site repairs, and the use of genuine Cummins parts, guaranteeing uninterrupted power.",
-    workshopRepairsDesc: "Workshop repairs for Cummins generators exemplify our commitment to professionalism and excellence. Our team of highly skilled technicians deliver expert diagnosis and rebuilds using genuine parts.",
-    trainingDesc: "We believe that knowledge and skills are key to maximizing the performance and efficiency of your Cummins generators. That’s why we offer comprehensive technical training programs.",
+    serviceContractsDesc: "Service contracts for Cummins generators deliver peace of mind through scheduled maintenance, priority response, on-site repairs, and the use of genuine Cummins parts, guaranteeing uninterrupted power and optimal performance for customer business.",
+    workshopRepairsDesc: "Workshop repairs for Cummins generators exemplify our commitment to professionalism and excellence. With our team of highly skilled technicians and access to a wide range of specialized tools and equipment, we deliver expert diagnosis, repairs using genuine parts and stringent quality assurance. We provide a professional and reliable service that restores your Cummins generator to optimal performance, minimizing downtime and keeping your operations running smoothly.",
+    trainingDesc: "We believe that knowledge and skills are key to maximizing the performance and efficiency of your Cummins generators. That’s why we are proud to offer a range of comprehensive training programs. Apply now to boost your technical skills.",
     learnMore: "Learn More",
 
     // FAQs

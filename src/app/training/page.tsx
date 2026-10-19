@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { GraduationCap, Award, CheckCircle2, Zap } from "lucide-react";
+import { GraduationCap, Award, CheckCircle2 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/data/translations";
 
@@ -11,31 +11,14 @@ export default function TrainingPage() {
   const { language } = useLanguage();
   const t = translations[language];
 
-  const courses = [
-    {
-      title: "Cummins PowerCommand® Control Systems",
-      duration: "3 Days Intensive",
-      desc: "Deep dive into PCC 1302, 2100, 3201 controllers, synchronizing panels, digital paralleling, and remote monitoring.",
-    },
-    {
-      title: "HHP Diesel Engine Diagnostics & Troubleshooting",
-      duration: "5 Days Practical",
-      desc: "Fault tracing on QSK and KTA engine platforms using Cummins INSITE™ electronic service tools and calibration tables.",
-    },
-    {
-      title: "Preventative Maintenance & Mechanical Overhaul",
-      duration: "4 Days Workshop",
-      desc: "Hands-on rebuild best practices, cylinder head servicing, injector timing, valve lash adjustments, and safety protocols.",
-    },
-  ];
-
   return (
-    <div className="bg-neutral-50 min-h-screen pb-24">
+    <div className="bg-white min-h-screen pb-24">
+      {/* Hero Header */}
       <div className="relative bg-black text-white py-16 sm:py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <Image
             src="/uploads/2023/05/engine-closeup-banner.jpg"
-            alt="Technical Training Academy"
+            alt="IMC Training"
             fill
             className="object-cover"
           />
@@ -44,42 +27,55 @@ export default function TrainingPage() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
           <div className="max-w-2xl space-y-3">
-            <span className="inline-block px-3 py-1 rounded-full bg-cummins-red/20 border border-cummins-red/40 text-cummins-red text-xs font-bold uppercase tracking-wider">
+            <span className="inline-block px-3 py-1 rounded-full bg-[#E2231B]/20 border border-[#E2231B]/40 text-[#E2231B] text-xs font-bold uppercase tracking-wider">
               {t.training}
             </span>
             <h1 className="text-3xl sm:text-5xl font-extrabold font-heading text-white">
-              {language === "en" ? "IMC Technical Training Academy" : "أكاديمية التدريب الفني المعتمدة"}
+              {language === "en" ? "IMC Training" : "تدريب IMC المعتمد"}
             </h1>
             <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
-              {t.trainingDesc}
+              {language === "en"
+                ? "At IMC, we believe that knowledge and skills are key to maximizing the performance and efficiency of your Cummins generators."
+                : "في IMC، نؤمن بأن المعرفة والمهارات هما المفتاح لتعظيم أداء وكفاءة مولدات كومنز الخاصة بك."}
             </p>
           </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 -mt-8 space-y-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {courses.map((c, i) => (
-            <div key={i} className="bg-white rounded-2xl p-6 border border-neutral-200/80 shadow-md space-y-4 flex flex-col justify-between">
-              <div className="space-y-3">
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-red-50 text-cummins-red text-[11px] font-bold">
-                  <Award className="w-3.5 h-3.5" />
-                  <span>{c.duration}</span>
-                </div>
-                <h3 className="text-lg font-bold text-neutral-900 font-heading">{c.title}</h3>
-                <p className="text-xs text-neutral-600 leading-relaxed">{c.desc}</p>
-              </div>
-
-              <div className="pt-4 border-t border-neutral-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 space-y-16">
+        <div className="bg-neutral-50 rounded-2xl p-8 sm:p-12 border border-neutral-200">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div className="space-y-4">
+              <span className="text-[#E2231B] font-bold text-xs uppercase tracking-wider">
+                {language === "en" ? "Boost Technical Skills" : "تطوير المهارات التقنية"}
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-900 font-heading">
+                {language === "en" ? "Training with IMC Iraq" : "التدريب مع شركة IMC العراق"}
+              </h2>
+              <p className="text-neutral-600 text-sm sm:text-base leading-relaxed">
+                {language === "en"
+                  ? "At IMC, we believe that knowledge and skills are key to maximizing the performance and efficiency of your Cummins generators. That’s why we are proud to offer a range of comprehensive training programs. Apply now to boost your technical skills."
+                  : "في IMC، نؤمن بأن المعرفة والمهارات هما المفتاح لتعظيم أداء وكفاءة مولدات كومنز الخاصة بك. لهذا السبب نحن فخورون بتقديم مجموعة من برامج التدريب الشاملة. قدم طلبك الآن لتعزيز مهاراتك الفنية."}
+              </p>
+              <div className="pt-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-cummins-red hover:text-cummins-red-dark uppercase"
+                  className="inline-flex items-center justify-center px-8 py-3 bg-[#E2231B] hover:bg-[#9E0202] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-colors shadow-md"
                 >
-                  <span>Enroll Technical Staff</span>
+                  {language === "en" ? "Apply Now" : "قدم الآن"}
                 </Link>
               </div>
             </div>
-          ))}
+
+            <div className="relative h-80 rounded-2xl overflow-hidden shadow-md border border-neutral-200">
+              <Image
+                src="/uploads/2023/05/engine-closeup-banner.jpg"
+                alt="IMC Training Academy"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>

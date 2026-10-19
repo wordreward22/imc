@@ -118,8 +118,8 @@ export const Navbar: React.FC = () => {
                     isRtl ? "right-0" : "left-0"
                   } w-64 bg-white rounded-xl shadow-xl border border-neutral-100 py-2 transition-all duration-200 z-50 ${
                     activeDropdown === link.title
-                      ? "opacity-100 tranneutral-y-0 pointer-events-auto"
-                      : "opacity-0 tranneutral-y-2 pointer-events-none"
+                      ? "opacity-100 translate-y-0 pointer-events-auto"
+                      : "opacity-0 translate-y-2 pointer-events-none"
                   }`}
                 >
                   {link.children.map((sub) => (

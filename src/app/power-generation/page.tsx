@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { Zap, ShieldCheck } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import { ProductGrid } from "@/components/products/ProductGrid";
 import { products } from "@/data/products";
 import { useLanguage } from "@/context/LanguageContext";

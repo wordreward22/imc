@@ -55,7 +55,7 @@ export const ProductGrid: React.FC<ProductGridProps> = ({ products }) => {
       <div className="bg-white p-5 rounded-2xl shadow-sm border border-neutral-200 flex flex-col md:flex-row items-center justify-between gap-4">
         {/* Search Input */}
         <div className="relative w-full md:w-96">
-          <Search className="absolute left-3.5 top-1/2 -tranneutral-y-1/2 w-4 h-4 text-neutral-400" />
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400" />
           <input
             type="text"
             value={search}

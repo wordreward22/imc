@@ -44,7 +44,7 @@ export const FeatureCards: React.FC = () => {
             <Link
               key={card.title}
               href={card.href}
-              className="group relative bg-white rounded-2xl shadow-lg overflow-hidden border border-neutral-200 p-6 flex flex-col justify-between transition-all duration-300 hover:-tranneutral-y-1 hover:shadow-xl hover:border-[#E2231B]"
+              className="group relative bg-white rounded-2xl shadow-lg overflow-hidden border border-neutral-200 p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-[#E2231B]"
             >
               {/* Top Solid Red Accent Line */}
               <div className="absolute top-0 inset-x-0 h-1 bg-[#E2231B]" />

@@ -65,7 +65,7 @@ export const ServicesSection: React.FC = () => {
             return (
               <div
                 key={item.id}
-                className="group bg-white rounded-2xl overflow-hidden border border-neutral-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between hover:border-[#E2231B] hover:-tranneutral-y-1"
+                className="group bg-white rounded-2xl overflow-hidden border border-neutral-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between hover:border-[#E2231B] hover:-translate-y-1"
               >
                 <div>
                   {/* Image Banner */}
