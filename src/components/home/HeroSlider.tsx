@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronLeft, ChevronRight, Zap, ArrowRight, ShieldCheck } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/data/translations";
 import { useQuote } from "@/context/QuoteContext";
@@ -81,20 +81,21 @@ export const HeroSlider: React.FC = () => {
 
             {/* Content Container */}
             <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 flex items-center">
-              <div className="max-w-2xl space-y-5 text-white">
-                {/* Badge */}
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cummins-red/20 border border-cummins-red/40 backdrop-blur-md text-cummins-red text-xs sm:text-sm font-bold uppercase tracking-wider">
-                  <ShieldCheck className="w-4 h-4" />
-                  <span>{slide.subtitle}</span>
+              <div className="max-w-2xl space-y-6 text-white">
+                {/* Authentic Subtitle Pill */}
+                <div>
+                  <span className="inline-block px-5 py-1.5 rounded-full bg-white text-[#E2231B] text-sm sm:text-base font-bold shadow-md">
+                    {slide.subtitle}
+                  </span>
                 </div>
 
                 {/* Main Headline */}
-                <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight uppercase font-heading text-white">
+                <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-tight uppercase font-heading text-white">
                   {slide.title}
                 </h1>
 
                 {/* Narrative Description */}
-                <p className="text-sm sm:text-base md:text-lg text-slate-200 leading-relaxed font-light">
+                <p className="text-sm sm:text-base md:text-lg text-slate-200 leading-relaxed font-normal">
                   {slide.description}
                 </p>
 
@@ -103,7 +104,7 @@ export const HeroSlider: React.FC = () => {
                   {slide.cta1Href && (
                     <Link
                       href={slide.cta1Href}
-                      className="px-6 py-3.5 bg-cummins-red hover:bg-cummins-red-dark text-white rounded-xl font-bold text-xs uppercase tracking-wider shadow-lg shadow-red-600/30 hover:shadow-red-600/40 flex items-center gap-2 transition-all hover:scale-105 active:scale-95"
+                      className="px-7 py-3.5 bg-[#E2231B] hover:bg-[#9E0202] text-white font-bold text-xs uppercase tracking-wider shadow-md flex items-center gap-2 transition-colors duration-200"
                     >
                       <span>{slide.cta1Text}</span>
                       <ArrowRight className={`w-4 h-4 ${isRtl ? "rotate-180" : ""}`} />
@@ -113,15 +114,14 @@ export const HeroSlider: React.FC = () => {
                   {slide.cta2Action ? (
                     <button
                       onClick={slide.cta2Action}
-                      className="px-6 py-3.5 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/20 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition-all hover:scale-105 active:scale-95"
+                      className="px-7 py-3.5 bg-black/40 hover:bg-black/60 text-white border border-white/30 font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition-colors duration-200"
                     >
-                      <Zap className="w-4 h-4 text-cummins-red" />
                       <span>{slide.cta2Text}</span>
                     </button>
                   ) : slide.cta2Href ? (
                     <Link
                       href={slide.cta2Href}
-                      className="px-6 py-3.5 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/20 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition-all hover:scale-105 active:scale-95"
+                      className="px-7 py-3.5 bg-black/40 hover:bg-black/60 text-white border border-white/30 font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition-colors duration-200"
                     >
                       <span>{slide.cta2Text}</span>
                     </Link>

@@ -51,7 +51,7 @@ export const translations = {
     // Company Overview
     badgeTitle: "Award Winning Cummins Authorized Seller.",
     overviewTitle: "Powers Industries Around the World",
-    overviewDesc: "IMC is the only authorized distributor to sell, distribute and service Cummins products in Iraq. IMC provides a full range of power system solutions for various applications and businesses.",
+    overviewDesc: "IMC the only authorized distributor to sell, distribute and service the Cummins products in Iraq. IMC provides a full range of power system solutions for various applications and businesses.",
     mission: "Mission",
     missionDesc: "To provide the highest quality and most reliable Cummins engines and power solutions to our customers throughout Iraq.",
     vision: "Vision",

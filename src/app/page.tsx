@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, Zap, ShieldCheck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { HeroSlider } from "@/components/home/HeroSlider";
 import { FeatureCards } from "@/components/home/FeatureCards";
 import { AboutSection } from "@/components/home/AboutSection";
@@ -23,7 +23,7 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* 1. Hero Revolution Slider Replacement */}
+      {/* 1. Hero Revolution Slider */}
       <HeroSlider />
 
       {/* 2. Feature Cards (Power Generation, Cummins Kit, IMC Services) */}
@@ -39,11 +39,13 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-100/80 text-cummins-red text-xs font-bold uppercase tracking-wider mb-2">
-                <ShieldCheck className="w-3.5 h-3.5" />
-                <span>Heavy Duty Power</span>
+              <div className="flex items-center gap-3 mb-2">
+                <span className="text-[#E2231B] text-xs sm:text-sm font-bold tracking-wider uppercase font-heading">
+                  {language === "en" ? "Commercial & Industrial Power" : language === "ar" ? "طاقة تجارية وصناعية" : "وزەی بازرگانی و پیشەسازی"}
+                </span>
+                <div className="w-10 h-[2px] bg-[#E2231B]" />
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-heading">
+              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight font-heading">
                 {t.catalogTitle}
               </h2>
               <p className="text-slate-500 text-sm mt-1">
@@ -53,7 +55,7 @@ export default function HomePage() {
 
             <Link
               href="/power-generation"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-cummins-red hover:text-white text-slate-800 text-xs font-bold uppercase tracking-wider transition-all self-start md:self-auto"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-100 hover:bg-[#E2231B] hover:text-white text-slate-900 text-xs font-bold uppercase tracking-wider transition-colors duration-200 shadow-sm self-start md:self-auto"
             >
               <span>{language === "en" ? "View All 27 Generators" : language === "ar" ? "عرض جميع المولدات (27 موديل)" : "هەموو مۆلیدەکان ببینە"}</span>
               <ArrowRight className={`w-3.5 h-3.5 ${isRtl ? "rotate-180" : ""}`} />
@@ -75,18 +77,17 @@ export default function HomePage() {
       <FaqSection />
 
       {/* 7. Bottom High-Impact CTA Banner */}
-      <section className="py-16 bg-gradient-to-r from-cummins-red-dark via-cummins-red to-red-700 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]" />
+      <section className="py-16 bg-[#0F172A] text-white relative border-t-4 border-[#E2231B]">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
           <div className="max-w-2xl space-y-2">
-            <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-white">
+            <h3 className="text-2xl sm:text-3xl font-bold font-heading text-white">
               {language === "en"
                 ? "Looking for an Engineered Power Solution?"
                 : language === "ar"
                 ? "تبحث عن حلول طاقة هندسية متكاملة؟"
                 : "بەدوای چارەسەری ئەندازیاری وزەدا دەگەڕێیت؟"}
             </h3>
-            <p className="text-white/85 text-xs sm:text-sm">
+            <p className="text-slate-300 text-xs sm:text-sm">
               {language === "en"
                 ? "Get in touch with IMC Iraq today for customized Cummins generator sizing, genuine spare parts, and certified field support."
                 : language === "ar"
@@ -98,14 +99,13 @@ export default function HomePage() {
           <div className="flex flex-wrap items-center justify-center gap-4 flex-shrink-0">
             <button
               onClick={() => openQuote()}
-              className="px-6 py-3.5 bg-white text-cummins-red hover:bg-slate-100 rounded-xl font-bold text-xs uppercase tracking-wider shadow-xl transition-all hover:scale-105 active:scale-95 flex items-center gap-2"
+              className="px-7 py-3.5 bg-[#E2231B] text-white hover:bg-[#9E0202] font-bold text-xs uppercase tracking-wider shadow-md transition-colors flex items-center justify-center"
             >
-              <Zap className="w-4 h-4 text-cummins-red" />
               <span>{t.getQuote}</span>
             </button>
             <Link
               href="/contact"
-              className="px-6 py-3.5 bg-black/20 hover:bg-black/30 text-white border border-white/20 rounded-xl font-bold text-xs uppercase tracking-wider transition-all"
+              className="px-7 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold text-xs uppercase tracking-wider transition-colors"
             >
               {t.contactUs}
             </Link>

@@ -10,8 +10,8 @@ const config: Config = {
     extend: {
       colors: {
         cummins: {
-          red: "#DA291C",
-          "red-dark": "#B31B10",
+          red: "#E2231B",
+          "red-dark": "#9E0202",
           "red-light": "#FF3B30",
         },
         imc: {
@@ -20,13 +20,13 @@ const config: Config = {
           navy: "#1E293B",
           gray: "#334155",
           light: "#F8FAFC",
-          accent: "#D92D20",
+          accent: "#E2231B",
           gold: "#F59E0B",
         },
       },
       fontFamily: {
-        sans: ["var(--font-roboto)", "var(--font-poppins)", "sans-serif"],
-        heading: ["var(--font-poppins)", "var(--font-montserrat)", "sans-serif"],
+        sans: ["var(--font-poppins)", "var(--font-roboto)", "sans-serif"],
+        heading: ["var(--font-montserrat)", "var(--font-poppins)", "sans-serif"],
         arabic: ["var(--font-cairo)", "sans-serif"],
       },
       boxShadow: {

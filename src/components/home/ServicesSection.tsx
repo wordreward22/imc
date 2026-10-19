@@ -47,16 +47,16 @@ export const ServicesSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-slate-50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-          <span className="text-xs font-bold uppercase tracking-widest text-cummins-red">
-            {t.servicesSubtitle}
+          <span className="inline-block px-4 py-1 rounded-full bg-white text-[#E2231B] text-xs font-bold uppercase tracking-widest shadow-sm border border-slate-200">
+            {language === "en" ? "Always Customer Driven" : language === "ar" ? "خدمة العملاء أولويتنا" : "هەمیشە لە خزمەتی کڕیاردا"}
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-heading">
-            {t.servicesHeadline}
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight font-heading">
+            IMC <span className="text-[#E2231B]">Services</span>
           </h2>
-          <div className="w-16 h-1 bg-cummins-red mx-auto rounded-full mt-2" />
+          <div className="w-16 h-1 bg-[#E2231B] mx-auto rounded-full mt-2" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -65,7 +65,7 @@ export const ServicesSection: React.FC = () => {
             return (
               <div
                 key={item.id}
-                className="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between hover:-translate-y-1"
+                className="group bg-white overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between hover:border-[#E2231B] hover:-translate-y-1"
               >
                 <div>
                   {/* Image Banner */}
@@ -74,20 +74,20 @@ export const ServicesSection: React.FC = () => {
                       src={item.image}
                       alt={item.title}
                       fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
-                    <div className="absolute top-3 right-3 w-9 h-9 rounded-lg bg-slate-900/80 backdrop-blur-md text-cummins-red flex items-center justify-center border border-white/10">
-                      <Icon className="w-4 h-4" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
+                    <div className="absolute top-3 right-3 w-9 h-9 bg-black/60 text-white flex items-center justify-center border border-white/20">
+                      <Icon className="w-4 h-4 text-[#E2231B]" />
                     </div>
                   </div>
 
                   {/* Content */}
                   <div className="p-5 space-y-2.5">
-                    <h3 className="text-base font-bold text-slate-900 group-hover:text-cummins-red transition-colors font-heading">
+                    <h3 className="text-base font-bold text-slate-900 group-hover:text-[#E2231B] transition-colors font-heading">
                       {item.title}
                     </h3>
-                    <p className="text-slate-500 text-xs leading-relaxed line-clamp-4">
+                    <p className="text-[#666666] text-xs leading-relaxed line-clamp-4">
                       {item.desc}
                     </p>
                   </div>
@@ -97,7 +97,7 @@ export const ServicesSection: React.FC = () => {
                 <div className="px-5 pb-5 pt-2">
                   <Link
                     href={item.href}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-cummins-red hover:text-cummins-red-dark uppercase tracking-wider transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#E2231B] hover:text-[#9E0202] uppercase tracking-wider transition-colors"
                   >
                     <span>{t.learnMore}</span>
                     <ArrowRight className={`w-3.5 h-3.5 ${isRtl ? "rotate-180" : ""}`} />

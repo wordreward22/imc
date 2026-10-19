@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { Zap, Gauge, Weight, Maximize2, Shield, ArrowRight } from "lucide-react";
+import { Gauge, Weight, Maximize2, Activity } from "lucide-react";
 import { Product } from "@/data/products";
 import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/data/translations";
@@ -27,10 +27,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const attrs = product.attributes;
 
   return (
-    <div className="group bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between hover:-translate-y-1">
+    <div className="group bg-white overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between hover:border-[#E2231B]">
       <div>
-        {/* Generator Image Header with Badges */}
-        <div className="relative h-56 w-full bg-gradient-to-b from-slate-100 to-slate-50 p-6 flex items-center justify-center overflow-hidden border-b border-slate-100">
+        {/* Generator Image Header */}
+        <div className="relative h-56 w-full bg-slate-50 p-6 flex items-center justify-center overflow-hidden border-b border-slate-200">
           <div className="relative w-full h-full group-hover:scale-105 transition-transform duration-500">
             <Image
               src={imgSrc}
@@ -43,52 +43,46 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
           {/* Standby Rating Badge */}
           {attrs.standby_kva_kw && (
-            <div className="absolute top-3 right-3 bg-cummins-red text-white text-[11px] font-extrabold px-3 py-1 rounded-full shadow-md">
+            <div className="absolute top-3 right-3 bg-[#E2231B] text-white text-[11px] font-bold px-3 py-1 shadow-sm">
               {attrs.standby_kva_kw.split("-")[0]?.trim() || attrs.standby_kva_kw}
             </div>
           )}
-
-          {/* Official Badge */}
-          <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-slate-800 text-[10px] font-bold px-2.5 py-0.5 rounded-md border border-slate-200 shadow-sm flex items-center gap-1">
-            <Shield className="w-3 h-3 text-cummins-red" />
-            <span>Cummins Official</span>
-          </div>
         </div>
 
         {/* Product Info */}
         <div className="p-5 space-y-4">
           <div>
-            <span className="text-[10px] font-extrabold uppercase tracking-wider text-cummins-red">
-              Heavy Duty Diesel Generator
+            <span className="text-[11px] font-bold uppercase tracking-wider text-[#E2231B]">
+              Cummins Power Generation
             </span>
-            <h3 className="text-xl font-extrabold text-slate-900 group-hover:text-cummins-red transition-colors font-heading">
+            <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#E2231B] transition-colors font-heading mt-0.5">
               {product.name}
             </h3>
           </div>
 
           {/* Key Spec Grid */}
-          <div className="grid grid-cols-2 gap-2 text-xs text-slate-600 bg-slate-50 p-3 rounded-xl border border-slate-100">
+          <div className="grid grid-cols-2 gap-2 text-xs text-slate-600 bg-slate-50 p-3 border border-slate-200">
             {attrs.engine_model && (
               <div className="flex items-center gap-1.5">
-                <Gauge className="w-3.5 h-3.5 text-cummins-red flex-shrink-0" />
+                <Gauge className="w-3.5 h-3.5 text-[#E2231B] flex-shrink-0" />
                 <span className="truncate font-medium">{attrs.engine_model}</span>
               </div>
             )}
             {attrs.frequency_hz && (
               <div className="flex items-center gap-1.5">
-                <Zap className="w-3.5 h-3.5 text-cummins-red flex-shrink-0" />
+                <Activity className="w-3.5 h-3.5 text-[#E2231B] flex-shrink-0" />
                 <span className="truncate font-medium">{attrs.frequency_hz}</span>
               </div>
             )}
             {attrs.dry_weight_kg && (
               <div className="flex items-center gap-1.5">
-                <Weight className="w-3.5 h-3.5 text-cummins-red flex-shrink-0" />
+                <Weight className="w-3.5 h-3.5 text-[#E2231B] flex-shrink-0" />
                 <span className="truncate font-medium">{attrs.dry_weight_kg}</span>
               </div>
             )}
             {attrs.dimensions_lwh && (
               <div className="flex items-center gap-1.5 col-span-2">
-                <Maximize2 className="w-3.5 h-3.5 text-cummins-red flex-shrink-0" />
+                <Maximize2 className="w-3.5 h-3.5 text-[#E2231B] flex-shrink-0" />
                 <span className="truncate font-medium text-[11px]">{attrs.dimensions_lwh}</span>
               </div>
             )}
@@ -100,9 +94,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       <div className="p-5 pt-0">
         <button
           onClick={() => openQuote(product)}
-          className="w-full py-2.5 bg-slate-900 hover:bg-cummins-red text-white text-xs font-bold uppercase tracking-wider rounded-xl shadow-md transition-all flex items-center justify-center gap-2 group-hover:bg-cummins-red"
+          className="w-full py-2.5 bg-slate-900 hover:bg-[#E2231B] text-white text-xs font-bold uppercase tracking-wider transition-colors duration-200 flex items-center justify-center shadow-sm"
         >
-          <Zap className="w-3.5 h-3.5" />
           <span>{t.requestQuoteForThis}</span>
         </button>
       </div>

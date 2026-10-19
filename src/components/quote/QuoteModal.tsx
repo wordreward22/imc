@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { X, CheckCircle, Send, Zap } from "lucide-react";
+import { X, CheckCircle, Send } from "lucide-react";
 import { useQuote } from "@/context/QuoteContext";
 import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/data/translations";
@@ -52,11 +52,8 @@ export const QuoteModal: React.FC = () => {
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white p-5 flex items-center justify-between border-b border-slate-700">
+        <div className="bg-[#0F172A] text-white p-5 flex items-center justify-between border-b-2 border-[#E2231B]">
           <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-lg bg-cummins-red/20 flex items-center justify-center border border-cummins-red/40">
-              <Zap className="w-5 h-5 text-cummins-red" />
-            </div>
             <div>
               <h3 className="font-bold text-lg text-white">
                 {language === "en"
@@ -252,7 +249,7 @@ export const QuoteModal: React.FC = () => {
               <button
                 type="submit"
                 disabled={submitting}
-                className="w-full py-3 bg-gradient-to-r from-cummins-red to-cummins-red-dark hover:from-cummins-red-dark hover:to-red-800 text-white rounded-xl font-semibold shadow-lg shadow-red-600/20 hover:shadow-red-600/30 flex items-center justify-center gap-2 transition-all disabled:opacity-50"
+                className="w-full py-3 bg-[#E2231B] hover:bg-[#9E0202] text-white font-bold text-xs uppercase tracking-wider shadow-sm flex items-center justify-center gap-2 transition-colors disabled:opacity-50"
               >
                 {submitting ? (
                   <span>...</span>

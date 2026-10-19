@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronDown, Menu, X, ArrowRight, Zap, Shield, Wrench, Settings } from "lucide-react";
+import { ChevronDown, Menu, X, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/data/translations";
 import { useQuote } from "@/context/QuoteContext";
@@ -142,9 +142,8 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center gap-3">
           <button
             onClick={() => openQuote()}
-            className="hidden sm:flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-cummins-red to-cummins-red-dark hover:from-cummins-red-dark hover:to-red-800 text-white text-xs font-bold uppercase tracking-wider rounded-xl shadow-md shadow-red-600/20 hover:shadow-red-600/30 transition-all hover:scale-105 active:scale-95"
+            className="hidden sm:inline-flex items-center justify-center px-5 py-2.5 bg-[#E2231B] hover:bg-[#9E0202] text-white text-xs font-bold uppercase tracking-wider transition-colors duration-200 shadow-sm"
           >
-            <Zap className="w-3.5 h-3.5" />
             <span>{t.getQuote}</span>
           </button>
 
@@ -194,9 +193,8 @@ export const Navbar: React.FC = () => {
                   setMobileOpen(false);
                   openQuote();
                 }}
-                className="w-full py-3 bg-cummins-red text-white text-xs font-bold uppercase rounded-xl flex items-center justify-center gap-2"
+                className="w-full py-3 bg-[#E2231B] hover:bg-[#9E0202] text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center transition-colors"
               >
-                <Zap className="w-4 h-4" />
                 <span>{t.getQuote}</span>
               </button>
             </div>

@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, MapPin, ChevronRight, ShieldCheck } from "lucide-react";
+import { Phone, Mail, MapPin, ChevronRight, Facebook, Instagram, Linkedin } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/data/translations";
 
@@ -25,13 +25,45 @@ export const Footer: React.FC = () => {
                 className="object-contain brightness-110"
               />
             </div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-cummins-red/10 border border-cummins-red/30 rounded-full text-cummins-red text-xs font-semibold">
-              <ShieldCheck className="w-3.5 h-3.5" />
-              <span>{t.sinceBadge}</span>
-            </div>
+            <p className="text-white text-sm font-semibold font-heading">
+              {language === "en"
+                ? "IMC Iraq – Authorized Cummins Seller."
+                : language === "ar"
+                ? "شركة IMC العراق – الوكيل المعتمد لكومنز."
+                : "ئای ئێم سی عێراق – بریکاری ڕێگەپێدراوی کۆمنز."}
+            </p>
             <p className="text-slate-400 text-xs leading-relaxed">
               {t.footerDesc}
             </p>
+            <div className="flex items-center gap-3 pt-2">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="w-8 h-8 rounded-full bg-white text-black hover:bg-[#E2231B] hover:text-white transition-colors flex items-center justify-center shadow-sm"
+              >
+                <Facebook className="w-4 h-4 fill-current stroke-none" />
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="w-8 h-8 rounded-full bg-white text-black hover:bg-[#E2231B] hover:text-white transition-colors flex items-center justify-center shadow-sm"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="w-8 h-8 rounded-full bg-white text-black hover:bg-[#E2231B] hover:text-white transition-colors flex items-center justify-center shadow-sm"
+              >
+                <Linkedin className="w-4 h-4 fill-current stroke-none" />
+              </a>
+            </div>
           </div>
 
           {/* Col 2: Site Map Links */}
