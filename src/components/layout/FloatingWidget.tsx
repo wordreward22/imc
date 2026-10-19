@@ -25,7 +25,7 @@ export const FloatingWidget: React.FC = () => {
         href={waUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="bg-white text-[#222222] text-xs font-semibold px-3 py-1.5 rounded-md shadow-md border border-slate-200 hover:text-[#E2231B] transition-colors flex items-center gap-1"
+        className="bg-white text-[#222222] text-xs font-semibold px-3 py-1.5 rounded-lg shadow-md border border-neutral-200 hover:text-[#E2231B] transition-colors flex items-center gap-1"
       >
         <span>{language === "en" ? "Reach us" : language === "ar" ? "تواصل معنا" : "پەیوەندیمان پێوە بکەن"}</span>
       </a>

@@ -5,8 +5,8 @@
 :root {
   --cummins-red: #E2231B;
   --cummins-red-dark: #9E0202;
-  --imc-dark: #0F172A;
-  --imc-navy: #1E293B;
+  --imc-dark: #111111;
+  --imc-navy: #1a1a1a;
 }
 
 html {
@@ -25,14 +25,14 @@ body {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #F1F5F9;
+  background: #F5F5F5;
 }
 ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
+  background: #D4D4D4;
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #DA291C;
+  background: #E2231B;
 }
 
 /* RTL Helpers */

@@ -32,8 +32,8 @@ export default function EnginesPage() {
   ];
 
   return (
-    <div className="bg-slate-50 min-h-screen pb-24">
-      <div className="relative bg-slate-950 text-white py-16 sm:py-20 overflow-hidden">
+    <div className="bg-neutral-50 min-h-screen pb-24">
+      <div className="relative bg-black text-white py-16 sm:py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <Image
             src="/uploads/2023/05/engine-closeup-banner.jpg"
@@ -42,7 +42,7 @@ export default function EnginesPage() {
             className="object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
           <div className="max-w-2xl space-y-3">
@@ -52,7 +52,7 @@ export default function EnginesPage() {
             <h1 className="text-3xl sm:text-5xl font-extrabold font-heading text-white">
               {language === "en" ? "Cummins Industrial Engines" : "محركات كومنز الصناعية المعتمدة"}
             </h1>
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+            <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
               {language === "en"
                 ? "Supplying new replacement engines, complete long blocks, and short blocks for industrial machinery, oil & gas, and marine vessels."
                 : "توريد محركات جديدة كاملة ومجمعات المحركات المجهزة للمعدات الصناعية والنفطية والبحرية."}
@@ -64,20 +64,20 @@ export default function EnginesPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 -mt-8 space-y-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {series.map((s, i) => (
-            <div key={i} className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-md space-y-4 flex flex-col justify-between">
+            <div key={i} className="bg-white rounded-2xl p-6 border border-neutral-200/80 shadow-md space-y-4 flex flex-col justify-between">
               <div className="space-y-3">
                 <div className="w-10 h-10 rounded-xl bg-red-50 text-cummins-red flex items-center justify-center">
                   <Gauge className="w-5 h-5" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 font-heading">{s.name}</h3>
+                <h3 className="text-xl font-bold text-neutral-900 font-heading">{s.name}</h3>
                 <p className="text-xs font-bold text-cummins-red">{s.models}</p>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{s.desc}</p>
+                <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">{s.desc}</p>
               </div>
 
-              <div className="pt-4 border-t border-slate-100">
+              <div className="pt-4 border-t border-neutral-100">
                 <button
                   onClick={() => openQuote()}
-                  className="w-full py-2.5 bg-slate-900 hover:bg-cummins-red text-white text-xs font-bold uppercase rounded-lg transition-colors flex items-center justify-center gap-2"
+                  className="w-full py-2.5 bg-[#111111] hover:bg-cummins-red text-white text-xs font-bold uppercase rounded-lg transition-colors flex items-center justify-center gap-2"
                 >
                   <Zap className="w-3.5 h-3.5" />
                   <span>Inquire for Engine</span>

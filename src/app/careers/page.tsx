@@ -34,8 +34,8 @@ export default function CareersPage() {
   ];
 
   return (
-    <div className="bg-slate-50 min-h-screen pb-24">
-      <div className="relative bg-slate-950 text-white py-16 sm:py-20 overflow-hidden">
+    <div className="bg-neutral-50 min-h-screen pb-24">
+      <div className="relative bg-black text-white py-16 sm:py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <Image
             src="/uploads/2023/05/engine-technician-shop-800.jpg"
@@ -44,7 +44,7 @@ export default function CareersPage() {
             className="object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
           <div className="max-w-2xl space-y-3">
@@ -54,7 +54,7 @@ export default function CareersPage() {
             <h1 className="text-3xl sm:text-5xl font-extrabold font-heading text-white">
               {language === "en" ? "Join the Team at IMC Iraq" : "انضم إلى فريق العمل في شركة IMC العراق"}
             </h1>
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+            <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
               {language === "en"
                 ? "Build a world-class engineering career representing the global power leader Cummins in Iraq."
                 : "ابنِ مسيرتك المهنية الهندسية مع الوكيل الحصري لكومنز في العراق."}
@@ -66,20 +66,20 @@ export default function CareersPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 -mt-8 space-y-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {openings.map((job, idx) => (
-            <div key={idx} className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-md space-y-4 flex flex-col justify-between">
+            <div key={idx} className="bg-white rounded-2xl p-6 border border-neutral-200/80 shadow-md space-y-4 flex flex-col justify-between">
               <div className="space-y-2">
                 <div className="flex items-center justify-between text-[11px] font-bold text-cummins-red">
                   <span>{job.dept}</span>
                   <span className="px-2 py-0.5 bg-red-50 rounded-full">{job.type}</span>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 font-heading">{job.title}</h3>
-                <p className="text-xs text-slate-500">{job.location}</p>
+                <h3 className="text-lg font-bold text-neutral-900 font-heading">{job.title}</h3>
+                <p className="text-xs text-neutral-500">{job.location}</p>
               </div>
 
-              <div className="pt-4 border-t border-slate-100">
+              <div className="pt-4 border-t border-neutral-100">
                 <a
                   href="mailto:careers@imc.iq"
-                  className="w-full py-2 bg-slate-900 hover:bg-cummins-red text-white text-xs font-bold uppercase rounded-lg transition-colors flex items-center justify-center gap-2"
+                  className="w-full py-2 bg-[#111111] hover:bg-cummins-red text-white text-xs font-bold uppercase rounded-lg transition-colors flex items-center justify-center gap-2"
                 >
                   <Send className="w-3.5 h-3.5" />
                   <span>Apply with CV</span>

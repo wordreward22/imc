@@ -45,17 +45,17 @@ export default function HomePage() {
                 </span>
                 <div className="w-10 h-[2px] bg-[#E2231B]" />
               </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight font-heading">
+              <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 tracking-tight font-heading">
                 {t.catalogTitle}
               </h2>
-              <p className="text-slate-500 text-sm mt-1">
+              <p className="text-neutral-500 text-sm mt-1">
                 {t.catalogSubtitle}
               </p>
             </div>
 
             <Link
               href="/power-generation"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-100 hover:bg-[#E2231B] hover:text-white text-slate-900 text-xs font-bold uppercase tracking-wider transition-colors duration-200 shadow-sm self-start md:self-auto"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-neutral-100 hover:bg-[#E2231B] hover:text-white text-neutral-900 text-xs font-bold uppercase tracking-wider rounded-xl transition-colors duration-200 shadow-sm self-start md:self-auto"
             >
               <span>{language === "en" ? "View All 27 Generators" : language === "ar" ? "عرض جميع المولدات (27 موديل)" : "هەموو مۆلیدەکان ببینە"}</span>
               <ArrowRight className={`w-3.5 h-3.5 ${isRtl ? "rotate-180" : ""}`} />
@@ -77,7 +77,7 @@ export default function HomePage() {
       <FaqSection />
 
       {/* 7. Bottom High-Impact CTA Banner */}
-      <section className="py-16 bg-[#0F172A] text-white relative border-t-4 border-[#E2231B]">
+      <section className="py-16 bg-[#111111] text-white relative border-t-4 border-[#E2231B]">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
           <div className="max-w-2xl space-y-2">
             <h3 className="text-2xl sm:text-3xl font-bold font-heading text-white">
@@ -87,7 +87,7 @@ export default function HomePage() {
                 ? "تبحث عن حلول طاقة هندسية متكاملة؟"
                 : "بەدوای چارەسەری ئەندازیاری وزەدا دەگەڕێیت؟"}
             </h3>
-            <p className="text-slate-300 text-xs sm:text-sm">
+            <p className="text-neutral-300 text-xs sm:text-sm">
               {language === "en"
                 ? "Get in touch with IMC Iraq today for customized Cummins generator sizing, genuine spare parts, and certified field support."
                 : language === "ar"
@@ -99,13 +99,13 @@ export default function HomePage() {
           <div className="flex flex-wrap items-center justify-center gap-4 flex-shrink-0">
             <button
               onClick={() => openQuote()}
-              className="px-7 py-3.5 bg-[#E2231B] text-white hover:bg-[#9E0202] font-bold text-xs uppercase tracking-wider shadow-md transition-colors flex items-center justify-center"
+              className="px-7 py-3.5 bg-[#E2231B] text-white hover:bg-[#9E0202] font-bold text-xs uppercase tracking-wider rounded-xl shadow-md transition-colors flex items-center justify-center"
             >
               <span>{t.getQuote}</span>
             </button>
             <Link
               href="/contact"
-              className="px-7 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold text-xs uppercase tracking-wider transition-colors"
+              className="px-7 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold text-xs uppercase tracking-wider rounded-xl transition-colors"
             >
               {t.contactUs}
             </Link>

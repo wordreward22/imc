@@ -33,8 +33,8 @@ export default function PreventativeMaintenancePage() {
   ];
 
   return (
-    <div className="bg-slate-50 min-h-screen pb-24">
-      <div className="relative bg-slate-950 text-white py-16 sm:py-20 overflow-hidden">
+    <div className="bg-neutral-50 min-h-screen pb-24">
+      <div className="relative bg-black text-white py-16 sm:py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <Image
             src="/uploads/2023/05/service-contracts-1.jpeg"
@@ -43,7 +43,7 @@ export default function PreventativeMaintenancePage() {
             className="object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
           <div className="max-w-2xl space-y-3">
@@ -53,7 +53,7 @@ export default function PreventativeMaintenancePage() {
             <h1 className="text-3xl sm:text-5xl font-extrabold font-heading text-white">
               {language === "en" ? "Service Contracts & Preventative Care" : "عقود الصيانة الوقائية والتشغيل"}
             </h1>
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+            <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
               {t.serviceContractsDesc}
             </p>
           </div>
@@ -68,21 +68,21 @@ export default function PreventativeMaintenancePage() {
               className={`bg-white rounded-3xl p-8 border shadow-lg flex flex-col justify-between relative ${
                 tier.popular
                   ? "border-cummins-red ring-2 ring-cummins-red/20"
-                  : "border-slate-200/80"
+                  : "border-neutral-200/80"
               }`}
             >
               {tier.popular && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-cummins-red text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-full shadow-md">
+                <div className="absolute -top-3.5 left-1/2 -tranneutral-x-1/2 bg-cummins-red text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-full shadow-md">
                   Most Selected by Clients
                 </div>
               )}
 
               <div className="space-y-4">
-                <h3 className="text-xl font-bold text-slate-900 font-heading">{tier.name}</h3>
-                <p className="text-xs text-slate-600 leading-relaxed">{tier.desc}</p>
-                <div className="pt-4 border-t border-slate-100 space-y-2.5">
+                <h3 className="text-xl font-bold text-neutral-900 font-heading">{tier.name}</h3>
+                <p className="text-xs text-neutral-600 leading-relaxed">{tier.desc}</p>
+                <div className="pt-4 border-t border-neutral-100 space-y-2.5">
                   {tier.features.map((f, i) => (
-                    <div key={i} className="flex items-center gap-2 text-xs text-slate-700">
+                    <div key={i} className="flex items-center gap-2 text-xs text-neutral-700">
                       <CheckCircle2 className="w-4 h-4 text-cummins-red flex-shrink-0" />
                       <span>{f}</span>
                     </div>
@@ -96,7 +96,7 @@ export default function PreventativeMaintenancePage() {
                   className={`w-full py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all ${
                     tier.popular
                       ? "bg-cummins-red text-white hover:bg-cummins-red-dark shadow-md"
-                      : "bg-slate-100 text-slate-800 hover:bg-slate-200"
+                      : "bg-neutral-100 text-neutral-800 hover:bg-neutral-200"
                   }`}
                 >
                   Inquire For Contract

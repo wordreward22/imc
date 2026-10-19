@@ -41,7 +41,7 @@ export const AboutSection: React.FC = () => {
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
             </div>
 
             {/* Red Circle Counter Badge: SINCE 2021 */}
@@ -55,7 +55,7 @@ export const AboutSection: React.FC = () => {
             </div>
 
             {/* Official Cummins Watermark Badge */}
-            <div className="absolute -bottom-6 -left-4 sm:left-6 bg-white p-4 shadow-lg border border-slate-200 flex items-center gap-4 z-20">
+            <div className="absolute -bottom-6 -left-4 sm:left-6 bg-white p-4 rounded-2xl shadow-lg border border-neutral-200 flex items-center gap-4 z-20">
               <div className="relative w-16 h-12">
                 <Image
                   src="/uploads/2023/02/CUMMINS-PNG.png"
@@ -64,11 +64,11 @@ export const AboutSection: React.FC = () => {
                   className="object-contain"
                 />
               </div>
-              <div className="border-l border-slate-200 pl-3">
+              <div className="border-l border-neutral-200 pl-3">
                 <p className="text-[11px] font-bold uppercase tracking-wider text-[#E2231B]">
                   Cummins Authorized Seller.
                 </p>
-                <p className="text-xs font-bold text-slate-900">
+                <p className="text-xs font-bold text-neutral-900">
                   {t.customerDriven}
                 </p>
               </div>
@@ -84,7 +84,7 @@ export const AboutSection: React.FC = () => {
                 </span>
                 <div className="w-12 h-[2px] bg-black" />
               </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight font-heading leading-tight">
+              <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 tracking-tight font-heading leading-tight">
                 {language === "en" ? (
                   <>Powers <span className="text-[#E2231B]">Industries</span> Around the World</>
                 ) : language === "ar" ? (
@@ -101,7 +101,7 @@ export const AboutSection: React.FC = () => {
 
             {/* Tabs: Mission, Vision, Values */}
             <div className="pt-2">
-              <div className="flex items-center gap-8 border-b border-slate-200">
+              <div className="flex items-center gap-8 border-b border-neutral-200">
                 {(["mission", "vision", "values"] as const).map((tab) => {
                   const isActive = activeTab === tab;
                   return (
@@ -109,7 +109,7 @@ export const AboutSection: React.FC = () => {
                       key={tab}
                       onClick={() => setActiveTab(tab)}
                       className={`pb-3 text-sm sm:text-base font-bold font-heading transition-colors relative ${
-                        isActive ? "text-[#E2231B]" : "text-slate-700 hover:text-[#E2231B]"
+                        isActive ? "text-[#E2231B]" : "text-neutral-700 hover:text-[#E2231B]"
                       }`}
                     >
                       {tabContent[tab].title}

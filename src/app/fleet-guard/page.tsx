@@ -33,8 +33,8 @@ export default function FleetGuardPage() {
   ];
 
   return (
-    <div className="bg-slate-50 min-h-screen pb-24">
-      <div className="relative bg-slate-950 text-white py-16 sm:py-20 overflow-hidden">
+    <div className="bg-neutral-50 min-h-screen pb-24">
+      <div className="relative bg-black text-white py-16 sm:py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <Image
             src="/uploads/2023/05/engine-closeup-banner.jpg"
@@ -43,7 +43,7 @@ export default function FleetGuardPage() {
             className="object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
           <div className="max-w-2xl space-y-3">
@@ -53,7 +53,7 @@ export default function FleetGuardPage() {
             <h1 className="text-3xl sm:text-5xl font-extrabold font-heading text-white">
               {language === "en" ? "Fleetguard Filtration Systems" : "أنظمة فلاتر فليت جارد الأصلية"}
             </h1>
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+            <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
               {language === "en"
                 ? "Engineered specifically for Cummins engines, Fleetguard filters deliver industry-leading media technology for maximum protection."
                 : "فلاتر فليت جارد المصممة هندسياً خصيصاً لمحركات كومنز لتوفير أقصى درجات الحماية والنقاء."}
@@ -65,12 +65,12 @@ export default function FleetGuardPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 -mt-8 space-y-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filterTypes.map((item, i) => (
-            <div key={i} className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-md space-y-3">
+            <div key={i} className="bg-white rounded-2xl p-6 border border-neutral-200/80 shadow-md space-y-3">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-cummins-red flex-shrink-0" />
-                <h3 className="text-lg font-bold text-slate-900 font-heading">{item.title}</h3>
+                <h3 className="text-lg font-bold text-neutral-900 font-heading">{item.title}</h3>
               </div>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+              <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>

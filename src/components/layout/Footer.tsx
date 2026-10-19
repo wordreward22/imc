@@ -12,9 +12,9 @@ export const Footer: React.FC = () => {
   const t = translations[language];
 
   return (
-    <footer className="bg-slate-950 text-slate-300 pt-16 pb-8 border-t border-slate-900">
+    <footer className="bg-[#0c0c0c] text-neutral-300 pt-16 pb-8 border-t border-[#1f1f1f]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-[#1f1f1f]">
           {/* Col 1: About Brand */}
           <div className="space-y-4">
             <div className="relative h-14 w-44">
@@ -32,7 +32,7 @@ export const Footer: React.FC = () => {
                 ? "شركة IMC العراق – الوكيل المعتمد لكومنز."
                 : "ئای ئێم سی عێراق – بریکاری ڕێگەپێدراوی کۆمنز."}
             </p>
-            <p className="text-slate-400 text-xs leading-relaxed">
+            <p className="text-neutral-400 text-xs leading-relaxed">
               {t.footerDesc}
             </p>
             <div className="flex items-center gap-3 pt-2">
@@ -72,52 +72,52 @@ export const Footer: React.FC = () => {
               <span className="w-2 h-2 rounded-full bg-cummins-red"></span>
               <span>{t.siteMap}</span>
             </h4>
-            <ul className="space-y-2.5 text-xs text-slate-400">
+            <ul className="space-y-2.5 text-xs text-neutral-400">
               <li>
                 <Link href="/about" className="hover:text-cummins-red transition-colors flex items-center gap-1.5">
-                  <ChevronRight className={`w-3 h-3 text-slate-600 ${isRtl ? "rotate-180" : ""}`} />
+                  <ChevronRight className={`w-3 h-3 text-neutral-600 ${isRtl ? "rotate-180" : ""}`} />
                   <span>{t.aboutUs}</span>
                 </Link>
               </li>
               <li>
                 <Link href="/power-generation" className="hover:text-cummins-red transition-colors flex items-center gap-1.5">
-                  <ChevronRight className={`w-3 h-3 text-slate-600 ${isRtl ? "rotate-180" : ""}`} />
+                  <ChevronRight className={`w-3 h-3 text-neutral-600 ${isRtl ? "rotate-180" : ""}`} />
                   <span>{t.generators}</span>
                 </Link>
               </li>
               <li>
                 <Link href="/cummins-kit" className="hover:text-cummins-red transition-colors flex items-center gap-1.5">
-                  <ChevronRight className={`w-3 h-3 text-slate-600 ${isRtl ? "rotate-180" : ""}`} />
+                  <ChevronRight className={`w-3 h-3 text-neutral-600 ${isRtl ? "rotate-180" : ""}`} />
                   <span>{t.spareParts}</span>
                 </Link>
               </li>
               <li>
                 <Link href="/engines" className="hover:text-cummins-red transition-colors flex items-center gap-1.5">
-                  <ChevronRight className={`w-3 h-3 text-slate-600 ${isRtl ? "rotate-180" : ""}`} />
+                  <ChevronRight className={`w-3 h-3 text-neutral-600 ${isRtl ? "rotate-180" : ""}`} />
                   <span>{t.engines}</span>
                 </Link>
               </li>
               <li>
                 <Link href="/imc-services" className="hover:text-cummins-red transition-colors flex items-center gap-1.5">
-                  <ChevronRight className={`w-3 h-3 text-slate-600 ${isRtl ? "rotate-180" : ""}`} />
+                  <ChevronRight className={`w-3 h-3 text-neutral-600 ${isRtl ? "rotate-180" : ""}`} />
                   <span>{t.service}</span>
                 </Link>
               </li>
               <li>
                 <Link href="/training" className="hover:text-cummins-red transition-colors flex items-center gap-1.5">
-                  <ChevronRight className={`w-3 h-3 text-slate-600 ${isRtl ? "rotate-180" : ""}`} />
+                  <ChevronRight className={`w-3 h-3 text-neutral-600 ${isRtl ? "rotate-180" : ""}`} />
                   <span>{t.training}</span>
                 </Link>
               </li>
               <li>
                 <Link href="/careers" className="hover:text-cummins-red transition-colors flex items-center gap-1.5">
-                  <ChevronRight className={`w-3 h-3 text-slate-600 ${isRtl ? "rotate-180" : ""}`} />
+                  <ChevronRight className={`w-3 h-3 text-neutral-600 ${isRtl ? "rotate-180" : ""}`} />
                   <span>{t.careers}</span>
                 </Link>
               </li>
               <li>
                 <Link href="/contact" className="hover:text-cummins-red transition-colors flex items-center gap-1.5">
-                  <ChevronRight className={`w-3 h-3 text-slate-600 ${isRtl ? "rotate-180" : ""}`} />
+                  <ChevronRight className={`w-3 h-3 text-neutral-600 ${isRtl ? "rotate-180" : ""}`} />
                   <span>{t.contactUs}</span>
                 </Link>
               </li>
@@ -130,7 +130,7 @@ export const Footer: React.FC = () => {
               <span className="w-2 h-2 rounded-full bg-cummins-red"></span>
               <span>{t.powerSystem}</span>
             </h4>
-            <ul className="space-y-2.5 text-xs text-slate-400">
+            <ul className="space-y-2.5 text-xs text-neutral-400">
               <li>
                 <Link href="/power-generation" className="hover:text-cummins-red transition-colors">
                   • Heavy-Duty Diesel Generators
@@ -170,12 +170,12 @@ export const Footer: React.FC = () => {
               <span className="w-2 h-2 rounded-full bg-cummins-red"></span>
               <span>{t.officialInfo}</span>
             </h4>
-            <div className="space-y-3.5 text-xs text-slate-400">
+            <div className="space-y-3.5 text-xs text-neutral-400">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-cummins-red flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-white font-medium">{t.baghdadOffice}</p>
-                  <p className="text-slate-500 mt-0.5">{t.basraOffice}</p>
+                  <p className="text-neutral-500 mt-0.5">{t.basraOffice}</p>
                 </div>
               </div>
               <div className="flex items-center gap-2.5">
@@ -195,7 +195,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
           <p>{t.rightsReserved}</p>
           
         </div>

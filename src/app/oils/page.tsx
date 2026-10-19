@@ -29,8 +29,8 @@ export default function OilsPage() {
   ];
 
   return (
-    <div className="bg-slate-50 min-h-screen pb-24">
-      <div className="relative bg-slate-950 text-white py-16 sm:py-20 overflow-hidden">
+    <div className="bg-neutral-50 min-h-screen pb-24">
+      <div className="relative bg-black text-white py-16 sm:py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <Image
             src="/uploads/2023/05/engine-closeup-banner.jpg"
@@ -39,7 +39,7 @@ export default function OilsPage() {
             className="object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
           <div className="max-w-2xl space-y-3">
@@ -49,7 +49,7 @@ export default function OilsPage() {
             <h1 className="text-3xl sm:text-5xl font-extrabold font-heading text-white">
               {language === "en" ? "Valvoline & Cummins Engine Oils" : "زيوت المحركات الأصلية من كومنز وفالفولين"}
             </h1>
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+            <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
               {language === "en"
                 ? "Formulated through joint engineering development between Cummins and Valvoline to unlock peak engine life and thermal stability."
                 : "تم تطوير زيوت فالفولين بريميوم بلو بالتعاون الهندسي الحصري مع كومنز لضمان أعلى مستويات الحماية التشغيلية."}
@@ -61,19 +61,19 @@ export default function OilsPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 -mt-8 space-y-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {oilProducts.map((p, i) => (
-            <div key={i} className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-md space-y-3 flex flex-col justify-between">
+            <div key={i} className="bg-white rounded-2xl p-6 border border-neutral-200/80 shadow-md space-y-3 flex flex-col justify-between">
               <div className="space-y-3">
                 <div className="w-10 h-10 rounded-xl bg-red-50 text-cummins-red flex items-center justify-center">
                   <Droplets className="w-5 h-5" />
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 font-heading">{p.name}</h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{p.desc}</p>
+                <h3 className="text-lg font-bold text-neutral-900 font-heading">{p.name}</h3>
+                <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">{p.desc}</p>
               </div>
 
-              <div className="pt-4 border-t border-slate-100">
+              <div className="pt-4 border-t border-neutral-100">
                 <button
                   onClick={() => openQuote()}
-                  className="w-full py-2 bg-slate-900 hover:bg-cummins-red text-white text-xs font-bold uppercase rounded-lg transition-colors"
+                  className="w-full py-2 bg-[#111111] hover:bg-cummins-red text-white text-xs font-bold uppercase rounded-lg transition-colors"
                 >
                   Request Bulk Quote
                 </button>

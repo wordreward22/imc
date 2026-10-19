@@ -43,9 +43,9 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="bg-slate-50 min-h-screen pb-24">
+    <div className="bg-neutral-50 min-h-screen pb-24">
       {/* Hero Header */}
-      <div className="relative bg-slate-950 text-white py-16 sm:py-20 overflow-hidden">
+      <div className="relative bg-black text-white py-16 sm:py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <Image
             src="/uploads/2023/05/field-service.jpg"
@@ -54,7 +54,7 @@ export default function ServicesPage() {
             className="object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
           <div className="max-w-2xl space-y-3">
@@ -64,7 +64,7 @@ export default function ServicesPage() {
             <h1 className="text-3xl sm:text-5xl font-extrabold font-heading text-white">
               {t.servicesHeadline}
             </h1>
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+            <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
               {language === "en"
                 ? "Full-lifecycle technical support, certified engine overhauls, and preventative maintenance for mission-critical installations across Iraq."
                 : "دعم فني متكامل عبر دورة التشغيل الكاملة وإصلاحات معتمدة للمولدات في جميع أنحاء العراق."}
@@ -80,27 +80,27 @@ export default function ServicesPage() {
             return (
               <div
                 key={idx}
-                className="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
+                className="bg-white rounded-3xl overflow-hidden border border-neutral-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
-                  <div className="relative h-64 w-full bg-slate-900">
+                  <div className="relative h-64 w-full bg-[#111111]">
                     <Image
                       src={item.image}
                       alt={item.title}
                       fill
                       className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
-                    <div className="absolute top-4 right-4 w-12 h-12 rounded-xl bg-slate-900/90 text-cummins-red flex items-center justify-center border border-white/10 shadow-lg">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                    <div className="absolute top-4 right-4 w-12 h-12 rounded-xl bg-[#111111]/90 text-cummins-red flex items-center justify-center border border-white/10 shadow-lg">
                       <Icon className="w-6 h-6" />
                     </div>
                   </div>
 
                   <div className="p-8 space-y-3">
-                    <h3 className="text-2xl font-bold text-slate-900 font-heading">
+                    <h3 className="text-2xl font-bold text-neutral-900 font-heading">
                       {item.title}
                     </h3>
-                    <p className="text-slate-600 text-sm leading-relaxed">
+                    <p className="text-neutral-600 text-sm leading-relaxed">
                       {item.desc}
                     </p>
                   </div>

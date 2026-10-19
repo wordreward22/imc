@@ -13,9 +13,9 @@ export default function PowerGenerationPage() {
   const t = translations[language];
 
   return (
-    <div className="bg-slate-50 min-h-screen pb-24">
+    <div className="bg-neutral-50 min-h-screen pb-24">
       {/* Page Hero Banner */}
-      <div className="relative bg-slate-950 text-white py-16 sm:py-20 overflow-hidden">
+      <div className="relative bg-black text-white py-16 sm:py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <Image
             src="/uploads/2023/05/imc-bg-slider.jpeg"
@@ -24,7 +24,7 @@ export default function PowerGenerationPage() {
             className="object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/40" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
           <div className="max-w-2xl space-y-3">
@@ -35,7 +35,7 @@ export default function PowerGenerationPage() {
             <h1 className="text-3xl sm:text-5xl font-extrabold font-heading text-white">
               {t.catalogTitle}
             </h1>
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+            <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
               {t.catalogSubtitle}
             </p>
           </div>

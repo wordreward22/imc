@@ -27,10 +27,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const attrs = product.attributes;
 
   return (
-    <div className="group bg-white overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between hover:border-[#E2231B]">
+    <div className="group bg-white rounded-2xl overflow-hidden border border-neutral-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between hover:border-[#E2231B]">
       <div>
         {/* Generator Image Header */}
-        <div className="relative h-56 w-full bg-slate-50 p-6 flex items-center justify-center overflow-hidden border-b border-slate-200">
+        <div className="relative h-56 w-full bg-neutral-50 p-6 flex items-center justify-center overflow-hidden border-b border-neutral-200">
           <div className="relative w-full h-full group-hover:scale-105 transition-transform duration-500">
             <Image
               src={imgSrc}
@@ -43,7 +43,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
           {/* Standby Rating Badge */}
           {attrs.standby_kva_kw && (
-            <div className="absolute top-3 right-3 bg-[#E2231B] text-white text-[11px] font-bold px-3 py-1 shadow-sm">
+            <div className="absolute top-3 right-3 bg-[#E2231B] text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-sm">
               {attrs.standby_kva_kw.split("-")[0]?.trim() || attrs.standby_kva_kw}
             </div>
           )}
@@ -55,13 +55,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             <span className="text-[11px] font-bold uppercase tracking-wider text-[#E2231B]">
               Cummins Power Generation
             </span>
-            <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#E2231B] transition-colors font-heading mt-0.5">
+            <h3 className="text-xl font-bold text-neutral-900 group-hover:text-[#E2231B] transition-colors font-heading mt-0.5">
               {product.name}
             </h3>
           </div>
 
           {/* Key Spec Grid */}
-          <div className="grid grid-cols-2 gap-2 text-xs text-slate-600 bg-slate-50 p-3 border border-slate-200">
+          <div className="grid grid-cols-2 gap-2 text-xs text-neutral-600 bg-neutral-50 p-3 rounded-xl border border-neutral-200">
             {attrs.engine_model && (
               <div className="flex items-center gap-1.5">
                 <Gauge className="w-3.5 h-3.5 text-[#E2231B] flex-shrink-0" />
@@ -94,7 +94,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       <div className="p-5 pt-0">
         <button
           onClick={() => openQuote(product)}
-          className="w-full py-2.5 bg-slate-900 hover:bg-[#E2231B] text-white text-xs font-bold uppercase tracking-wider transition-colors duration-200 flex items-center justify-center shadow-sm"
+          className="w-full py-2.5 bg-[#111111] hover:bg-[#E2231B] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-colors duration-200 flex items-center justify-center shadow-sm"
         >
           <span>{t.requestQuoteForThis}</span>
         </button>

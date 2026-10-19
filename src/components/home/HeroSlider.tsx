@@ -52,7 +52,7 @@ export const HeroSlider: React.FC = () => {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <div className="relative w-full h-[580px] sm:h-[640px] md:h-[700px] overflow-hidden bg-slate-950">
+    <div className="relative w-full h-[580px] sm:h-[640px] md:h-[700px] overflow-hidden bg-black">
       {slides.map((slide, index) => {
         const isActive = index === currentSlide;
         return (
@@ -76,8 +76,8 @@ export const HeroSlider: React.FC = () => {
             </div>
 
             {/* Dark & Brand Gradient Overlays */}
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/60 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-black/30" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/40" />
 
             {/* Content Container */}
             <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 flex items-center">
@@ -95,7 +95,7 @@ export const HeroSlider: React.FC = () => {
                 </h1>
 
                 {/* Narrative Description */}
-                <p className="text-sm sm:text-base md:text-lg text-slate-200 leading-relaxed font-normal">
+                <p className="text-sm sm:text-base md:text-lg text-neutral-200 leading-relaxed font-normal">
                   {slide.description}
                 </p>
 
@@ -104,7 +104,7 @@ export const HeroSlider: React.FC = () => {
                   {slide.cta1Href && (
                     <Link
                       href={slide.cta1Href}
-                      className="px-7 py-3.5 bg-[#E2231B] hover:bg-[#9E0202] text-white font-bold text-xs uppercase tracking-wider shadow-md flex items-center gap-2 transition-colors duration-200"
+                      className="px-7 py-3.5 bg-[#E2231B] hover:bg-[#9E0202] text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-md flex items-center gap-2 transition-colors duration-200"
                     >
                       <span>{slide.cta1Text}</span>
                       <ArrowRight className={`w-4 h-4 ${isRtl ? "rotate-180" : ""}`} />
@@ -114,14 +114,14 @@ export const HeroSlider: React.FC = () => {
                   {slide.cta2Action ? (
                     <button
                       onClick={slide.cta2Action}
-                      className="px-7 py-3.5 bg-black/40 hover:bg-black/60 text-white border border-white/30 font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition-colors duration-200"
+                      className="px-7 py-3.5 bg-black/50 hover:bg-black/70 text-white border border-white/30 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition-colors duration-200"
                     >
                       <span>{slide.cta2Text}</span>
                     </button>
                   ) : slide.cta2Href ? (
                     <Link
                       href={slide.cta2Href}
-                      className="px-7 py-3.5 bg-black/40 hover:bg-black/60 text-white border border-white/30 font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition-colors duration-200"
+                      className="px-7 py-3.5 bg-black/50 hover:bg-black/70 text-white border border-white/30 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition-colors duration-200"
                     >
                       <span>{slide.cta2Text}</span>
                     </Link>
@@ -138,28 +138,28 @@ export const HeroSlider: React.FC = () => {
         <button
           onClick={prevSlide}
           aria-label="Previous Slide"
-          className="w-11 h-11 rounded-full bg-slate-900/60 hover:bg-cummins-red text-white backdrop-blur-md border border-white/10 flex items-center justify-center transition-all hover:scale-110 active:scale-95"
+          className="w-11 h-11 rounded-full bg-black/70 hover:bg-[#E2231B] text-white backdrop-blur-md border border-white/20 flex items-center justify-center transition-all hover:scale-110 active:scale-95"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
         <button
           onClick={nextSlide}
           aria-label="Next Slide"
-          className="w-11 h-11 rounded-full bg-slate-900/60 hover:bg-cummins-red text-white backdrop-blur-md border border-white/10 flex items-center justify-center transition-all hover:scale-110 active:scale-95"
+          className="w-11 h-11 rounded-full bg-black/70 hover:bg-[#E2231B] text-white backdrop-blur-md border border-white/20 flex items-center justify-center transition-all hover:scale-110 active:scale-95"
         >
           <ChevronRight className="w-5 h-5" />
         </button>
       </div>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2.5">
+      <div className="absolute bottom-6 left-1/2 -tranneutral-x-1/2 z-20 flex items-center gap-2.5">
         {slides.map((_, idx) => (
           <button
             key={idx}
             onClick={() => setCurrentSlide(idx)}
             className={`h-2.5 rounded-full transition-all duration-300 ${
               idx === currentSlide
-                ? "w-8 bg-cummins-red"
+                ? "w-8 bg-[#E2231B]"
                 : "w-2.5 bg-white/40 hover:bg-white/70"
             }`}
             aria-label={`Go to slide ${idx + 1}`}
