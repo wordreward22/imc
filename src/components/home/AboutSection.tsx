@@ -36,10 +36,10 @@ export const AboutSection: React.FC = () => {
           <div className="relative">
             <div className="relative h-[420px] sm:h-[480px] w-full rounded-2xl overflow-hidden shadow-xl border-4 border-white">
               <Image
-                src="/uploads/2023/03/WhatsApp-Image-2023-02-21-at-1.12.54-PM-650x650.jpeg"
-                alt="IMC Cummins Workshop Iraq"
+                src="/uploads/2023/03/slider-img-2.jpeg"
+                alt="IMC Cummins Iraq Facility"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
             </div>
