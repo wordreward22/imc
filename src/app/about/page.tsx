@@ -45,9 +45,9 @@ export default function AboutPage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 space-y-16">
         {/* Mission, Vision, Values */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="flex flex-wrap justify-center gap-8">
           {/* Mission */}
-          <div className="bg-neutral-50 rounded-2xl p-8 border border-neutral-200 shadow-sm space-y-4">
+          <div className="w-full md:w-[calc(33.333%-22px)] max-w-md md:max-w-none bg-neutral-50 rounded-2xl p-8 border border-neutral-200 shadow-sm space-y-4">
             <div className="w-12 h-12 rounded-xl bg-red-50 text-[#E2231B] flex items-center justify-center">
               <Target className="w-6 h-6" />
             </div>
@@ -64,7 +64,7 @@ export default function AboutPage() {
           </div>
 
           {/* Vision */}
-          <div className="bg-neutral-50 rounded-2xl p-8 border border-neutral-200 shadow-sm space-y-4">
+          <div className="w-full md:w-[calc(33.333%-22px)] max-w-md md:max-w-none bg-neutral-50 rounded-2xl p-8 border border-neutral-200 shadow-sm space-y-4">
             <div className="w-12 h-12 rounded-xl bg-[#111111] text-white flex items-center justify-center">
               <Eye className="w-6 h-6" />
             </div>
@@ -81,7 +81,7 @@ export default function AboutPage() {
           </div>
 
           {/* Values */}
-          <div className="bg-neutral-50 rounded-2xl p-8 border border-neutral-200 shadow-sm space-y-4">
+          <div className="w-full md:w-[calc(33.333%-22px)] max-w-md md:max-w-none bg-neutral-50 rounded-2xl p-8 border border-neutral-200 shadow-sm space-y-4">
             <div className="w-12 h-12 rounded-xl bg-red-50 text-[#E2231B] flex items-center justify-center">
               <ShieldCheck className="w-6 h-6" />
             </div>

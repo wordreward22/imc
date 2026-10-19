@@ -130,9 +130,12 @@ export default function PreventativeMaintenancePage() {
             <div className="w-12 h-1 bg-[#E2231B] mx-auto rounded-full mt-3" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {packages.map((pkg, idx) => (
-              <div key={idx} className="bg-neutral-50 rounded-2xl p-6 border border-neutral-200 shadow-sm space-y-3">
+              <div
+                key={idx}
+                className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-neutral-50 rounded-2xl p-6 border border-neutral-200 shadow-sm space-y-3"
+              >
                 <div className="w-10 h-10 rounded-xl bg-red-50 text-[#E2231B] flex items-center justify-center">
                   <CheckCircle2 className="w-5 h-5" />
                 </div>

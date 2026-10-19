@@ -37,14 +37,14 @@ export const FeatureCards: React.FC = () => {
 
   return (
     <section className="relative -mt-16 z-20 max-w-7xl mx-auto px-4 sm:px-6">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="flex flex-wrap justify-center gap-6">
         {cards.map((card) => {
           const Icon = card.icon;
           return (
             <Link
               key={card.title}
               href={card.href}
-              className="group relative bg-white rounded-2xl shadow-lg overflow-hidden border border-neutral-200 p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-[#E2231B]"
+              className="w-full md:w-[calc(33.333%-16px)] max-w-md md:max-w-none group relative bg-white rounded-2xl shadow-lg overflow-hidden border border-neutral-200 p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-[#E2231B]"
             >
               {/* Top Solid Red Accent Line */}
               <div className="absolute top-0 inset-x-0 h-1 bg-[#E2231B]" />
