@@ -54,7 +54,13 @@ export const ServicesSection: React.FC = () => {
             {language === "en" ? "Always Customer Driven" : language === "ar" ? "خدمة العملاء أولويتنا" : "هەمیشە لە خزمەتی کڕیاردا"}
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 tracking-tight font-heading">
-            IMC <span className="text-[#E2231B]">Services</span>
+            {language === "ar" ? (
+              <>خدمات <span className="text-[#E2231B]">IMC</span></>
+            ) : language === "ku" ? (
+              <>خزمەتگوزارییەکانی <span className="text-[#E2231B]">IMC</span></>
+            ) : (
+              <>IMC <span className="text-[#E2231B]">Services</span></>
+            )}
           </h2>
           <div className="w-16 h-1 bg-[#E2231B] mx-auto rounded-full mt-2" />
         </div>

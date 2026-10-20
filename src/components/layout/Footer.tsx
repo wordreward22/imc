@@ -133,32 +133,32 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2.5 text-xs text-neutral-400">
               <li>
                 <Link href="/power-generation" className="hover:text-cummins-red transition-colors">
-                  • Heavy-Duty Diesel Generators
+                  • {t.generators}
                 </Link>
               </li>
               <li>
                 <Link href="/renewable-power" className="hover:text-cummins-red transition-colors">
-                  • Hybrid & Renewable Solutions
+                  • {t.renewablePower}
                 </Link>
               </li>
               <li>
                 <Link href="/fleet-guard" className="hover:text-cummins-red transition-colors">
-                  • Fleetguard Heavy Filtration
+                  • {t.fleetGuard}
                 </Link>
               </li>
               <li>
                 <Link href="/oils" className="hover:text-cummins-red transition-colors">
-                  • Valvoline & Cummins Premium Oils
+                  • {t.oils}
                 </Link>
               </li>
               <li>
                 <Link href="/master-rebuild" className="hover:text-cummins-red transition-colors">
-                  • Certified Master Rebuild Center
+                  • {t.workshopRepairs}
                 </Link>
               </li>
               <li>
                 <Link href="/preventative-maintenance" className="hover:text-cummins-red transition-colors">
-                  • Scheduled Maintenance Contracts
+                  • {t.serviceContracts}
                 </Link>
               </li>
             </ul>
