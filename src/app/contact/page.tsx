@@ -2,267 +2,420 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle, MessageSquare } from "lucide-react";
+import { SubpageHero } from "@/components/subpage/SubpageHero";
+import { CtaStatsBanner } from "@/components/subpage/CtaStatsBanner";
 import { useLanguage } from "@/context/LanguageContext";
-import { translations } from "@/data/translations";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Send,
+  CheckCircle2,
+  Building2,
+  ShieldCheck,
+  Headphones,
+} from "lucide-react";
 
 export default function ContactPage() {
-  const { language, isRtl } = useLanguage();
-  const t = translations[language];
+  const { language } = useLanguage();
 
-  const [form, setForm] = useState({
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    subject: "Power Generation",
+    service: "Power Generation",
     message: "",
   });
-  const [sent, setSent] = useState(false);
-  const [sending, setSending] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSending(true);
+    setSubmitting(true);
     setTimeout(() => {
-      setSending(false);
-      setSent(true);
-    }, 700);
+      setSubmitting(false);
+      setSubmitted(true);
+    }, 600);
   };
 
   return (
-    <div className="bg-neutral-50 min-h-screen pb-24">
-      {/* Hero Header */}
-      <div className="relative bg-black text-white py-16 sm:py-20 overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <Image
-            src="/uploads/2023/05/engine-technician-shop-800.jpg"
-            alt="Contact IMC Iraq"
-            fill
-            className="object-cover"
-          />
+    <div className="bg-white min-h-screen">
+      {/* 1. Subpage Hero */}
+      <SubpageHero
+        subtitle="IMC Iraq"
+        title="Contact"
+        accentWord="us"
+        watermark="IMC Iraq"
+        bgImage="/uploads/2023/05/engine-technician-shop-800.jpg"
+      />
+
+      {/* 2. Main Contact Section (Grow Your Business With Our Expertise) */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        {/* Subtle Watermark */}
+        <div className="absolute top-10 inset-x-0 flex items-center justify-center pointer-events-none select-none overflow-hidden opacity-5">
+          <span className="text-[120px] sm:text-[180px] font-black uppercase text-neutral-900 tracking-widest font-heading">
+            CONNECT
+          </span>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="max-w-2xl space-y-3">
-            <span className="inline-block px-3 py-1 rounded-full bg-cummins-red/20 border border-cummins-red/40 text-cummins-red text-xs font-bold uppercase tracking-wider">
-              {t.contactUs}
-            </span>
-            <h1 className="text-3xl sm:text-5xl font-extrabold font-heading text-white">
-              {language === "en"
-                ? "Grow Your Business With Our Expertise"
-                : language === "ar"
-                ? "طور أعمالك مع خبرة مهندسينا"
-                : "پەرە بە کارەکانت بدە بە هاوکاری ئێمە"}
-            </h1>
-            <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
-              {language === "en"
-                ? "Thank you for your interest in IMC's products & services. We are excited to hear from you and provide the exceptional services and support you need."
-                : language === "ar"
-                ? "شكراً لاهتمامكم بمنتجات وخدمات IMC. يسعدنا تواصلكم وتقديم أعلى مستويات الدعم الفني المعتمد."
-                : "سوپاس بۆ پەیوەندیکردنت بە ئای ئێم سی. ئێمە ئامادەین بۆ پێشکەشکردنی باشترین خزمەتگوزاری."}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 -mt-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Branch Offices & Contact Cards */}
-          <div className="lg:col-span-1 space-y-4">
-            {/* Baghdad Branch */}
-            <div className="bg-white rounded-2xl p-6 border border-neutral-200/80 shadow-md space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-red-50 text-cummins-red flex items-center justify-center">
-                <MapPin className="w-5 h-5" />
-              </div>
-              <h3 className="font-bold text-base text-neutral-900 font-heading">
-                {language === "en" ? "Baghdad Main Branch" : "فرع بغداد الرئيسي"}
-              </h3>
-              <p className="text-xs text-neutral-600 leading-relaxed">
-                {language === "en"
-                  ? "Ewairij Industrial Area, Baghdad, Iraq"
-                  : "المنطقة الصناعية - عويريج، بغداد، العراق"}
-              </p>
-              <div className="pt-2 border-t border-neutral-100 flex items-center gap-2 text-xs font-semibold text-neutral-800">
-                <Clock className="w-3.5 h-3.5 text-cummins-red" />
-                <span>{t.workingHours}</span>
-              </div>
-            </div>
-
-            {/* Basra Branch */}
-            <div className="bg-white rounded-2xl p-6 border border-neutral-200/80 shadow-md space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-[#111111] text-white flex items-center justify-center">
-                <MapPin className="w-5 h-5" />
-              </div>
-              <h3 className="font-bold text-base text-neutral-900 font-heading">
-                {language === "en" ? "Basra Branch" : "فرع البصرة"}
-              </h3>
-              <p className="text-xs text-neutral-600 leading-relaxed">
-                {language === "en"
-                  ? "Hamdan Street, Basra, Iraq"
-                  : "شارع حمدان، البصرة، العراق"}
-              </p>
-              <div className="pt-2 border-t border-neutral-100 flex items-center gap-2 text-xs font-semibold text-neutral-800">
-                <Clock className="w-3.5 h-3.5 text-cummins-red" />
-                <span>{t.workingHours}</span>
-              </div>
-            </div>
-
-            {/* Direct Phone & Email */}
-            <div className="bg-gradient-to-br from-neutral-900 to-neutral-800 text-white rounded-2xl p-6 shadow-xl space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-cummins-red flex items-center justify-center text-white">
-                  <Phone className="w-5 h-5" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            {/* Left Column: Narrative & Fancy Contact Detail Boxes */}
+            <div className="lg:col-span-5 space-y-8">
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <span className="text-[#E2231B] font-bold text-xs uppercase tracking-wider font-heading">
+                    Contact us
+                  </span>
+                  <svg
+                    width="24"
+                    height="12"
+                    viewBox="0 0 24 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 2H24"
+                      stroke="#E2231B"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M6 6H24"
+                      stroke="#E2231B"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M12 10H24"
+                      stroke="#E2231B"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                    />
+                  </svg>
                 </div>
-                <div>
-                  <p className="text-xs text-neutral-400">Direct Telephone</p>
-                  <a href="tel:+9647842000220" dir="ltr" className="font-bold text-sm hover:text-cummins-red transition-colors">
-                    {t.phone}
-                  </a>
-                </div>
-              </div>
 
-              <div className="flex items-center gap-3 pt-2 border-t border-neutral-700/60">
-                <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-xs text-neutral-400">Official Inquiries</p>
-                  <a href="mailto:info@imc.iq" className="font-bold text-sm hover:text-cummins-red transition-colors">
-                    {t.email}
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 tracking-tight font-heading uppercase">
+                  Grow Your Business With{" "}
+                  <span className="text-[#E2231B]">Our Expertise</span>
+                </h2>
 
-          {/* Interactive Contact Form */}
-          <div className="lg:col-span-2 bg-white rounded-2xl p-8 border border-neutral-200/80 shadow-md">
-            {sent ? (
-              <div className="text-center py-16 space-y-4">
-                <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 mx-auto flex items-center justify-center">
-                  <CheckCircle className="w-10 h-10" />
-                </div>
-                <h3 className="text-2xl font-bold text-neutral-900">
-                  {language === "en" ? "Message Sent Successfully!" : "تم إرسال رسالتكم بنجاح!"}
-                </h3>
-                <p className="text-neutral-600 text-sm max-w-md mx-auto">
-                  {language === "en"
-                    ? "Thank you for contacting IMC Iraq. One of our engineers will follow up with you within 24 hours."
-                    : "شكراً لتواصلك مع IMC العراق. سيقوم أحد مهندسينا بالتواصل معك خلال 24 ساعة."}
+                <p className="text-neutral-600 text-sm sm:text-base leading-relaxed">
+                  Thank you for your interest in IMC&apos;s products &amp; services. We are excited to hear from you and provide the exceptional services and support you need. Whether you have questions, require assistance, or are interested in joining our team, we are here to help.
                 </p>
-                <button
-                  onClick={() => setSent(false)}
-                  className="px-6 py-2.5 bg-cummins-red text-white text-xs font-bold uppercase rounded-xl"
-                >
-                  {language === "en" ? "Send Another Message" : "إرسال رسالة أخرى"}
-                </button>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div>
-                  <h3 className="text-xl font-bold text-neutral-900 font-heading">
-                    {language === "en" ? "Send an Inquiry" : "أرسل استفسارك الفني"}
-                  </h3>
-                  <p className="text-neutral-500 text-xs mt-1">
-                    {language === "en"
-                      ? "Fill in the form below and our team in Iraq will get back to you promptly."
-                      : "املأ النموذج أدناه وسيتواصل معك فريقنا في العراق في أقرب وقت."}
-                  </p>
-                </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-semibold text-neutral-700 mb-1.5">
-                      {language === "en" ? "Your Name *" : "الاسم الكامل *"}
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={form.name}
-                      onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-sm focus:ring-2 focus:ring-cummins-red/20 focus:border-cummins-red outline-none"
-                    />
+              {/* 4 Fancy Contact Cards */}
+              <div className="space-y-4">
+                {/* Baghdad Office */}
+                <div className="flex items-start gap-4 p-5 rounded-2xl bg-neutral-50 border border-neutral-200/90 shadow-sm hover:border-[#E2231B]/40 transition-colors">
+                  <div className="w-12 h-12 rounded-xl bg-red-50 text-[#E2231B] flex items-center justify-center flex-shrink-0 border border-red-100">
+                    <MapPin className="w-6 h-6" />
                   </div>
-
                   <div>
-                    <label className="block text-xs font-semibold text-neutral-700 mb-1.5">
-                      {language === "en" ? "Email Address *" : "البريد الإلكتروني *"}
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={form.email}
-                      onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-sm focus:ring-2 focus:ring-cummins-red/20 focus:border-cummins-red outline-none"
-                    />
+                    <h3 className="text-xs font-bold uppercase tracking-wider text-neutral-400">
+                      Office Address
+                    </h3>
+                    <p className="text-sm font-bold text-neutral-900 mt-0.5">
+                      Baghdad Branch - Ewairij Industrial Zone
+                    </p>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-semibold text-neutral-700 mb-1.5">
-                      {language === "en" ? "Phone Number *" : "رقم الهاتف *"}
-                    </label>
-                    <input
-                      type="tel"
-                      required
-                      dir="ltr"
-                      value={form.phone}
-                      onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-sm focus:ring-2 focus:ring-cummins-red/20 focus:border-cummins-red outline-none"
-                    />
+                {/* Basra Office */}
+                <div className="flex items-start gap-4 p-5 rounded-2xl bg-neutral-50 border border-neutral-200/90 shadow-sm hover:border-[#E2231B]/40 transition-colors">
+                  <div className="w-12 h-12 rounded-xl bg-[#111111] text-white flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-6 h-6" />
                   </div>
-
                   <div>
-                    <label className="block text-xs font-semibold text-neutral-700 mb-1.5">
-                      {language === "en" ? "Select Service Area *" : "اختر الخدمة المطلوبة *"}
-                    </label>
-                    <select
-                      value={form.subject}
-                      onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-sm focus:ring-2 focus:ring-cummins-red/20 focus:border-cummins-red outline-none"
+                    <h3 className="text-xs font-bold uppercase tracking-wider text-neutral-400">
+                      Office Address
+                    </h3>
+                    <p className="text-sm font-bold text-neutral-900 mt-0.5">
+                      Basra Branch - Hamdan Street
+                    </p>
+                  </div>
+                </div>
+
+                {/* Phone */}
+                <div className="flex items-start gap-4 p-5 rounded-2xl bg-neutral-50 border border-neutral-200/90 shadow-sm hover:border-[#E2231B]/40 transition-colors">
+                  <div className="w-12 h-12 rounded-xl bg-red-50 text-[#E2231B] flex items-center justify-center flex-shrink-0 border border-red-100">
+                    <Phone className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-xs font-bold uppercase tracking-wider text-neutral-400">
+                      Phone Number
+                    </h3>
+                    <a
+                      href="tel:+9647842000220"
+                      className="text-sm font-bold text-neutral-900 mt-0.5 block hover:text-[#E2231B] transition-colors"
                     >
-                      <option value="Power Generation">Power Generation / مولدات الطاقة</option>
-                      <option value="Parts">Genuine Cummins Parts / قطع الغيار</option>
-                      <option value="Service">Field & Workshop Service / الصيانة</option>
-                      <option value="Training">Technical Training / التدريب الفني</option>
-                    </select>
+                      +964 7842 000 220
+                    </a>
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-xs font-semibold text-neutral-700 mb-1.5">
-                    {language === "en" ? "Message / Inquiry Details *" : "تفاصيل الرسالة أو الطلب *"}
-                  </label>
-                  <textarea
-                    required
-                    rows={4}
-                    value={form.message}
-                    onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className="w-full px-4 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-sm focus:ring-2 focus:ring-cummins-red/20 focus:border-cummins-red outline-none resize-none"
-                  />
+                {/* Mail */}
+                <div className="flex items-start gap-4 p-5 rounded-2xl bg-neutral-50 border border-neutral-200/90 shadow-sm hover:border-[#E2231B]/40 transition-colors">
+                  <div className="w-12 h-12 rounded-xl bg-[#111111] text-white flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-xs font-bold uppercase tracking-wider text-neutral-400">
+                      Mail address
+                    </h3>
+                    <a
+                      href="mailto:info@imc.iq"
+                      className="text-sm font-bold text-neutral-900 mt-0.5 block hover:text-[#E2231B] transition-colors"
+                    >
+                      info@imc.iq
+                    </a>
+                  </div>
                 </div>
+              </div>
+            </div>
 
-                <button
-                  type="submit"
-                  disabled={sending}
-                  className="px-8 py-3 bg-cummins-red hover:bg-cummins-red-dark text-white rounded-xl text-xs font-bold uppercase tracking-wider shadow-lg shadow-red-600/20 transition-all flex items-center justify-center gap-2"
-                >
-                  {sending ? (
-                    <span>...</span>
-                  ) : (
-                    <>
-                      <Send className="w-4 h-4" />
-                      <span>{language === "en" ? "Submit Now" : "إرسال الآن"}</span>
-                    </>
-                  )}
-                </button>
-              </form>
-            )}
+            {/* Right Column: Interactive Contact Form matching 1:1 */}
+            <div className="lg:col-span-7">
+              <div className="bg-[#111111] text-white p-8 sm:p-12 rounded-3xl border border-neutral-800 shadow-2xl">
+                {submitted ? (
+                  <div className="text-center py-12 space-y-4">
+                    <div className="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center mx-auto border border-emerald-500/20">
+                      <CheckCircle2 className="w-8 h-8" />
+                    </div>
+                    <h3 className="text-2xl font-bold font-heading text-white">
+                      Message Sent Successfully
+                    </h3>
+                    <p className="text-neutral-400 text-sm max-w-md mx-auto">
+                      Thank you, <span className="text-white font-medium">{formData.name}</span>. Your inquiry has been routed to our specialized Cummins engineering department. We will respond promptly.
+                    </p>
+                    <button
+                      onClick={() => {
+                        setSubmitted(false);
+                        setFormData({ name: "", email: "", phone: "", service: "Power Generation", message: "" });
+                      }}
+                      className="px-6 py-2.5 bg-neutral-800 hover:bg-neutral-700 text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-colors"
+                    >
+                      Send Another Message
+                    </button>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div>
+                      <span className="text-xs font-bold uppercase tracking-wider text-[#E2231B] block mb-1">
+                        Send An Inquiry
+                      </span>
+                      <h3 className="text-2xl font-bold font-heading text-white uppercase">
+                        Get In Touch With Our Engineers
+                      </h3>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-xs font-bold uppercase tracking-wider text-neutral-400 mb-2">
+                          Your Name <span className="text-[#E2231B]">*</span>
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          placeholder="Your Name*"
+                          value={formData.name}
+                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                          className="w-full px-4 py-3.5 bg-neutral-900 border border-neutral-800 rounded-xl text-white text-sm placeholder-neutral-500 focus:outline-none focus:border-[#E2231B] transition-colors"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-xs font-bold uppercase tracking-wider text-neutral-400 mb-2">
+                          Mail <span className="text-[#E2231B]">*</span>
+                        </label>
+                        <input
+                          type="email"
+                          required
+                          placeholder="Mail*"
+                          value={formData.email}
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          className="w-full px-4 py-3.5 bg-neutral-900 border border-neutral-800 rounded-xl text-white text-sm placeholder-neutral-500 focus:outline-none focus:border-[#E2231B] transition-colors"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-xs font-bold uppercase tracking-wider text-neutral-400 mb-2">
+                          Your Phone
+                        </label>
+                        <input
+                          type="tel"
+                          placeholder="Your Phone"
+                          value={formData.phone}
+                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                          className="w-full px-4 py-3.5 bg-neutral-900 border border-neutral-800 rounded-xl text-white text-sm placeholder-neutral-500 focus:outline-none focus:border-[#E2231B] transition-colors"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-xs font-bold uppercase tracking-wider text-neutral-400 mb-2">
+                          Select Service <span className="text-[#E2231B]">*</span>
+                        </label>
+                        <select
+                          value={formData.service}
+                          onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                          className="w-full px-4 py-3.5 bg-neutral-900 border border-neutral-800 rounded-xl text-white text-sm focus:outline-none focus:border-[#E2231B] transition-colors"
+                        >
+                          <option value="Power Generation">Power Generation</option>
+                          <option value="Parts">Parts</option>
+                          <option value="Service">Service</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-bold uppercase tracking-wider text-neutral-400 mb-2">
+                        Your Message <span className="text-[#E2231B]">*</span>
+                      </label>
+                      <textarea
+                        required
+                        rows={5}
+                        placeholder="Your Message*"
+                        value={formData.message}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        className="w-full px-4 py-3.5 bg-neutral-900 border border-neutral-800 rounded-xl text-white text-sm placeholder-neutral-500 focus:outline-none focus:border-[#E2231B] transition-colors resize-none"
+                      />
+                    </div>
+
+                    <div className="pt-2 border-t border-neutral-800">
+                      <button
+                        type="submit"
+                        disabled={submitting}
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-4 bg-[#E2231B] hover:bg-[#9E0202] text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-colors shadow-lg shadow-red-600/30 disabled:opacity-50"
+                      >
+                        {submitting ? "Sending..." : "Submit Now"}
+                        <Send className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </form>
+                )}
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* 3. Interactive Facilities / Map Section */}
+      <section className="py-16 bg-neutral-50 border-t border-neutral-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
+            <span className="text-[#E2231B] font-bold text-xs uppercase tracking-wider font-heading">
+              Our Locations
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-900 font-heading uppercase">
+              Authorized Service Centers &amp; Workshops
+            </h2>
+            <div className="w-12 h-1 bg-[#E2231B] mx-auto rounded-full mt-2" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Baghdad Main Facility */}
+            <div className="bg-white rounded-3xl p-8 border border-neutral-200/90 shadow-sm space-y-5">
+              <div className="flex items-center justify-between">
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#E2231B] block">
+                    Headquarters &amp; Master Workshop
+                  </span>
+                  <h3 className="text-xl font-bold font-heading text-neutral-900 mt-1">
+                    Baghdad - Ewairij Industrial Zone
+                  </h3>
+                </div>
+                <div className="w-10 h-10 rounded-xl bg-red-50 text-[#E2231B] flex items-center justify-center">
+                  <Building2 className="w-5 h-5" />
+                </div>
+              </div>
+
+              <div className="space-y-3 text-sm text-neutral-600">
+                <div className="flex items-center gap-3">
+                  <MapPin className="w-4 h-4 text-[#E2231B] flex-shrink-0" />
+                  <span>Ewairij Industrial Area, Expressway, Baghdad, Iraq</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Phone className="w-4 h-4 text-[#E2231B] flex-shrink-0" />
+                  <span>+964 7842 000 220</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Clock className="w-4 h-4 text-[#E2231B] flex-shrink-0" />
+                  <span>Sunday – Thursday: 8:00 AM – 5:00 PM (24/7 Emergency Dispatch)</span>
+                </div>
+              </div>
+
+              <div className="pt-2 border-t border-neutral-100 flex items-center gap-2 text-xs font-semibold text-neutral-500">
+                <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                <span>Full Engine Overhaul Facility &amp; Central Spare Parts Depot</span>
+              </div>
+            </div>
+
+            {/* Basra Regional Facility */}
+            <div className="bg-white rounded-3xl p-8 border border-neutral-200/90 shadow-sm space-y-5">
+              <div className="flex items-center justify-between">
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#E2231B] block">
+                    Southern Regional Facility
+                  </span>
+                  <h3 className="text-xl font-bold font-heading text-neutral-900 mt-1">
+                    Basra - Hamdan Street
+                  </h3>
+                </div>
+                <div className="w-10 h-10 rounded-xl bg-neutral-900 text-white flex items-center justify-center">
+                  <Building2 className="w-5 h-5" />
+                </div>
+              </div>
+
+              <div className="space-y-3 text-sm text-neutral-600">
+                <div className="flex items-center gap-3">
+                  <MapPin className="w-4 h-4 text-[#E2231B] flex-shrink-0" />
+                  <span>Hamdan Industrial District, Basra, Southern Iraq</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Phone className="w-4 h-4 text-[#E2231B] flex-shrink-0" />
+                  <span>+964 7842 000 220</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Clock className="w-4 h-4 text-[#E2231B] flex-shrink-0" />
+                  <span>Sunday – Thursday: 8:00 AM – 5:00 PM (24/7 Oil &amp; Gas Dispatch)</span>
+                </div>
+              </div>
+
+              <div className="pt-2 border-t border-neutral-100 flex items-center gap-2 text-xs font-semibold text-neutral-500">
+                <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                <span>Oilfield Specialized Support &amp; Mobile Service Units</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. CTA Stats Banner */}
+      <CtaStatsBanner
+        title="The Genuine Difference"
+        desc="Thank you for your interest in IMC's products & services. We are excited to hear from you and provide the exceptional services and support you need."
+        buttonText="Request A Quote"
+        bgImage="/uploads/2023/05/engine-technician-shop-800.jpg"
+        stats={[
+          {
+            number: "24/7",
+            label: "Emergency technical dispatch and support available across Iraq",
+            icon: "shield",
+          },
+          {
+            number: "100%",
+            label: "Official Cummins distributor warranty and authentic parts backing",
+            icon: "award",
+          },
+          {
+            number: "2+",
+            label: "Full-scale authorized service centers in Baghdad & Basra",
+            icon: "pin",
+          },
+        ]}
+      />
     </div>
   );
 }

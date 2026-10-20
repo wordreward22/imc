@@ -1,166 +1,289 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import { Wrench, PhoneCall, ShieldCheck, CheckCircle2, Clock } from "lucide-react";
+import { SubpageHero } from "@/components/subpage/SubpageHero";
+import { CircularFeatureBlock } from "@/components/subpage/CircularFeatureBlock";
+import { MediaFeatureList } from "@/components/subpage/MediaFeatureList";
+import { CtaStatsBanner } from "@/components/subpage/CtaStatsBanner";
 import { useLanguage } from "@/context/LanguageContext";
-import { translations } from "@/data/translations";
 import { useQuote } from "@/context/QuoteContext";
+import { CheckCircle2, Send, Wrench, ShieldCheck, Clock, MapPin } from "lucide-react";
 
 export default function RepairsPage() {
   const { language } = useLanguage();
-  const t = translations[language];
   const { openQuote } = useQuote();
 
-  const benefits = [
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    email: "",
+    phone: "",
+    city: "",
+    country: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitting(true);
+    setTimeout(() => {
+      setSubmitting(false);
+      setSubmitted(true);
+    }, 600);
+  };
+
+  const featureItems = [
     {
-      num: "1",
-      title: language === "en" ? "Prompt Response, Anytime" : "استجابة فورية على مدار الساعة",
-      desc: language === "en"
-        ? "Our team of highly skilled technicians is available around the clock, ready to respond promptly to your service requests."
-        : "فريقنا من الفنيين المهرة متواجد ومستعد دائماً للاستجابة السريعة لطلبات الخدمة والصيانة الطارئة في أي وقت.",
+      title: "1. Prompt Response, Anytime",
+      desc: "Our team of highly skilled technicians is available around the clock, ready to respond promptly to your service requests.",
     },
     {
-      num: "2",
-      title: language === "en" ? "Expert Diagnosis for Swift Solutions" : "تشخيص خبير لحلول سريعة وفعالة",
-      desc: language === "en"
-        ? "Our technicians are certified by Cummins and possess in-depth knowledge and expertise in generator systems."
-        : "فنيونا معتمدون رسمياً من شركة كومنز ويمتلكون معرفة تقنية عميقة في أنظمة المولدات الكهربائية ولوحات التحكم.",
+      title: "2. Expert Diagnosis for Swift Solutions",
+      desc: "Our technicians are certified by Cummins and possess in-depth knowledge and expertise in generator systems.",
     },
     {
-      num: "3",
-      title: language === "en" ? "On-Site Repairs for Minimum Disruption" : "إصلاحات ميدانية لتقليل تعطل الأعمال",
-      desc: language === "en"
-        ? "When it comes to generator repairs, time is of the essence.."
-        : "عندما يتعلق الأمر بإصلاحات المولدات، فإن عامل الوقت حاسم لحماية أعمالك ومنشأتك من انقطاع التيار.",
+      title: "3. On-Site Repairs for Minimum Disruption",
+      desc: "When it comes to generator repairs, time is of the essence.. Our mobile workshops perform swift troubleshooting and overhauls on-site.",
     },
     {
-      num: "4",
-      title: language === "en" ? "Technical Support and Peace of Mind" : "دعم فني واستشارات متواصلة",
-      desc: language === "en"
-        ? "Our Field Service Option comes with comprehensive technical support, providing you with guidance, advice, and answers to your questions regarding generator operation, maintenance, and troubleshooting."
-        : "يوفر خيار الخدمة الميدانية دعماً فنياً شاملاً يمنحك التوجيه والنصائح والإجابات الوافية حول تشغيل المولد واستكشاف الأعطال.",
+      title: "4. Technical Support and Peace of Mind",
+      desc: "Our Field Service Option comes with comprehensive technical support, providing you with guidance, advice, and answers to your questions regarding generator operation, maintenance, and troubleshooting.",
     },
   ];
 
   return (
-    <div className="bg-white min-h-screen pb-24">
-      {/* Hero Header */}
-      <div className="relative bg-black text-white py-16 sm:py-20 overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <Image
-            src="/uploads/2023/05/field-service.jpg"
-            alt="Field Service"
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
+    <div className="bg-white min-h-screen">
+      {/* 1. Subpage Hero */}
+      <SubpageHero
+        subtitle="Alkan"
+        title="Field"
+        accentWord="Service"
+        watermark="Alkan"
+        bgImage="/uploads/2023/05/field-service.jpg"
+      />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="max-w-2xl space-y-3">
-            <span className="inline-block px-3 py-1 rounded-full bg-[#E2231B]/20 border border-[#E2231B]/40 text-[#E2231B] text-xs font-bold uppercase tracking-wider">
-              {language === "en" ? "Responding to Customer's Needs On Site" : "تلبية احتياجات العملاء في الموقع"}
-            </span>
-            <h1 className="text-3xl sm:text-5xl font-extrabold font-heading text-white">
-              {language === "en" ? "Field Service" : "الخدمة الميدانية في الموقع"}
-            </h1>
-            <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
-              {language === "en"
-                ? "At IMC, we understand the critical importance of uninterrupted power supply for your business. That's why we are thrilled to offer our comprehensive Field Service Option for Cummins generators, bringing exceptional service and expertise right to your doorstep."
-                : "في IMC، ندرك الأهمية الحاسمة لاستمرار إمدادات الطاقة لأعمالك. لذلك نقدم خدمة ميدانية متكاملة لمولدات كومنز تجلب الخبرة المعتمدة مباشرة إلى موقعك."}
-            </p>
-          </div>
-        </div>
-      </div>
+      {/* 2. Circular Feature Block */}
+      <CircularFeatureBlock
+        subtitle="Field Service"
+        title="Responding to Customer's Needs"
+        accentWord="On Site"
+        paragraphs={[
+          "At Alkan, we understand the critical importance of uninterrupted power supply for your business. That's why we are thrilled to offer our comprehensive Field Service Option for Cummins generators, bringing exceptional service and expertise right to your doorstep.",
+          "With Alkan's Field Service Option, you can enjoy a range of benefits that are designed to maximize the performance and reliability of your Cummins generator, while minimizing downtime and optimizing your operations.",
+        ]}
+        image="/uploads/2023/05/field-service-e1685022126314.jpg"
+        badgeTitle="Cummins Authorized Distributor"
+        badgeText="Only buy Genuine Cummins parts and accessories from Cummins distributors or Cummins authorized dealer locations"
+      />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 space-y-16">
-        {/* Intro Grid */}
-        <div className="bg-neutral-50 rounded-2xl p-8 sm:p-12 border border-neutral-200">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-            <div className="space-y-4">
-              <span className="text-[#E2231B] font-bold text-xs uppercase tracking-wider">
-                {language === "en" ? "On Site Engineering" : "خدمات هندسية ميدانية"}
+      {/* 3. Media Feature List */}
+      <MediaFeatureList
+        title="Responding to Customer's Needs"
+        accentWord="On Site"
+        intro="By choosing Alkan's Field Service Option, you can benefit from a range of advantages that are designed to minimize downtime, deliver meticulous repairs, and ensure the reliable operation of your Cummins generator:"
+        image="/uploads/2023/04/2m6wwkx.jpg"
+        items={featureItems}
+      />
+
+      {/* 4. Interactive Field Service Request Form */}
+      <section className="py-20 bg-neutral-900 text-white relative overflow-hidden">
+        {/* Subtle Background Watermark */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden opacity-5">
+          <span className="text-[140px] sm:text-[200px] font-black uppercase text-white tracking-widest font-heading">
+            ALKAN
+          </span>
+        </div>
+
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 z-10">
+          <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
+            <div className="flex items-center justify-center gap-3">
+              <span className="text-[#E2231B] font-bold text-xs uppercase tracking-wider font-heading">
+                Contact us today
               </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-900 font-heading">
-                {language === "en" ? "Maximize Performance & Reliability" : "تعظيم أداء وموثوقية مولدك"}
-              </h2>
-              <p className="text-neutral-600 text-sm leading-relaxed">
-                {language === "en"
-                  ? "With IMC's Field Service Option, you can enjoy a range of benefits that are designed to maximize the performance and reliability of your Cummins generator, while minimizing downtime and optimizing your operations."
-                  : "مع خدمة IMC الميدانية، ستستمتع بمجموعة من المزايا المصممة لتعظيم أداء وموثوقية مولد كومنز الخاص بك مع تقليل فترات التوقف وتحسين كفاءة عملياتك."}
-              </p>
-              <div className="pt-2">
+              <svg
+                width="24"
+                height="12"
+                viewBox="0 0 24 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 2H24"
+                  stroke="#E2231B"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M6 6H24"
+                  stroke="#E2231B"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M12 10H24"
+                  stroke="#E2231B"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </div>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight font-heading uppercase">
+              Fill the below fields to request{" "}
+              <span className="text-[#E2231B]">Field Service Visit</span>
+            </h2>
+            <div className="w-16 h-1 bg-[#E2231B] mx-auto rounded-full mt-3" />
+          </div>
+
+          <div className="bg-[#111111] p-8 sm:p-12 rounded-3xl border border-neutral-800 shadow-2xl">
+            {submitted ? (
+              <div className="text-center py-12 space-y-4">
+                <div className="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center mx-auto border border-emerald-500/20">
+                  <CheckCircle2 className="w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-bold font-heading text-white">
+                  Field Service Request Received
+                </h3>
+                <p className="text-neutral-400 text-sm max-w-md mx-auto">
+                  Thank you, <span className="text-white font-medium">{formData.name}</span>. Our technical dispatch team will contact you shortly to coordinate the visit.
+                </p>
                 <button
-                  onClick={() => openQuote()}
-                  className="px-6 py-3 bg-[#E2231B] hover:bg-[#9E0202] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-colors shadow-md"
+                  onClick={() => {
+                    setSubmitted(false);
+                    setFormData({ name: "", company: "", email: "", phone: "", city: "", country: "" });
+                  }}
+                  className="px-6 py-2.5 bg-neutral-800 hover:bg-neutral-700 text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-colors"
                 >
-                  {language === "en" ? "Request Field Service Visit" : "طلب زيارة خدمة ميدانية"}
+                  Submit Another Request
                 </button>
               </div>
-            </div>
-
-            <div className="relative h-80 rounded-2xl overflow-hidden shadow-md border border-neutral-200">
-              <Image
-                src="/uploads/2023/05/field-service.jpg"
-                alt="Field Service Van"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* 4 Points Grid */}
-        <div>
-          <div className="text-center max-w-xl mx-auto mb-10 space-y-2">
-            <span className="text-[#E2231B] font-bold text-xs uppercase tracking-wider">
-              {language === "en" ? "Certified Support" : "دعم معتمد"}
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-900 font-heading">
-              {language === "en" ? "Key Field Service Benefits" : "مزايا الخدمة الميدانية"}
-            </h2>
-            <div className="w-12 h-1 bg-[#E2231B] mx-auto rounded-full mt-2" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {benefits.map((b) => (
-              <div key={b.num} className="bg-neutral-50 rounded-2xl p-8 border border-neutral-200 shadow-sm space-y-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#E2231B] text-white flex items-center justify-center font-extrabold text-sm flex-shrink-0">
-                    {b.num}
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-neutral-400 mb-2">
+                      Name <span className="text-[#E2231B]">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Name*"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="w-full px-4 py-3.5 bg-neutral-900 border border-neutral-800 rounded-xl text-white text-sm placeholder-neutral-500 focus:outline-none focus:border-[#E2231B] transition-colors"
+                    />
                   </div>
-                  <h3 className="text-lg font-bold text-neutral-900 font-heading">{b.title}</h3>
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-neutral-400 mb-2">
+                      Company Name <span className="text-[#E2231B]">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Company Name*"
+                      value={formData.company}
+                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                      className="w-full px-4 py-3.5 bg-neutral-900 border border-neutral-800 rounded-xl text-white text-sm placeholder-neutral-500 focus:outline-none focus:border-[#E2231B] transition-colors"
+                    />
+                  </div>
                 </div>
-                <p className="text-neutral-600 text-sm leading-relaxed">{b.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
 
-        {/* Action Box */}
-        <div className="bg-[#111111] text-white rounded-2xl p-8 sm:p-12 border border-neutral-800 space-y-5">
-          <span className="text-[#E2231B] font-bold text-xs uppercase tracking-wider">
-            {language === "en" ? "Immediate Field Support" : "دعم ميداني فوري"}
-          </span>
-          <h3 className="text-2xl font-bold font-heading text-white">
-            {language === "en" ? "Fill the below fields to request Field Service Visit" : "طلب زيارة ميدانية لفحص وصيانة المولد"}
-          </h3>
-          <p className="text-neutral-300 text-sm leading-relaxed max-w-2xl">
-            {language === "en"
-              ? "Contact us today to schedule an on-site visit by certified Cummins technicians."
-              : "تواصل معنا اليوم لجدولة زيارة ميدانية من قبل مهندسي وفنيي كومنز المعتمدين في العراق."}
-          </p>
-          <div className="pt-2">
-            <button
-              onClick={() => openQuote()}
-              className="px-6 py-3 bg-[#E2231B] hover:bg-[#9E0202] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-colors shadow-md"
-            >
-              {language === "en" ? "Apply Now" : "تقديم الطلب الآن"}
-            </button>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-neutral-400 mb-2">
+                      E-Mail <span className="text-[#E2231B]">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      placeholder="E-Mail*"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full px-4 py-3.5 bg-neutral-900 border border-neutral-800 rounded-xl text-white text-sm placeholder-neutral-500 focus:outline-none focus:border-[#E2231B] transition-colors"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-neutral-400 mb-2">
+                      Mobile Number
+                    </label>
+                    <input
+                      type="tel"
+                      placeholder="Mobile Number"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="w-full px-4 py-3.5 bg-neutral-900 border border-neutral-800 rounded-xl text-white text-sm placeholder-neutral-500 focus:outline-none focus:border-[#E2231B] transition-colors"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-neutral-400 mb-2">
+                      City
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="City"
+                      value={formData.city}
+                      onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                      className="w-full px-4 py-3.5 bg-neutral-900 border border-neutral-800 rounded-xl text-white text-sm placeholder-neutral-500 focus:outline-none focus:border-[#E2231B] transition-colors"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-neutral-400 mb-2">
+                      Country
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Country"
+                      value={formData.country}
+                      onChange={(e) => setFormData({ ...formData, country: e.target.value })}
+                      className="w-full px-4 py-3.5 bg-neutral-900 border border-neutral-800 rounded-xl text-white text-sm placeholder-neutral-500 focus:outline-none focus:border-[#E2231B] transition-colors"
+                    />
+                  </div>
+                </div>
+
+                <div className="pt-4 border-t border-neutral-800">
+                  <button
+                    type="submit"
+                    disabled={submitting}
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-4 bg-[#E2231B] hover:bg-[#9E0202] text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-colors shadow-lg shadow-red-600/30 disabled:opacity-50"
+                  >
+                    {submitting ? "Sending..." : "Apply Now"}
+                    <Send className="w-4 h-4" />
+                  </button>
+                </div>
+              </form>
+            )}
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* 5. CTA Stats Banner */}
+      <CtaStatsBanner
+        title="The Genuine Difference"
+        desc="Our workshop technicians and field engineers utilize genuine Cummins parts, ensuring compatibility and reliability. With meticulous attention to detail, they carry out comprehensive repairs that adhere to Cummins' stringent standards, guaranteeing the optimal functionality of your generator."
+        buttonText="Request A Service Visit"
+        bgImage="/uploads/2023/05/field-service.jpg"
+        stats={[
+          {
+            number: "24/7",
+            label: "Emergency on-site response dispatch available across Iraq",
+            icon: "shield",
+          },
+          {
+            number: "100%",
+            label: "Cummins certified field technicians with specialized diagnostic computers",
+            icon: "award",
+          },
+          {
+            number: "15+",
+            label: "Fully equipped mobile service fleet stationed regionally",
+            icon: "pin",
+          },
+        ]}
+      />
     </div>
   );
 }
