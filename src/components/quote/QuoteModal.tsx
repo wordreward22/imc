@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { emailDraftNotice, openEmailDraft } from "@/lib/emailDraft";
+import { submissionError, submissionNotice, submitForm } from "@/lib/formSubmission";
 import { X, CheckCircle, Send } from "lucide-react";
 import { useQuote } from "@/context/QuoteContext";
 import { useLanguage } from "@/context/LanguageContext";
@@ -25,6 +25,7 @@ export const QuoteModal: React.FC = () => {
   });
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     if (selectedProduct) {
@@ -33,14 +34,23 @@ export const QuoteModal: React.FC = () => {
       setProductChoice("");
     }
     setSubmitted(false);
+    setError("");
   }, [selectedProduct, isOpen]);
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    openEmailDraft("IMC Iraq quote request", { product: productChoice, ...formData });
-    setSubmitted(true);
+    setSubmitting(true);
+    setError("");
+    try {
+      await submitForm("quote", language, { product: productChoice, ...formData });
+      setSubmitted(true);
+    } catch (cause) {
+      setError(submissionError(cause, language));
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -85,10 +95,10 @@ export const QuoteModal: React.FC = () => {
                 <CheckCircle className="w-10 h-10" />
               </div>
               <h4 className="text-2xl font-bold text-neutral-900">
-                {emailDraftNotice[language].title}
+                {submissionNotice[language].title}
               </h4>
               <p className="text-neutral-600 text-sm max-w-md mx-auto">
-                {emailDraftNotice[language].description}
+                {submissionNotice[language].description}
               </p>
               <button
                 onClick={closeQuote}
@@ -236,6 +246,7 @@ export const QuoteModal: React.FC = () => {
                 />
               </div>
 
+              {error && <p role="alert" className="text-sm text-red-700 bg-red-50 rounded-lg p-3">{error}</p>}
               <button
                 type="submit"
                 disabled={submitting}

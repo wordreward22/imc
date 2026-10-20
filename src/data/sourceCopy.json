@@ -4,6 +4,18 @@
       "title": "Engines",
       "blocks": [
         {
+          "kind": "label",
+          "text": "Genuine innovation. Genuine expertise."
+        },
+        {
+          "kind": "heading",
+          "text": "Engines"
+        },
+        {
+          "kind": "label",
+          "text": "Count on us"
+        },
+        {
           "kind": "heading",
           "text": "Cummins Engines"
         },
@@ -18,6 +30,10 @@
         {
           "kind": "heading",
           "text": "Cummins Authorized Distributer"
+        },
+        {
+          "kind": "label",
+          "text": "Only buy Genuine Cummins parts from Cummins authorized dealer"
         },
         {
           "kind": "heading",
@@ -47,14 +63,31 @@
           "kind": "heading",
           "text": "Best Engines in the Field"
         }
+      ],
+      "media": [
+        "/uploads/2023/05/engine-closeup-banner-800x530.jpg",
+        "/uploads/2023/05/engine-technician-shop-800-600x473.jpg",
+        "/uploads/2023/05/service-contracts-2.jpeg"
+      ],
+      "videos": [],
+      "contactCtas": [
+        "Contact us"
       ]
     },
     "renewablePower": {
       "title": "Renewable Power",
       "blocks": [
         {
+          "kind": "label",
+          "text": "Genuine innovation. Genuine expertise."
+        },
+        {
           "kind": "heading",
           "text": "Renewable Power"
+        },
+        {
+          "kind": "label",
+          "text": "Count on us"
         },
         {
           "kind": "heading",
@@ -69,12 +102,20 @@
           "text": "Cummins Authorized Distributer"
         },
         {
+          "kind": "label",
+          "text": "Only buy Genuine Cummins parts from Cummins authorized dealer"
+        },
+        {
           "kind": "heading",
           "text": "customized energy solutions"
         },
         {
           "kind": "paragraph",
           "text": "At Our Group Energy we take pride in our ability to work diligently with all of our clients and parties to successfully create customized energy solutions that would reduce the dependence on traditional Energy while preserving our Environment."
+        },
+        {
+          "kind": "label",
+          "text": "Expert Diagnosis"
         },
         {
           "kind": "heading",
@@ -92,11 +133,28 @@
           "kind": "paragraph",
           "text": "Our Group Energy offer the best tailor-made energy solutions to meet any power requirements with the support from largest international energy companies."
         }
+      ],
+      "media": [
+        "/uploads/2023/06/imc_renewable_power-800x530.webp",
+        "/uploads/2023/06/solar-farm-rocky-mount_hero-600x473.jpg",
+        "/uploads/2023/06/IMC-Renewable-Power.webp"
+      ],
+      "videos": [],
+      "contactCtas": [
+        "Contact us"
       ]
     },
     "oils": {
       "title": "Oils",
       "blocks": [
+        {
+          "kind": "label",
+          "text": "IMC Iraq"
+        },
+        {
+          "kind": "heading",
+          "text": "Oils"
+        },
         {
           "kind": "heading",
           "text": "Valvoline Premium Blue Oil"
@@ -108,6 +166,10 @@
         {
           "kind": "heading",
           "text": "Cummins Authorized Distributer"
+        },
+        {
+          "kind": "label",
+          "text": "Only buy Genuine Cummins parts and accessories from Cummins distributors or Cummins authorized dealer locations"
         },
         {
           "kind": "heading",
@@ -150,6 +212,10 @@
           "text": "Valvoline’s Premium Blue Engine Oil is endorsed by Cummins and has been tested extensively by Cummins in stationary and EGR on-road engines, including engines powered by diesel, CNG, LNG, as well as engines equipped with DPFs. It is tested and approved against industry standard specifications such as SAE, TMC and CES."
         },
         {
+          "kind": "label",
+          "text": "IMC Iraq Fleetguard"
+        },
+        {
           "kind": "heading",
           "text": "Request A Quote"
         },
@@ -157,11 +223,22 @@
           "kind": "paragraph",
           "text": "To learn more about Valvoline’s Premium Blue Oils available for Cummins engines, please contact us."
         }
+      ],
+      "media": [
+        "/uploads/2023/06/us_dtc_atf_bottles_393x250.webp"
+      ],
+      "videos": [],
+      "contactCtas": [
+        "Request A Quote"
       ]
     },
     "fleetGuard": {
       "title": "Fleet Guard",
       "blocks": [
+        {
+          "kind": "label",
+          "text": "IMC Iraq"
+        },
         {
           "kind": "heading",
           "text": "Fleet Guard"
@@ -173,6 +250,14 @@
         {
           "kind": "heading",
           "text": "Cummins Authorized Distributer"
+        },
+        {
+          "kind": "label",
+          "text": "Only buy Genuine Cummins parts and accessories from Cummins distributors or Cummins authorized dealer locations"
+        },
+        {
+          "kind": "label",
+          "text": "The Reliable Quality"
         },
         {
           "kind": "heading",
@@ -211,6 +296,10 @@
           "text": "Fleetguard filters are at the forefront of technological advancements in filtration. From our cutting-edge NanoNet filter media to the groundbreaking FleetguardFIT ® filtration performance monitoring system, our innovative solutions are designed to simplify your operations and enhance productivity. With a rich history dating back to 1958, our products undergo rigorous testing both in the lab and in real-world applications."
         },
         {
+          "kind": "label",
+          "text": "IMC Iraq Fleetguard"
+        },
+        {
           "kind": "heading",
           "text": "Request A Quote"
         },
@@ -218,11 +307,22 @@
           "kind": "paragraph",
           "text": "Rest assured that by choosing Fleetguard, you are investing in a trusted partner that delivers uncompromising quality, cost savings, technological advancements, and comprehensive solutions tailored to your business requirements."
         }
+      ],
+      "media": [
+        "/uploads/2023/06/fleetguard-489x530.jpg"
+      ],
+      "videos": [],
+      "contactCtas": [
+        "Request A Quote"
       ]
     },
     "preventativeMaintenance": {
       "title": "Preventative Maintenance",
       "blocks": [
+        {
+          "kind": "label",
+          "text": "Alkan International"
+        },
         {
           "kind": "heading",
           "text": "Service Contracts"
@@ -248,12 +348,20 @@
           "text": "Cummins Authorized Distributer"
         },
         {
+          "kind": "label",
+          "text": "Only buy Genuine Cummins parts and accessories from Cummins distributors or Cummins authorized dealer locations"
+        },
+        {
           "kind": "heading",
           "text": "Preventative Maintenance Contracts"
         },
         {
           "kind": "paragraph",
           "text": "These are preventative maintenance contracts which are designed to reduce the total cost of ownership on Cummins powered application. Preventive diesel engine maintenance consists of the following operations"
+        },
+        {
+          "kind": "label",
+          "text": "General inspection"
         },
         {
           "kind": "paragraph",
@@ -285,6 +393,10 @@
         },
         {
           "kind": "paragraph",
+          "text": "Product improvement programs"
+        },
+        {
+          "kind": "paragraph",
           "text": "Through the Preventive Maintenance Contracts, Alkan strives to help their customers avoid unplanned maintenance which includes lost production, higher costs for parts and shipping, as well as time lost responding to emergencies and diagnosing faults while equipment is not working. Unplanned maintenance typically costs three to nine times more than planned maintenance."
         },
         {
@@ -295,11 +407,23 @@
           "kind": "paragraph",
           "text": "For further information on Preventive Maintenance and benefits, please contact us."
         }
+      ],
+      "media": [
+        "/uploads/2023/05/service-contracts-2.jpeg",
+        "/uploads/2023/05/service-contracts-1-600x449.jpeg"
+      ],
+      "videos": [],
+      "contactCtas": [
+        "Request A Quote"
       ]
     },
     "cumminsKit": {
       "title": "Cummins Kit",
       "blocks": [
+        {
+          "kind": "label",
+          "text": "Alkan"
+        },
         {
           "kind": "heading",
           "text": "Cummins Kits"
@@ -313,8 +437,32 @@
           "text": "Genuine products packaged together to provide the best protection for your Cummins Engines at Excellent Value!"
         },
         {
+          "kind": "label",
+          "text": "Preventive Maintenance Kit"
+        },
+        {
+          "kind": "label",
+          "text": "Top Overhauling Kit"
+        },
+        {
+          "kind": "label",
+          "text": "Complete Engine Overhauling Kit"
+        },
+        {
+          "kind": "label",
+          "text": "Gasket Kit"
+        },
+        {
           "kind": "heading",
           "text": "Cummins Authorized Distributer"
+        },
+        {
+          "kind": "label",
+          "text": "Only buy Genuine Cummins parts and accessories from Cummins distributors or Cummins authorized dealer locations"
+        },
+        {
+          "kind": "label",
+          "text": "Why buy Genuine Cummins Parts?"
         },
         {
           "kind": "heading",
@@ -323,6 +471,10 @@
         {
           "kind": "paragraph",
           "text": "Many competitive parts manufacturers try to reverse engineer Cummins parts and build something reasonably close at a cheaper price. The problem is, these non-genuine parts usually don’t meet critical specifications either dimensionally or from a materials standpoint."
+        },
+        {
+          "kind": "label",
+          "text": "The Risk of using Non-Genuine Parts"
         },
         {
           "kind": "paragraph",
@@ -346,6 +498,14 @@
         },
         {
           "kind": "heading",
+          "text": "Uptime"
+        },
+        {
+          "kind": "heading",
+          "text": "Warranty"
+        },
+        {
+          "kind": "heading",
           "text": "The Genuine Difference"
         },
         {
@@ -353,11 +513,27 @@
           "text": "The Genuine Cummins parts that you buy from a Cummins distributor or authorized dealer are built to our exact standards, meeting or exceeding original specifications on your QSK engine."
         },
         {
-          "kind": "paragraph",
+          "kind": "label",
+          "text": "Genuine overhaul kit components tested through lab analysis"
+        },
+        {
+          "kind": "label",
+          "text": "Non-genuine parts met all Cummins design specifications"
+        },
+        {
+          "kind": "label",
+          "text": "Years of perfecting the design and manufacturing of Genuine Cummins parts"
+        },
+        {
+          "kind": "listItem",
+          "text": "Why Buy Cummins QSK Engine Parts?"
+        },
+        {
+          "kind": "listItem",
           "text": "Non-Genuine Parts Fail to Measure Up"
         },
         {
-          "kind": "paragraph",
+          "kind": "listItem",
           "text": "Saving a Little Upfront Could Ultimately Cost you"
         },
         {
@@ -380,14 +556,32 @@
           "kind": "heading",
           "text": "Request A Quote"
         }
+      ],
+      "media": [
+        "/uploads/2023/05/engine-technician-shop-800-800x530.jpg",
+        "/uploads/2023/05/genuine-parts-box-800x400-1-600x400.jpg"
+      ],
+      "videos": [
+        "https://www.youtube.com/watch?v=Pd1LYnbpP1k"
+      ],
+      "contactCtas": [
+        "Request Parts Quote"
       ]
     },
     "masterRebuild": {
       "title": "Master Rebuild",
       "blocks": [
         {
+          "kind": "label",
+          "text": "Genuine innovation. Genuine expertise."
+        },
+        {
           "kind": "heading",
           "text": "Workshop Repairs"
+        },
+        {
+          "kind": "label",
+          "text": "Repair you can count on"
         },
         {
           "kind": "paragraph",
@@ -396,6 +590,10 @@
         {
           "kind": "heading",
           "text": "Cummins Authorized Distributer"
+        },
+        {
+          "kind": "label",
+          "text": "Only buy Genuine Cummins parts and accessories from Cummins distributors or Cummins authorized dealer locations"
         },
         {
           "kind": "heading",
@@ -464,7 +662,26 @@
         {
           "kind": "paragraph",
           "text": "Our workshop technicians utilize genuine Cummins parts, ensuring compatibility and reliability. With meticulous attention to detail, they carry out comprehensive repairs that adhere to Cummins’ stringent standards, guaranteeing the optimal functionality of your generator."
+        },
+        {
+          "kind": "label",
+          "text": "Genuine overhaul kit components tested through lab analysis"
+        },
+        {
+          "kind": "label",
+          "text": "Years of perfecting the design and manufacturing of Genuine Cummins parts"
         }
+      ],
+      "media": [
+        "/uploads/2023/04/2pj92mb-1.jpg",
+        "/uploads/2023/05/cummins-600x473.jpeg",
+        "/uploads/2023/02/SLIDER1-800x530.jpg"
+      ],
+      "videos": [
+        "https://www.youtube.com/watch?v=omZbcRGNX3I"
+      ],
+      "contactCtas": [
+        "Request A Quote"
       ]
     },
     "careers": {
@@ -481,8 +698,23 @@
         {
           "kind": "paragraph",
           "text": "At Alkan, we are proud to foster a dynamic and inclusive work environment where talented individuals can thrive and make a meaningful impact in the power solutions industry. We believe that our people are the driving force behind our success, and we are always looking for exceptional individuals to join our team."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Education Level Bachelors Masters"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Upload Your CV"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Apply Now"
         }
-      ]
+      ],
+      "media": [],
+      "videos": [],
+      "contactCtas": []
     },
     "training": {
       "title": "Training",
@@ -498,8 +730,15 @@
         {
           "kind": "paragraph",
           "text": "At IMC, we believe that knowledge and skills are key to maximizing the performance and efficiency of your Cummins generators. That’s why we are proud to offer a range of comprehensive training programs. Apply now to boost your technical skills."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Apply Now"
         }
-      ]
+      ],
+      "media": [],
+      "videos": [],
+      "contactCtas": []
     },
     "repairs": {
       "title": "Repairs",
@@ -521,14 +760,32 @@
           "text": "1. Prompt Response, Anytime: Our team of highly skilled technicians is available around the clock, ready to respond promptly to your service requests. 2. Expert Diagnosis for Swift Solutions: Our technicians are certified by Cummins and possess in-depth knowledge and expertise in generator systems. 3. On-Site Repairs for Minimum Disruption: When it comes to generator repairs, time is of the essence.. 4. Technical Support and Peace of Mind: Our Field Service Option comes with comprehensive technical support, providing you with guidance, advice, and answers to your questions regarding generator operation, maintenance, and troubleshooting."
         },
         {
+          "kind": "label",
+          "text": "Contact us today"
+        },
+        {
           "kind": "heading",
           "text": "Fill the below fields to request Field Service Visit"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Apply Now"
         }
-      ]
+      ],
+      "media": [
+        "/uploads/2023/05/field-service-e1685022126314-600x473.jpg",
+        "/uploads/2023/04/2m6wwkx-600x427.jpg"
+      ],
+      "videos": [],
+      "contactCtas": []
     },
     "contact": {
       "title": "Contact",
       "blocks": [
+        {
+          "kind": "label",
+          "text": "IMC Iraq"
+        },
         {
           "kind": "heading",
           "text": "Contact us"
@@ -546,17 +803,106 @@
           "text": "Office Address"
         },
         {
+          "kind": "label",
+          "text": "Baghdad, Ewairij"
+        },
+        {
+          "kind": "label",
+          "text": "Basra Branch - Hamdan Street"
+        },
+        {
           "kind": "heading",
           "text": "Phone Number"
+        },
+        {
+          "kind": "label",
+          "text": "+964 7842 000 220"
         },
         {
           "kind": "heading",
           "text": "Mail address"
         },
         {
+          "kind": "label",
+          "text": "info@imc.iq"
+        },
+        {
           "kind": "paragraph",
           "text": "Select Service Power Generation Parts Service"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Submit Now"
         }
+      ],
+      "media": [],
+      "videos": [],
+      "contactCtas": []
+    },
+    "services": {
+      "title": "Services",
+      "blocks": [
+        {
+          "kind": "label",
+          "text": "IMC Iraq"
+        },
+        {
+          "kind": "heading",
+          "text": "IMC Services"
+        },
+        {
+          "kind": "label",
+          "text": "High Quality Services"
+        },
+        {
+          "kind": "heading",
+          "text": "Always Customer Driven"
+        },
+        {
+          "kind": "heading",
+          "text": "Field Service"
+        },
+        {
+          "kind": "label",
+          "text": "Reliable field service options for Cummins generators, providing prompt response, expert diagnosis, preventive maintenance, on-site repairs, and technical support to ensure optimal performance and minimize downtime."
+        },
+        {
+          "kind": "heading",
+          "text": "Service Contracts"
+        },
+        {
+          "kind": "label",
+          "text": "Service contracts for Cummins generators deliver peace of mind through scheduled maintenance, priority response, on-site repairs, and the use of genuine Cummins parts, guaranteeing uninterrupted power and optimal performance for customer business."
+        },
+        {
+          "kind": "heading",
+          "text": "Workshop Repairs"
+        },
+        {
+          "kind": "label",
+          "text": "Workshop repairs for Cummins generators exemplify our commitment to professionalism and excellence. With our team of highly skilled technicians and access to a wide range of specialized tools and equipment, we deliver expert diagnosis, repairs using genuine parts and stringent quality assurance. We provide a professional and reliable service that restores your Cummins generator to optimal performance, minimizing downtime and keeping your operations running smoothly."
+        },
+        {
+          "kind": "heading",
+          "text": "Training"
+        },
+        {
+          "kind": "label",
+          "text": "We believe that knowledge and skills are key to maximizing the performance and efficiency of your Cummins generators. That’s why we are proud to offer a range of comprehensive training programs. Apply now to boost your technical skills."
+        },
+        {
+          "kind": "heading",
+          "text": "Request A Quote"
+        },
+        {
+          "kind": "paragraph",
+          "text": "The Genuine Cummins parts that you buy from a Cummins distributor or authorized dealer are built to our exact standards, meeting or exceeding original specifications on your QSK engine."
+        }
+      ],
+      "media": [],
+      "videos": [],
+      "contactCtas": [
+        "Request Quote"
       ]
     }
   },
@@ -565,8 +911,20 @@
       "title": "المحركات",
       "blocks": [
         {
+          "kind": "label",
+          "text": "شركة المعدات العالمية للتجارة العامة"
+        },
+        {
+          "kind": "heading",
+          "text": "المحركات"
+        },
+        {
           "kind": "heading",
           "text": "موزع كمنز المعتمد"
+        },
+        {
+          "kind": "label",
+          "text": "قم بشراء قطع غيار كمنز الأصلية فقط من وكيل كمنز المعتمد"
         },
         {
           "kind": "heading",
@@ -604,7 +962,14 @@
           "kind": "heading",
           "text": "أفضل المحركات على الإطلاق"
         }
-      ]
+      ],
+      "media": [
+        "/uploads/2023/05/engine-closeup-banner-800x530.jpg",
+        "/uploads/2023/05/engine-technician-shop-800-600x473.jpg",
+        "/uploads/2023/05/service-contracts-2.jpeg"
+      ],
+      "videos": [],
+      "contactCtas": []
     },
     "renewablePower": {
       "title": "الطاقة المتجددة",
@@ -618,6 +983,10 @@
           "text": "موزع كمنز المعتمد"
         },
         {
+          "kind": "label",
+          "text": "قم بشراء قطع غيار كمنز الأصلية فقط من وكيل كمنز المعتمد"
+        },
+        {
           "kind": "paragraph",
           "text": "توفر مجموعتنا للطاقة مشروع تسليم المفتاح مع أحدث تقنيات الطاقة الشمسية والمنتجات التي تقدم الاستشارات ، وخدمة تدقيق الطاقة ، وإنتاج الطاقة المتجددة مع حلول متنوعة مدعومة بالمشورة الفنية الكاملة وخدمات المواصفات."
         },
@@ -628,6 +997,10 @@
         {
           "kind": "paragraph",
           "text": "في مجموعتنا للطاقة ، نفخر بقدرتنا على العمل بجد مع جميع عملائنا والأطراف لإنشاء حلول طاقة مخصصة بنجاح من شأنها تقليل الاعتماد على الطاقة التقليدية مع الحفاظ على بيئتنا."
+        },
+        {
+          "kind": "label",
+          "text": "من تحليل خبراؤنا"
         },
         {
           "kind": "heading",
@@ -645,14 +1018,33 @@
           "kind": "paragraph",
           "text": "تقدم شركة المعدات العالمية للتجارة العامة أفضل حلول الطاقة المصممة خصيصًا لتلبية أي متطلبات للطاقة بدعم من أكبر شركات الطاقة العالمية."
         }
-      ]
+      ],
+      "media": [
+        "/uploads/2023/06/imc_renewable_power-800x530.webp",
+        "/uploads/2023/06/solar-farm-rocky-mount_hero-600x473.jpg",
+        "/uploads/2023/06/IMC-Renewable-Power.webp"
+      ],
+      "videos": [],
+      "contactCtas": []
     },
     "oils": {
       "title": "الزيوت",
       "blocks": [
         {
+          "kind": "label",
+          "text": "شركة المعدات العالمية للتجارة العامة"
+        },
+        {
+          "kind": "heading",
+          "text": "الزيوت"
+        },
+        {
           "kind": "heading",
           "text": "موزع كمنز المعتمد"
+        },
+        {
+          "kind": "label",
+          "text": "قم بشراء قطع غيار كمنز الأصلية والملحقات من موزعي كمنز أو مواقع تجار معتمدين من كمنز فقط."
         },
         {
           "kind": "heading",
@@ -661,6 +1053,10 @@
         {
           "kind": "paragraph",
           "text": "تم تصميم زيوت المحركات الزرقاء الممتازة من فالفولين لتوفير أداء زيوت متقدم في محركات الديزل الحديثة المجهزة بمعالجة الانبعاثات ، بما في ذلك جميع أنواع إعادة تدوير غاز العادم (EGR) وفلاتر جسيمات الديزل (DPF). عند استخدامها بالاقتران مع وقود الديزل منخفض الكبريت للغاية ، توفر تقنية المنتج هذه عمرًا طويلاً وقدرة تصريف ممتدة وصياغة متوازنة تساعد على زيادة متانة المحرك إلى أقصى حد ونظافة ما بعد المعالجة."
+        },
+        {
+          "kind": "label",
+          "text": "زيت فالفولين بريميوم بلو"
         },
         {
           "kind": "heading",
@@ -691,6 +1087,10 @@
           "text": "التحكم في الترسبات ذات درجة الحرارة العالية ، بما في ذلك المكابس المفردة والمكونة من قطعتين ، والحلقة / البطانة للحماية من التآكل"
         },
         {
+          "kind": "heading",
+          "text": "أداء أعلى"
+        },
+        {
           "kind": "paragraph",
           "text": "مستوى أعلى من TBN والاحتفاظ TBN لأداء طويل العمر ، مع تلبية جميع الحدود الكيميائية"
         },
@@ -706,7 +1106,12 @@
           "kind": "paragraph",
           "text": "لمعرفة المزيد عن زيوت فالفولين الممتازة الزرقاء المتوفرة لمحركات كمنز، يرجى الاتصال بنا."
         }
-      ]
+      ],
+      "media": [
+        "/uploads/2023/06/us_dtc_atf_bottles_393x250.webp"
+      ],
+      "videos": [],
+      "contactCtas": []
     },
     "fleetGuard": {
       "title": "فليت جارد",
@@ -720,8 +1125,16 @@
           "text": "موزع كمنز المعتمد"
         },
         {
+          "kind": "label",
+          "text": "قم بشراء قطع غيار كمنز الأصلية والملحقات من موزعي كمنز أو مواقع تجار معتمدين من كمنز فقط."
+        },
+        {
           "kind": "paragraph",
           "text": "تقدم شركة المعدات العالمية للتجارة العامة مجموعة كاملة من الفلاتر المصممة خصيصًا لمجموعة واسعة من الأنظمة. بفضل التصميم المتقدم والأداء العالي الجودة ، تمنح فلاتر كمنز الحماية القصوى لجميع معدات عملاؤنا."
+        },
+        {
+          "kind": "label",
+          "text": "الجودة الموثوقة"
         },
         {
           "kind": "heading",
@@ -752,6 +1165,10 @@
           "text": "تحت سقف واحد بصفتها المزود الرائد في الصناعات الثقيلة ، تقدم فليت جارد مجموعة واسعة من الفلاتر والمبردات. يضمن التزامنا بكوننا متجرًا شاملاً أنه يمكننا دعم جميع احتياجات صيانة أجهزتك ، مما يوفر الراحة وراحة البال"
         },
         {
+          "kind": "heading",
+          "text": "الابتكار"
+        },
+        {
           "kind": "paragraph",
           "text": "تعد مرشحات فليت جارد في طليعة التطورات التكنولوجية في مجال الترشيح. بدءًا من وسائط مرشح نانو نت المتطورة إلى نظام مراقبة أداء الترشيح فليت جارد فيت® الرائد ، تم تصميم حلولنا المبتكرة لتبسيط عملياتك وتعزيز الإنتاجية. بتاريخ غني يعود إلى عام 1958 ، تخضع منتجاتنا لاختبارات صارمة في كل من المختبر والتطبيقات الواقعية"
         },
@@ -763,7 +1180,12 @@
           "kind": "paragraph",
           "text": "كن مطمئنًا أنه باختيار فلاتر كمنز، فإنك تستثمر في شريك موثوق به يوفر جودة لا تضاهى ، وتوفير التكاليف ، والتقدم التكنولوجي ، والحلول الشاملة المصممة لمتطلبات عملك."
         }
-      ]
+      ],
+      "media": [
+        "/uploads/2023/06/fleetguard-489x530.jpg"
+      ],
+      "videos": [],
+      "contactCtas": []
     },
     "preventativeMaintenance": {
       "title": "الصيانة الوقائية",
@@ -775,6 +1197,10 @@
         {
           "kind": "heading",
           "text": "موزع كمنز المعتمد"
+        },
+        {
+          "kind": "label",
+          "text": "قم بشراء قطع غيار كمنز الأصلية والملحقات من موزعي كمنز أو مواقع تجار معتمدين من كمنز فقط."
         },
         {
           "kind": "heading",
@@ -801,6 +1227,10 @@
           "text": "هذه هي عقود الصيانة الوقائية التي تم تصميمها لتقليل التكلفة الإجمالية للملكية على التطبيقات التي تعمل بمحركات كمنز . تتكون الصيانة الوقائية لمحركات الديزل من العمليات التالية"
         },
         {
+          "kind": "label",
+          "text": "الفحص العام"
+        },
+        {
           "kind": "paragraph",
           "text": "تتعرض المحركات لحرارة شديدة وضغط وجزيئات ملوثة في الهواء والغبار والرمال. ومن أجل الحفاظ على موثوقية محركات كمنز، فإن استراتيجية الصيانة الوقائية أو الجدول الزمني المحدد هو الأساس. تعد الأنظمة فائقة الموثوقية هي الأساس لأداء عملك، وتحميك من التوقف التشغيلي المكلف. نحن نوفر الدعم الذي تحتاجه للحفاظ على معداتك التي تعمل بمحركات كمنز في أفضل حالاتها. بالإضافة إلى ذلك، تأتي عقود الصيانة الوقائية لدينا من الدرجة الأولى مع تميزنا في “قوة الوحدة” – حيث نعمل كشريك واحد وخبير لك لتحقيق أقصى إنتاجية لديك. بالإضافة إلى ذلك، نحن نصمم عقودنا لتلبية احتياجاتك ونقدم لك الدعم المصمم خصيصًا لك بسعر تنافسي وثابت. تم تصميم برنامج “كمنز بي أم سي” لتقديم أفضل خدمة من نوعها لك. توفير حزم القيم التالية"
         },
@@ -814,7 +1244,15 @@
         },
         {
           "kind": "paragraph",
+          "text": "الصيانة المجدولة وغير المجدولة"
+        },
+        {
+          "kind": "paragraph",
           "text": "خدمة الرد على المكالمات والدعم الفني على مدار الساعة 24/7 وفقًا لاحتياجات العملاء لتعظيم وقت التشغيل"
+        },
+        {
+          "kind": "paragraph",
+          "text": "برامج تحسين المنتجات"
         },
         {
           "kind": "paragraph",
@@ -828,11 +1266,24 @@
           "kind": "paragraph",
           "text": "لمزيد من المعلومات حول الصيانة الوقائية وفوائدها ، يرجى الاتصال بنا"
         }
+      ],
+      "media": [
+        "/uploads/2023/05/service-contracts-2.jpeg",
+        "/uploads/2023/05/service-contracts-1-600x449.jpeg"
+      ],
+      "videos": [],
+      "contactCtas": [
+        "عرض سعر",
+        "أطلب سعر"
       ]
     },
     "cumminsKit": {
       "title": "مجموعات كومنز",
       "blocks": [
+        {
+          "kind": "label",
+          "text": "شركة المعدات العالمية للتجارة العامة"
+        },
         {
           "kind": "heading",
           "text": "قطع غيار كمنز"
@@ -840,6 +1291,10 @@
         {
           "kind": "heading",
           "text": "موزع كمنز المعتمد"
+        },
+        {
+          "kind": "label",
+          "text": "قم بشراء قطع غيار كمنز الأصلية والملحقات من موزعي كمنز أو مواقع تجار معتمدين من كمنز فقط."
         },
         {
           "kind": "heading",
@@ -850,12 +1305,44 @@
           "text": "منتجات أصلية معبأة معًا لتوفير أفضل حماية لمحركات كمنز الخاصة بك بقيمة ممتازة!"
         },
         {
+          "kind": "label",
+          "text": "عدة صيانة وقائية"
+        },
+        {
+          "kind": "label",
+          "text": "عدة تجديد الجزء العلوي"
+        },
+        {
+          "kind": "label",
+          "text": "عدة إصلاح المحرك الشاملة."
+        },
+        {
+          "kind": "label",
+          "text": "مجموعة الجوانات"
+        },
+        {
+          "kind": "label",
+          "text": "لماذا تشتري قطع غيار كمنز الأصلية؟"
+        },
+        {
+          "kind": "heading",
+          "text": "هناك فرق"
+        },
+        {
           "kind": "paragraph",
           "text": "يحاول العديد من مصنعي القطع التنافسية استنساخ قطع كمنز وتصنيع شيء يشبهها بسعر أرخص. المشكلة هي أن هذه الأجزاء غير الأصلية عادة لا تفي بالمواصفات الحرجة إما من حيث الأبعاد أو من حيث نوعية المواد."
         },
         {
+          "kind": "label",
+          "text": "المخاطر المرتبطة باستخدام قطع غيار غير أصلية"
+        },
+        {
           "kind": "paragraph",
           "text": "قد يحاول مصنعو قطع الغيار التنافسية تصميم قطع كمنز بشكل عكسي وبناء شيء يشبه الجزء الأصلي بسعر أرخص. المشكلة هي أن هذه الأجزاء غير الأصلية عادة ما لا تلبي المواصفات الهندسية الحرجة إما من حيث الأبعاد أو من حيث نوعية المواد المستخدمة. قد تؤثر استخدام الأجزاء غير الأصلية التي لا تلبي المواصفات التصميمية الحرجة على أداء وعمر المحرك."
+        },
+        {
+          "kind": "label",
+          "text": "لماذا شراء قطع كمنز الأصلية؟"
         },
         {
           "kind": "heading",
@@ -867,7 +1354,19 @@
         },
         {
           "kind": "heading",
+          "text": "مصداقية"
+        },
+        {
+          "kind": "heading",
+          "text": "متانة"
+        },
+        {
+          "kind": "heading",
           "text": "مدة التشغيل"
+        },
+        {
+          "kind": "heading",
+          "text": "ضمان"
         },
         {
           "kind": "heading",
@@ -878,8 +1377,28 @@
           "text": "تم تصميم قطع غيار كمنز الأصلية التي تشتريها من موزع كمنز أو تاجر معتمد وفقًا لمعاييرنا الدقيقة ، بما يلبي أو يتجاوز المواصفات الأصلية لمحرك QSK الخاص بك"
         },
         {
-          "kind": "paragraph",
+          "kind": "label",
+          "text": "مكونات طقم إصلاح أصلية تم اختبارها من خلال التحليل المعملي"
+        },
+        {
+          "kind": "label",
+          "text": "تفي قطع الغيار غير الأصلية بجميع مواصفات تصميم كمنز"
+        },
+        {
+          "kind": "label",
+          "text": "سنوات من إتقان تصميم وتصنيع قطع غيار كمنز الأصلية"
+        },
+        {
+          "kind": "listItem",
+          "text": "لماذا تشتري أجزاء محرك كمنز QSK؟"
+        },
+        {
+          "kind": "listItem",
           "text": "القطع غير الأصلية لا تفي بالمقاييس المطلوبة"
+        },
+        {
+          "kind": "listItem",
+          "text": "قد يكلفك التوفير القليل في النهاية"
         },
         {
           "kind": "paragraph",
@@ -909,14 +1428,30 @@
           "kind": "paragraph",
           "text": "القطع الأصلية لكمنز التي تشتريها من موزع كمنز أو وكيل معتمد مصنوعة وفقًا لمعاييرنا الدقيقة، وتلبي أو تتجاوز المواصفات الأصلية على محرك QSK الخاص بك"
         }
-      ]
+      ],
+      "media": [
+        "/uploads/2023/05/engine-technician-shop-800-800x530.jpg",
+        "/uploads/2023/05/genuine-parts-box-800x400-1-600x400.jpg"
+      ],
+      "videos": [
+        "https://www.youtube.com/watch?v=Pd1LYnbpP1k"
+      ],
+      "contactCtas": []
     },
     "masterRebuild": {
       "title": "تخصص إعادة البناء",
       "blocks": [
         {
+          "kind": "label",
+          "text": "ابتكار حقيقي. خبرة حقيقية."
+        },
+        {
           "kind": "heading",
           "text": "ورش الإصلاح"
+        },
+        {
+          "kind": "label",
+          "text": "خدمة إصلاح تعتمد عليها"
         },
         {
           "kind": "paragraph",
@@ -927,6 +1462,10 @@
           "text": "موزع كمنز المعتمد"
         },
         {
+          "kind": "label",
+          "text": "قم بشراء قطع غيار كمنز الأصلية والملحقات من موزعي كمنز أو مواقع تجار معتمدين من كمنز فقط."
+        },
+        {
           "kind": "heading",
           "text": "استفد من مجموعة واسعة من المزايا"
         },
@@ -935,12 +1474,24 @@
           "text": "باختيار خدمات إصلاح ورشة العمل الخاصة بـ شركة المعدات العالمية للتجارة العامة، يمكنك الاستفادة من مجموعة من المزايا المصممة لتقليل وقت التوقف عن العمل ، وتقديم إصلاحات دقيقة ، وضمان التشغيل الموثوق به لمولد كمنز الخاص بك"
         },
         {
+          "kind": "label",
+          "text": "تشخيص من خبراؤنا لحلول دقيقة"
+        },
+        {
+          "kind": "label",
+          "text": "بأيدى خبراؤنا"
+        },
+        {
           "kind": "heading",
           "text": "حلول مميزة"
         },
         {
           "kind": "paragraph",
           "text": "يمتلك الفنيون ذوو الخبرة لدينا معرفة وخبرة متعمقة في مولدات كمنز. في ورشة العمل المتخصصة لدينا ، يجرون تقييمات شاملة ويستخدمون تقنيات تشخيص متقدمة لتحديد السبب الجذري للمشكلة بدقة. تتيح لهم هذه الدقة تقديم حلول فعالة مصممة وفقًا لاحتياجات المولد الخاصة بك"
+        },
+        {
+          "kind": "label",
+          "text": "إستفد من"
         },
         {
           "kind": "heading",
@@ -993,25 +1544,71 @@
         {
           "kind": "paragraph",
           "text": "يستخدم فنيو الورشة لدينا قطع غيار كمنزالأصلية ، مما يضمن التوافق والموثوقية. مع الاهتمام الدقيق بالتفاصيل ، يقومون بإجراء إصلاحات شاملة تلتزم بمعايير كمنز الصارمة ، مما يضمن الأداء الأمثل لمولدك"
+        },
+        {
+          "kind": "label",
+          "text": "سنوات من إتقان تصميم وتصنيع قطع غيار كمنز الأصلية"
+        },
+        {
+          "kind": "label",
+          "text": "مكونات طقم إصلاح أصلية تم اختبارها من خلال التحليل المعملي"
         }
+      ],
+      "media": [
+        "/uploads/2023/04/2pj92mb-1.jpg",
+        "/uploads/2023/05/cummins-600x473.jpeg",
+        "/uploads/2023/02/SLIDER1-800x530.jpg"
+      ],
+      "videos": [
+        "https://www.youtube.com/watch?v=omZbcRGNX3I"
+      ],
+      "contactCtas": [
+        "طلب عرض سعر"
       ]
     },
     "careers": {
       "title": "الوظائف",
       "blocks": [
         {
+          "kind": "heading",
+          "text": "فرص عمل"
+        },
+        {
           "kind": "paragraph",
           "text": "في شركة المعدات العالمية للتجارة العامة، نحن فخورون بتعزيز بيئة عمل ديناميكية وشاملة حيث يمكن للأفراد الموهوبين الازدهار وإحداث تأثير هادف في صناعة حلول الطاقة. نعتقد أن موظفينا هم القوة الدافعة وراء نجاحنا ، ونبحث دائمًا عن أفراد استثنائيين للانضمام إلى فريقنا"
         },
         {
+          "kind": "label",
+          "text": "وظائف"
+        },
+        {
           "kind": "heading",
           "text": "قدم مع شركة المعدات العالمية للتجارة العامة"
+        },
+        {
+          "kind": "paragraph",
+          "text": "مستوى التعليم بكالوريوس ماجسيتير"
+        },
+        {
+          "kind": "paragraph",
+          "text": "حمل سيرتك الذاتية"
+        },
+        {
+          "kind": "paragraph",
+          "text": "قدم الآن"
         }
-      ]
+      ],
+      "media": [],
+      "videos": [],
+      "contactCtas": []
     },
     "training": {
       "title": "التدريب",
       "blocks": [
+        {
+          "kind": "heading",
+          "text": "التدريب"
+        },
         {
           "kind": "paragraph",
           "text": "في شركة المعدات العالمية للتجارة العامة، نؤمن بأن المعرفة والمهارات هي المفتاح لتعظيم أداء وكفاءة مولدات كمنز الخاصة بك. لهذا السبب نحن فخورون بتقديم مجموعة من البرامج التدريبية الشاملة. تقدم الآن لتعزيز مهاراتك الفنية"
@@ -1019,12 +1616,23 @@
         {
           "kind": "heading",
           "text": "تدرَّب مع شركة المعدات العالمية للتجارة العامة"
+        },
+        {
+          "kind": "paragraph",
+          "text": "إرسال"
         }
-      ]
+      ],
+      "media": [],
+      "videos": [],
+      "contactCtas": []
     },
     "repairs": {
       "title": "الإصلاحات",
       "blocks": [
+        {
+          "kind": "label",
+          "text": "شركة المعدات العالمية للتجارة العامة"
+        },
         {
           "kind": "heading",
           "text": "الصيانة الخارجية"
@@ -1042,54 +1650,139 @@
           "text": "1. استجابة سريعة ، في أي وقت : فريقنا من الفنيين ذوي المهارات العالية متاحين على مدار الساعة ، وعلى استعداد للاستجابة على الفور لطلبات الخدمة الخاصة بك. 2. تشخيص بدقة الحلول السريعة : تم اعتماد الفنيين لدينا من قبل كمنز ولديهم معرفة وخبرة متعمقة في أنظمة المولدات. 3. الإصلاحات في الموقع للحد الأدنى من الاعطال: عندما يتعلق الأمر بإصلاحات المولد ، فإن الوقت هو عنصر جوهري 4. الدعم الفني وراحة البال: يأتي خيار الصيانة الخارجية الخاص بنا مع دعم فني شامل يوفر لك التوجيه والمشورة والإجابات على أسئلتك المتعلقة بتشغيل المولد وصيانته واستكشاف الأخطاء وإصلاحها."
         },
         {
+          "kind": "label",
+          "text": "تواصل معنا"
+        },
+        {
           "kind": "heading",
           "text": "إملا الطلب أدناه لطلب خدمة الإصلاحات"
+        },
+        {
+          "kind": "paragraph",
+          "text": "إرسال الآن"
         }
-      ]
+      ],
+      "media": [
+        "/uploads/2023/05/field-service-e1685022126314-600x473.jpg",
+        "/uploads/2023/04/2m6wwkx-600x427.jpg"
+      ],
+      "videos": [],
+      "contactCtas": []
     },
     "contact": {
       "title": "تواصل معنا",
       "blocks": [
         {
+          "kind": "label",
+          "text": "شركة المعدات العالمية للتجارة العامة"
+        },
+        {
+          "kind": "heading",
+          "text": "اتصل بنا"
+        },
+        {
           "kind": "paragraph",
           "text": "شكرًا لك على اهتمامك بمنتجات وخدمات شركة المعدات العالية للتجارة العامة. يسعدنا أن نسمع منك ونقدم لك الخدمات الاستثنائية والدعم الذي تحتاجه. سواء كانت لديك أسئلة أو تحتاج إلى مساعدة أو ترغب في الانضمام إلى فريقنا ، فنحن هنا لمساعدتك"
+        },
+        {
+          "kind": "label",
+          "text": "تواصل معنا"
         },
         {
           "kind": "heading",
           "text": "ينمو عملك مع خبرتنا"
         },
         {
+          "kind": "paragraph",
+          "text": "حدد الخدمة مولدات قطع غيار صيانة"
+        },
+        {
+          "kind": "paragraph",
+          "text": "أرسل الآن"
+        },
+        {
           "kind": "heading",
           "text": "عنوان المكتب"
+        },
+        {
+          "kind": "label",
+          "text": "العويريج ، المنطقة الصناعية - مستودع رقم 12 ، قطعة رقم. 586 حي 9 قريش بغداد العراق"
         },
         {
           "kind": "heading",
           "text": "الفرع الثانى"
         },
         {
+          "kind": "label",
+          "text": "البصرة - طريق حمدان الصناعي - قرب مفرق القبلة"
+        },
+        {
           "kind": "heading",
           "text": "رقم التليفون"
         },
         {
+          "kind": "label",
+          "text": "+964 7842 000 220"
+        },
+        {
           "kind": "heading",
           "text": "البريد الالكتروني"
+        },
+        {
+          "kind": "label",
+          "text": "info@imc-iraq.com"
         }
-      ]
+      ],
+      "media": [],
+      "videos": [],
+      "contactCtas": []
     },
     "about": {
       "title": "من نحن",
       "blocks": [
         {
+          "kind": "label",
+          "text": "شركة المعدات العالمية للتجارة العامة"
+        },
+        {
+          "kind": "heading",
+          "text": "من نحن"
+        },
+        {
           "kind": "heading",
           "text": "موزع معتمد لشركة كمنز"
+        },
+        {
+          "kind": "label",
+          "text": "يجب شراء قطع غيار وملحقات شركة كمنز الأصلية فقط من موزعي كمنز المعتمدين أو من مواقع الوكلاء المعتمدين لشركة كمنز."
+        },
+        {
+          "kind": "heading",
+          "text": "مهمتنا"
         },
         {
           "kind": "paragraph",
           "text": "توفير أعلى جودة للمحركات كمنز وحلول الطاقة لعملائنا في جميع أنحاء العراق"
         },
         {
+          "kind": "heading",
+          "text": "رؤيتنا"
+        },
+        {
           "kind": "paragraph",
           "text": "أن نكون الوكيل المفضل الأول من خلال خدمة عملاء استثنائية، والخبرة التقنية، والحلول المبتكرة"
+        },
+        {
+          "kind": "heading",
+          "text": "قيمنا"
+        },
+        {
+          "kind": "heading",
+          "text": "الموثوقية"
+        },
+        {
+          "kind": "heading",
+          "text": "الجودة"
         },
         {
           "kind": "heading",
@@ -1102,6 +1795,10 @@
         {
           "kind": "paragraph",
           "text": "منذ عام 1919 ، حولت كمنزالتحديات إلى فرص ، وتبحث دائمًا عن حلول جديدة لتشغيل عالم أكثر ازدهارًا. اكتشف شركة تأسست على قيم ثابتة ومستعدة لحل المشاكل لعملائنا ومجتمعاتنا وبيئتنا ، لجعل العالم مكانًا أفضل"
+        },
+        {
+          "kind": "heading",
+          "text": "قيم كمنز"
         },
         {
           "kind": "paragraph",
@@ -1118,7 +1815,94 @@
         {
           "kind": "paragraph",
           "text": "احتفلت ألكان القابضة بفخر بعيدها التاسع والأربعين في عام 2023 تحت قيادة خالد نصير تدير مجموعة ألكان بنجاح مجموعة واسعة من خطوط الأعمال ، وتغطي مجموعة متنوعة من الأنشطة التجارية، وتمتلك شركات مختلفة، وتعمل من خلال الشركات التابعة والفروع المحلية في 17 دولة في جميع أنحاء الشرق الأوسط وأفريقيا. مع أكثر من 6000 موظف يعملون ، تعمل شركة ألكان القابضة بنشاط في مجالات عمل متعددة ، بما في ذلك الاتصالات وتكنولوجيا المعلومات ، والعقارات ، والتصنيع ، والتجارة والتوزيع ، والطيران ، والسفر والسياحة وتجارة المنسوجات والقطن"
+        },
+        {
+          "kind": "label",
+          "text": "شركة تابعة"
+        },
+        {
+          "kind": "label",
+          "text": "سنة من الخبرة"
         }
+      ],
+      "media": [
+        "/uploads/2023/03/WhatsApp-Image-2023-02-21-at-1.12.54-PM-800x530.jpeg",
+        "/uploads/2023/05/engine-closeup-banner-600x473.jpg",
+        "/uploads/2023/05/imc-iraq-600x473.jpg",
+        "/uploads/2023/05/holding-White-1.png"
+      ],
+      "videos": [
+        "https://www.youtube.com/watch?v=B_zooNrioCA",
+        "https://www.youtube.com/watch?v=QrZOzLDVVAs"
+      ],
+      "contactCtas": [
+        "تواصل معنا"
+      ]
+    },
+    "services": {
+      "title": "الخدمات",
+      "blocks": [
+        {
+          "kind": "heading",
+          "text": "خدمات الصيانة"
+        },
+        {
+          "kind": "label",
+          "text": "نهتم بتقديم افضل الخدمات"
+        },
+        {
+          "kind": "heading",
+          "text": "خدمات شركة المعدات العالمية للتجارة العامة"
+        },
+        {
+          "kind": "heading",
+          "text": "التدريب"
+        },
+        {
+          "kind": "label",
+          "text": "في شركة المعدات العالمية للتجارة العامة، نؤمن بأن المعرفة والمهارات هي المفتاح لتعظيم أداء وكفاءة مولدات كمنز الخاصة بك. لهذا السبب نحن فخورون بتقديم مجموعة من البرامج التدريبية الشاملة. تقدم الآن لتعزيز مهاراتك الفنية"
+        },
+        {
+          "kind": "heading",
+          "text": "ورش الإصلاح"
+        },
+        {
+          "kind": "label",
+          "text": "نقوم بإمداد عملائنا بأعلى درجات الجودة من خلال عمليات هندسية مسبقة التعريف بأقل نسب من المشاكل وقدرات تم تحسينها لتوفير التكلفة والوقت."
+        },
+        {
+          "kind": "heading",
+          "text": "عقود الصيانة"
+        },
+        {
+          "kind": "label",
+          "text": "نستخدم أفضل أجهزة تحديد وكشف العيوب للتأكد من حالة الماكينات ومعدات كمنز، ونقوم بتوفير تقارير تفصيبية تساعدك في إتخاذ القرارات السليمة."
+        },
+        {
+          "kind": "heading",
+          "text": "الصيانة الخارجية"
+        },
+        {
+          "kind": "label",
+          "text": "ملتزمون بتقديم أعلى مستويات الصيانة والإصلاح لمولدات كمنز، لتأكيد انتظام وسهولة العمل لدى عملائنا وضمان أقل نسب أعطال متعارف عليها عالميًا."
+        },
+        {
+          "kind": "label",
+          "text": "خدمات أي إم سي العراق"
+        },
+        {
+          "kind": "heading",
+          "text": "طلب عرض أسعار"
+        },
+        {
+          "kind": "paragraph",
+          "text": "قطع غيار كمنز الأصلية التي تشتريها من موزع كمنز أو تاجر معتمد مبنية وفقًا لمعاييرنا الدقيقة، وتفي بالمواصفات الأصلية أو تتجاوزها على محرك كي إس ك الخاص بك"
+        }
+      ],
+      "media": [],
+      "videos": [],
+      "contactCtas": [
+        "عرض سعر"
       ]
     }
   },
@@ -1127,12 +1911,20 @@
       "title": "الصيانة الوقائية -چاککردنەوەی خۆپارێزی",
       "blocks": [
         {
+          "kind": "label",
+          "text": "عێراق IMC"
+        },
+        {
           "kind": "heading",
           "text": "چاکردنەوە خۆپارێزی"
         },
         {
           "kind": "heading",
           "text": "دابەشکەری ڕێگەپێدراوی کۆمۆنز"
+        },
+        {
+          "kind": "label",
+          "text": "پارچە و ئیکسسواراتە ڕاستەقینەکانی کامینز تەنها لە بریکارەکانی کۆمۆنز یان شوێنە ڕێگەپێدراوەکانی بریکاری کۆمۆنز بکڕە."
         },
         {
           "kind": "heading",
@@ -1159,6 +1951,30 @@
           "text": "ئەمانە گرێبەستی چاککردنەوەی خۆپارێزین کە بۆ کەمکردنەوەی کۆی تێچووی خاوەندارێتی لەسەر ئەو بەرنامانەی کە بە بزوێنەری کامینز کاردەکەن، داڕێژراون. چاککردنەوەی خۆپارێزی بزوێنەری دیزڵ لەم کارانەی خوارەوە پێکدێت"
         },
         {
+          "kind": "label",
+          "text": "پشکنینی گشتی"
+        },
+        {
+          "kind": "label",
+          "text": "خزمەتگوزاری چەورکردن"
+        },
+        {
+          "kind": "label",
+          "text": "خزمەتگوزاری سیستەمی ساردکردنەوە"
+        },
+        {
+          "kind": "label",
+          "text": "خزمەتگوزاری سیستەمی سووتەمەنی"
+        },
+        {
+          "kind": "label",
+          "text": "خزمەتگوزاری و تاقیکردنەوەی پاتری دەستپێکردن"
+        },
+        {
+          "kind": "label",
+          "text": "وەرزشی جوڵەی وەرزی"
+        },
+        {
           "kind": "paragraph",
           "text": "بزوێنەرەکان بەر گەرمای زۆر و پەستان و گەردیلە پیسکەرەکانی ناو هەوا و خۆڵ و خۆڵ دەبن. بۆ ئەوەی متمانەپێکراوی بزوێنەرەکانی کامینز بپارێزرێت، ستراتیژی یان خشتەی چاککردنەوەی خۆپارێزی کلیلە. سیستەمی زۆر متمانەپێکراو بنەمای ئەدای کارەکەتە، کە دەتپارێزێت لە وەستانی کارکردنی تێچووی زۆر. ئێمە ئەو پشتگیرییە پێشکەش دەکەین کە پێویستت پێیانە بۆ ئەوەی ئامێرەکانت کە بە کامینز کاردەکەن بە باشترین شێوە دەربکەون. سەرەڕای ئەوە، گرێبەستە پلە یەکەکانی چاککردنەوەی خۆپارێزیمان لەگەڵ جیاوازی “هێزی یەکێتی”دا دێن – کە ئێمە وەک یەک وێستگە و هاوبەشی پسپۆڕت کاردەکەین بۆ زۆرترین بەرهەمهێنانت. جگە لەوەش، ئێمە گرێبەستەکانمان بەپێی پێداویستییەکانتان دادەڕێژین و پشتگیرییەکی تایبەتمەند پێشکەش دەکەین بە نرخێکی کێبڕکێکار و جێگیر. کۆمپانیای کۆمۆنز بی ئێم سی بە شێوەیەک دروست کراوە کە باشترین خزمەتگوزاری لە جۆری خۆی پێشکەشتان بکات. ئەم پاکێجە بەهایانەی خوارەوە دابین بکە"
         },
@@ -1180,6 +1996,10 @@
         },
         {
           "kind": "paragraph",
+          "text": "بەرنامەکانی باشترکردنی بەرهەم"
+        },
+        {
+          "kind": "paragraph",
           "text": "لە ڕێگەی گرێبەستی چاککردنەوەی خۆپارێزییەوە، کۆمپانیای IMC عێراق هەوڵدەدات یارمەتی کڕیارەکانی بدات بۆ دوورکەوتنەوە لە چاککردنەوەی بێ پلان کە بریتییە لە لەدەستدانی بەرهەمهێنان، زیادبوونی پارچە و تێچووی گواستنەوە، هەروەها کات لەدەستچوو لە وەڵامدانەوەی فریاگوزاری و دەستنیشانکردنی هەڵە لەکاتێکدا ئامێرەکان کارناکەن. بە شێوەیەکی گشتی چاککردنەوەی بێ پلان سێ بۆ نۆ هێندەی پلانی بۆ دانراوە تێدەچێت."
         },
         {
@@ -1191,15 +2011,15 @@
           "text": "ئامانجی کامینز کەمکردنەوەی تێچووی کارپێکردن و چاککردنەوە بە کەمترین کاتەکانی وەستانی بێ پلان بۆ بزوێنەری کامینزەکەت بە پەیڕەوکردنی خشتەی چاککردنەوەی خولیی پلان بۆ داڕێژراو و گونجاو. ئەمانەی خوارەوە ئەو خزمەتگوزارییانەن کە بەگشتی پلانیان بۆ دانراوە:"
         },
         {
-          "kind": "paragraph",
+          "kind": "listItem",
           "text": "هەموو مانگێک خزمەتگوزاری M0 ئەنجام بدە"
         },
         {
-          "kind": "paragraph",
+          "kind": "listItem",
           "text": "هەر ٢٥٠ کاتژمێر یان ٦ مانگ جارێک خزمەتگوزاری M1 ئەنجام بدە"
         },
         {
-          "kind": "paragraph",
+          "kind": "listItem",
           "text": "خزمەتگوزاری M2 هەر ٢٥٠ کاتژمێر یان ساڵێک ئەنجام بدە"
         },
         {
@@ -1218,11 +2038,24 @@
           "kind": "paragraph",
           "text": "بۆ زانیاری زیاتر لەسەر پاراستنی خۆپارێزی و سوودەکانی، تکایە پەیوەندیمان پێوە بکەن."
         }
+      ],
+      "media": [
+        "/uploads/2023/03/imc-slider-1-800x530.jpg",
+        "/uploads/2023/03/imc-slider-1-600x473.jpg"
+      ],
+      "videos": [],
+      "contactCtas": [
+        "نرخی ئۆفەر",
+        "داوای نرخ بکە"
       ]
     },
     "cumminsKit": {
       "title": "مجموعات كومنز – گروپەکانی کۆمۆن",
       "blocks": [
+        {
+          "kind": "label",
+          "text": "ئەی ئێم سی عێراق"
+        },
         {
           "kind": "heading",
           "text": "گروپەکانی کۆمۆن"
@@ -1232,8 +2065,32 @@
           "text": "دابەشکەری ڕێگەپێدراوی کۆمۆنز"
         },
         {
+          "kind": "label",
+          "text": "پارچە و ئیکسسواراتە ڕاستەقینەکانی کامینز تەنها لە بریکارەکانی کۆمۆنز یان شوێنە ڕێگەپێدراوەکانی بریکاری کۆمۆنز بکڕە."
+        },
+        {
           "kind": "paragraph",
           "text": "بەرهەمە ڕاستەقینەکان کە پێکەوە کۆکراونەتەوە بۆ ئەوەی باشترین پاراستن بۆ بزوێنەری کامینزتان دابین بکەن بە بەهایەکی نایاب!"
+        },
+        {
+          "kind": "label",
+          "text": "کیتی چاککردنەوەی خۆپارێزی"
+        },
+        {
+          "kind": "label",
+          "text": "کیتی نۆژەنکردنەوەی سەرەوە"
+        },
+        {
+          "kind": "label",
+          "text": "کیتی یونێڤێرساڵ بۆ چاککردنەوەی بزوێنەر."
+        },
+        {
+          "kind": "label",
+          "text": "سێتی گاسکێت"
+        },
+        {
+          "kind": "label",
+          "text": "بۆچی پارچەی یەدەگی جینۆین کومینز بکڕیت؟"
         },
         {
           "kind": "heading",
@@ -1244,8 +2101,16 @@
           "text": "زۆرێک لە بەرهەمهێنەرانی پارچەی کێبڕکێکار هەوڵدەدەن پارچەکانی کامینز کلۆن بکەن و شتێکی هاوشێوەیان بە نرخێکی هەرزانتر دروست بکەن. کێشەکە لەوەدایە کە ئەم بەشە ناڕەسەنانە بەزۆری تایبەتمەندییە گرنگەکان بەدی ناهێنن نە لە ڕووی ڕەهەندەکانەوە یان لە ڕووی کوالیتی مادەکانەوە."
         },
         {
+          "kind": "label",
+          "text": "مەترسییەکانی پەیوەست بە بەکارهێنانی پارچەی یەدەگی نائۆرجیناڵ"
+        },
+        {
           "kind": "paragraph",
           "text": "ڕەنگە بەرهەمهێنەرانی پارچەی کێبڕکێکار هەوڵ بدەن پارچەکانی کامینز ئەندازیاری پێچەوانە بکەنەوە و شتێک زیاتر لە پارچەی ئەسڵی دروست بکەن بە نرخێکی هەرزانتر. کێشەکە لەوەدایە کە ئەم بەشە ناڕەسەنانە بەزۆری تایبەتمەندییە ئەندازیارییە گرنگەکان بەدی ناهێنن نە لە ڕووی ڕەهەندەکانەوە یان کوالیتی کەرەستەی بەکارهێنراوەوە. بەکارهێنانی پارچەی ناڕاستەقینە کە لەگەڵ تایبەتمەندییە گرنگەکانی دیزایندا ناگونجێت، ڕەنگە کاریگەری لەسەر کارایی و تەمەنی بزوێنەر هەبێت."
+        },
+        {
+          "kind": "label",
+          "text": "بۆچی پارچەی ئۆرجیناڵی کامینز بکڕیت؟"
         },
         {
           "kind": "heading",
@@ -1280,15 +2145,31 @@
           "text": "پارچەی گۆڕینی ڕاستەقینەی Cummins کە لە دابەشکەری Cummins یان بریکاری ڕێگەپێدراو دەیکڕیت بەپێی ستانداردە وردەکانمان ئەندازیاری کراون، کە تایبەتمەندییە ئەسڵیەکانی بزوێنەری QSK ـت بەدی دەکەن یان زیاترن."
         },
         {
-          "kind": "paragraph",
+          "kind": "label",
+          "text": "پێکهاتەکانی کیتی چاککردنەوەی ناڕەسەن کە تاقیکراونەتەوە"
+        },
+        {
+          "kind": "label",
+          "text": "بەشە ناڕاستەقینەکان هەموو تایبەتمەندییەکانی دیزاینی کۆمۆنەکان دەگونجێن"
+        },
+        {
+          "kind": "label",
+          "text": "ساڵانێک لە تەواوکردنی دیزاین و دروستکردنی پارچەکانی OEM Cummins"
+        },
+        {
+          "kind": "label",
+          "text": "بۆچی پارچەی کومینزی ئەسڵی بکڕیت؟"
+        },
+        {
+          "kind": "listItem",
           "text": "بۆچی پارچەی بزوێنەری Cummins QSK بکڕیت؟"
         },
         {
-          "kind": "paragraph",
+          "kind": "listItem",
           "text": "بەشە ناڕەسەنەکان ستانداردە پێویستەکان ناگونجێن"
         },
         {
-          "kind": "paragraph",
+          "kind": "listItem",
           "text": "ڕەنگە پاشەکەوتکردنەکە لە کۆتاییدا کەمێک تێچووی تۆ بێت"
         },
         {
@@ -1312,6 +2193,10 @@
           "text": "بەکارهێنانی پارچەی نائۆرجیناڵ نەک تەنها کاریگەری لەسەر کارایی بزوێنەرە بەهێزەکانت دەبێت، بەڵکو کارەکەت دەخاتە مەترسییەوە و وا دەکات کە چاوەڕوانییەکانی کڕیارەکانت قورس بێت. ئەو بڕە کەمەی کە لە سەرەتادا پاشەکەوتی دەکەیت بە بەکارهێنانی پارچەی ناڕاستەقینە، ئەگەری زۆرە لە درێژخایەندا تێچووی زیاترت بۆ دروست بکات. کاتێک قازانج و ناوبانگت پشتی پێدەبەستێت، پارچەی ڕاستەقینەی کامینز بەکاربهێنە بۆ دڵنیابوون لە بەردەوامی کارکردن."
         },
         {
+          "kind": "label",
+          "text": "کۆمۆنز گروپی ئەی ئێم سی عێراق"
+        },
+        {
           "kind": "heading",
           "text": "داواکاری پیشاندانی نرخ"
         },
@@ -1319,11 +2204,26 @@
           "kind": "paragraph",
           "text": "پارچەی ڕاستەقینەی Cummins کە لە دابەشکەری Cummins یان بریکاری ڕێگەپێدراو دەیکڕیت بە ستانداردە وردەکانمان دروست دەکرێن، و تایبەتمەندییە ئەسڵیەکانی بزوێنەری QSK ـت بەدی دەکەن یان تێدەپەڕێنن."
         }
+      ],
+      "media": [
+        "/uploads/2023/03/imc-slider-1-800x530.jpg",
+        "/uploads/2023/03/imc-slider-1-600x473.jpg"
+      ],
+      "videos": [
+        "https://www.youtube.com/"
+      ],
+      "contactCtas": [
+        "داواكاری بۆ پێشنیار",
+        "داواکاری پیشاندانی نرخ"
       ]
     },
     "masterRebuild": {
       "title": "تخصص إعادة البناء   – پسپۆڕی ئاوەدانکردنەوە",
       "blocks": [
+        {
+          "kind": "label",
+          "text": "داهێنانی ڕاستەقینە. ئەزموونی ڕاستەقینە."
+        },
         {
           "kind": "heading",
           "text": "دووبارە بنیاتنانەوەی کۆی گشتی کۆی گشتی"
@@ -1331,6 +2231,14 @@
         {
           "kind": "heading",
           "text": "دابەشکەری ڕێگەپێدراوی کۆمۆنز"
+        },
+        {
+          "kind": "label",
+          "text": "پارچە و ئیکسسواراتە ڕاستەقینەکانی کامینز تەنها لە بریکارەکانی کۆمۆنز یان شوێنە ڕێگەپێدراوەکانی بریکاری کۆمۆنز بکڕە."
+        },
+        {
+          "kind": "label",
+          "text": "سەنتەری دووبارە دروستکردنەوەی بزوێنەر (HHP)"
         },
         {
           "kind": "heading",
@@ -1345,16 +2253,76 @@
           "text": "هەر بۆیە ئێمە وەبەرهێنانمان کردووە لە دروستکردنی تۆڕێک لە دامەزراوە پێشکەوتووەکان – کە کارمەندی پسپۆڕانی ڕاهێنراوی بەرزیان تێدایە – بە تاکە گرنگیدان بە گەیاندنی ئاوەدانکردنەوەی توانای بەرز بە کوالیتییەکی بێهاوتای."
         },
         {
+          "kind": "label",
+          "text": "ئێمە کوالیتی ناسراوی نێودەوڵەتی پێشکەش دەکەین"
+        },
+        {
           "kind": "heading",
           "text": "بڕوانامەی کوالیتی هەیە"
+        },
+        {
+          "kind": "label",
+          "text": "ناوەندە سەرەکییەکانی دووبارە دروستکردنەوە بڕوانامەی ISO 9001 یان هەیە"
+        },
+        {
+          "kind": "label",
+          "text": "بەکارهێنانی پارچەی گۆڕینی ئۆرجیناڵی نوێ و نۆژەنکراوی کامینز بۆ بەرزکردنەوەی کارایی و ستانداردەکانی کوالیتی."
+        },
+        {
+          "kind": "label",
+          "text": "کوالیتی نایابی ئاوەدانکردنەوە لە ڕێگەی پرۆسەیەکی پێشوەختە دیاریکراوەوە بە باشترکردنی کارایی بە بەکارهێنانی نوێترین تەکنەلۆژیا و ئامێرەکان"
+        },
+        {
+          "kind": "label",
+          "text": "لەلایەن تەکنیکارانی بڕوانامەدار لە کۆمۆنەکانەوە ئەنجام دەدرێت"
+        },
+        {
+          "kind": "label",
+          "text": "هەمان ستانداردی کۆنترۆڵکردنی کوالیتی وەک ماتۆڕی نوێی کامینز"
+        },
+        {
+          "kind": "label",
+          "text": "گەرەنتی تەواو بۆ ساڵێک/کاتژمێری بێسنوور پێشکەش دەکرێت"
+        },
+        {
+          "kind": "label",
+          "text": "تاگەکان کە پێویستت پێیانە"
         },
         {
           "kind": "heading",
           "text": "دووبارە ئاوەدانکردنەوە"
         },
         {
+          "kind": "label",
+          "text": "کۆی گشتی گاڵۆنەکانی سووتەمەنی سووتاو لە مەودای ئاسایی تێپەڕاند"
+        },
+        {
+          "kind": "label",
+          "text": "ئیتر کۆنتڕۆڵی کارەبا لەگەڵ تایبەتمەندییە پێویستەکاندا ناگونجێت"
+        },
+        {
+          "kind": "label",
+          "text": "شیکارییەکانی ڕۆنی بزوێنەر ئاماژەن بۆ زیادەڕۆیی لە بەکارهێنانی ڕۆن."
+        },
+        {
+          "kind": "label",
+          "text": "تۆماری مێژوویی چاککردنەوە و چاککردنەوە کە ئاماژە بە پێویستی دەکات."
+        },
+        {
+          "kind": "label",
+          "text": "بارودۆخی کارکردن ئاماژە بە پێویستی بەرهەمهێنانی هێزی زیاتر دەکات"
+        },
+        {
+          "kind": "label",
+          "text": "هەنگاوەکان 6"
+        },
+        {
           "kind": "heading",
           "text": "پرۆسەی ئاوەدانکردنەوە"
+        },
+        {
+          "kind": "heading",
+          "text": "جێگرەوە"
         },
         {
           "kind": "paragraph",
@@ -1411,12 +2379,35 @@
         {
           "kind": "paragraph",
           "text": "دوای پرۆسەی بەرهەمهێنانی کوالیتی کامینز، ماتۆڕەکان لەلایەن تەکنیکارانی ڕاهێنراوی بەرزەوە تاقیدەکرێنەوە بۆ ئەوەی ستانداردە ڕەسەنەکانی بەرهەمهێنەر بەدیبهێنن یان تێپەڕێنن، ئەمەش دڵنیای دەدات لەوەی کە ئەو کوالیتی و متمانەیە بەدەستدەهێنیت کە چاوەڕێی دەکەیت."
+        },
+        {
+          "kind": "label",
+          "text": "سایتەکانی خزمەتگوزاری"
+        },
+        {
+          "kind": "label",
+          "text": "وڵاتەکان"
         }
+      ],
+      "media": [
+        "/uploads/2023/03/imc-slider-1-800x530.jpg",
+        "/uploads/2023/03/imc-slider-1-600x473.jpg",
+        "/uploads/2023/02/SLIDER1-800x530.jpg"
+      ],
+      "videos": [
+        "https://www.youtube.com/"
+      ],
+      "contactCtas": [
+        "داواکاری بۆ وەرگرتنی نرخ"
       ]
     },
     "careers": {
       "title": "الوظائف  – هەلی کار",
       "blocks": [
+        {
+          "kind": "label",
+          "text": "عێراق IMC"
+        },
         {
           "kind": "heading",
           "text": "پیشەکان IMC"
@@ -1428,12 +2419,31 @@
         {
           "kind": "heading",
           "text": "خزمەتکردن لەگەڵ IMC عێراق"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Education Level Bachelors Masters"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Upload Your CV"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Apply Now"
         }
-      ]
+      ],
+      "media": [],
+      "videos": [],
+      "contactCtas": []
     },
     "training": {
       "title": "التدريب – خوێندنگای پیشەیی",
       "blocks": [
+        {
+          "kind": "label",
+          "text": "عێراق IMC"
+        },
         {
           "kind": "heading",
           "text": "مەشقەکان IMC"
@@ -1445,12 +2455,31 @@
         {
           "kind": "heading",
           "text": "IMC لەگەڵ مەشق بکە"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Education Level Bachelors Masters"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Upload Your CV"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Apply Now"
         }
-      ]
+      ],
+      "media": [],
+      "videos": [],
+      "contactCtas": []
     },
     "repairs": {
       "title": "الإصلاحات – چاککردنەوە",
       "blocks": [
+        {
+          "kind": "label",
+          "text": "عێراق IMC"
+        },
         {
           "kind": "heading",
           "text": "چاککردنەوە IMC"
@@ -1470,12 +2499,23 @@
         {
           "kind": "paragraph",
           "text": "ژمارەی تەلەفۆن ائیمەیڵ بەبێ پەسەندکردن"
+        },
+        {
+          "kind": "paragraph",
+          "text": "ئێستا جێبەجێی بکە"
         }
-      ]
+      ],
+      "media": [],
+      "videos": [],
+      "contactCtas": []
     },
     "contact": {
       "title": "تواصل معنا – پەیوەندیمان پێوە بکەن",
       "blocks": [
+        {
+          "kind": "label",
+          "text": "ئەی ئێم سی عێراق"
+        },
         {
           "kind": "heading",
           "text": "پەیوەندیمان پێوە بکەن"
@@ -1493,13 +2533,103 @@
           "text": "خزمەتگوزارییەکە هەڵبژێرە چاککردنەوە وۆرک شۆپی ماستەر بنیاتنانەوە چاککردنەوەی خۆپارێزی ڕاهێنان"
         },
         {
+          "kind": "paragraph",
+          "text": "ئێستا بینێرە"
+        },
+        {
           "kind": "heading",
           "text": "ناونیشانی ئۆفیس"
         },
         {
+          "kind": "label",
+          "text": "الاوریج - ناوچەی پیشەسازی - کۆگا ژمارە ١٢، پڵۆت. 586 قەزای 9 قوڕەیش بەغدا، عێراق"
+        },
+        {
           "kind": "heading",
           "text": "ژمارەی تەلەفۆن"
+        },
+        {
+          "kind": "label",
+          "text": "+964 7842 000 220"
+        },
+        {
+          "kind": "heading",
+          "text": "ئیمەیڵ"
+        },
+        {
+          "kind": "label",
+          "text": "info@imc-iraq.com"
         }
+      ],
+      "media": [],
+      "videos": [],
+      "contactCtas": []
+    },
+    "services": {
+      "title": "الخدمات – خزمەتگوزارییەکان",
+      "blocks": [
+        {
+          "kind": "label",
+          "text": "عێراق IMC"
+        },
+        {
+          "kind": "heading",
+          "text": "خزمەتگوزارییەکان IMC"
+        },
+        {
+          "kind": "label",
+          "text": "خزمەتگوزاری کوالێتی بەرز"
+        },
+        {
+          "kind": "heading",
+          "text": "گشت کاتێک لە خزمەتگوزاری کڕیاران"
+        },
+        {
+          "kind": "heading",
+          "text": "خزمەتگوزاری چاککردنەوە"
+        },
+        {
+          "kind": "label",
+          "text": "هەست بە سۆزێکی گەورە دەکەین بەرامبەر بە ئامانجەکەمان، ئەمەش وامان لێدەکات پەرە بە هەموو شتێک بدەین."
+        },
+        {
+          "kind": "heading",
+          "text": "چاککردنەوەی خۆپارێزی"
+        },
+        {
+          "kind": "label",
+          "text": "کۆمەڵگەی جیهانیمان کە نزیکەی ٥٠٠٠ کەسە و لە کۆمپانیاکە کاردەکەن."
+        },
+        {
+          "kind": "heading",
+          "text": "چاککردنەوە و نۆژەنکردنەوەی بزوێنەری سەرەکی"
+        },
+        {
+          "kind": "heading",
+          "text": "ڕاهێنان"
+        },
+        {
+          "kind": "label",
+          "text": "ئێمە دەزانین کە کارمەندەکانمان باشترین سەروەت و سامانمانن، ئێمەش پارەکانمان دەخەینە ناویانەوە."
+        },
+        {
+          "kind": "label",
+          "text": "IMC خزمەتگوزارییەکانی"
+        },
+        {
+          "kind": "heading",
+          "text": "داواکردن وەرگرتە"
+        },
+        {
+          "kind": "paragraph",
+          "text": "پارچەی ڕاستەقینەی کامینز کە لە بریکاری کامینز یان بریکاری ڕێگەپێدراو دەیکڕیت بە ستانداردە توندەکانی ئێمە دروستکراون، و تایبەتمەندییە ئەسڵیەکانی بزوێنەری KSK ـەکەت بەدی دەکەن یان تێدەپەڕێنن."
+        }
+      ],
+      "media": [],
+      "videos": [],
+      "contactCtas": [
+        "زیاتر بخوێنەوە",
+        "نرخی ئۆفەر"
       ]
     }
   }

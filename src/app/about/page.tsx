@@ -44,7 +44,7 @@ export default function AboutPage() {
         title={t.circular.title}
         accentWord={t.circular.accentWord}
         paragraphs={aboutParagraphs.length ? aboutParagraphs.slice(0, 2) : t.circular.paragraphs}
-        image="/uploads/2023/03/slider-img-2.jpeg"
+        image="/uploads/2023/03/WhatsApp-Image-2023-02-21-at-1.12.54-PM-800x530.jpeg"
         badgeTitle={t.circular.badgeTitle}
         badgeText={t.circular.badgeText}
       />
@@ -115,7 +115,7 @@ export default function AboutPage() {
             <div className="lg:col-span-6 relative">
               <div className="relative h-80 sm:h-96 md:h-[460px] w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-neutral-100 bg-neutral-900">
                 <Image
-                  src="/uploads/2023/05/engine-closeup-banner.jpg"
+                  src="/uploads/2023/05/engine-closeup-banner-600x473.jpg"
                   alt="Cummins History"
                   fill
                   className="object-cover object-center"
@@ -234,7 +234,7 @@ export default function AboutPage() {
 
               <div className="relative h-48 sm:h-56 rounded-3xl overflow-hidden border border-neutral-800 shadow-xl">
                 <Image
-                  src="/uploads/2023/05/imc-iraq.jpg"
+                  src="/uploads/2023/05/imc-iraq-600x473.jpg"
                   alt="IMC Iraq Facilities"
                   fill
                   className="object-cover"

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { emailDraftNotice, openEmailDraft } from "@/lib/emailDraft";
+import { submissionError, submissionNotice, submitForm } from "@/lib/formSubmission";
 import { SubpageHero } from "@/components/subpage/SubpageHero";
 import { CircularFeatureBlock } from "@/components/subpage/CircularFeatureBlock";
 import { getSourceParagraphs } from "@/components/subpage/SourceCopyPage";
@@ -25,11 +25,20 @@ export default function RepairsPage() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    openEmailDraft("IMC Iraq repair request", formData);
-    setSubmitted(true);
+    setSubmitting(true);
+    setError("");
+    try {
+      await submitForm("repairs", language, formData);
+      setSubmitted(true);
+    } catch (cause) {
+      setError(submissionError(cause, language));
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -49,7 +58,7 @@ export default function RepairsPage() {
         title={t.circular.title}
         accentWord={t.circular.accentWord}
         paragraphs={getSourceParagraphs(language, "repairs").length ? getSourceParagraphs(language, "repairs").slice(0, 2) : t.circular.paragraphs}
-        image="/uploads/2023/05/field-service-e1685022126314.jpg"
+        image="/uploads/2023/05/field-service-e1685022126314-600x473.jpg"
         badgeTitle={t.circular.badgeTitle}
         badgeText={t.circular.badgeText}
       />
@@ -59,7 +68,7 @@ export default function RepairsPage() {
         title={t.media.title}
         accentWord={t.media.accentWord}
         intro={t.media.intro}
-        image="/uploads/2023/04/2m6wwkx.jpg"
+        image="/uploads/2023/04/2m6wwkx-600x427.jpg"
         items={t.media.items}
       />
 
@@ -104,10 +113,10 @@ export default function RepairsPage() {
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
                 <h3 className="text-2xl font-bold font-heading text-white">
-                    {emailDraftNotice[language].title}
+                    {submissionNotice[language].title}
                 </h3>
                 <p className="text-neutral-400 text-sm max-w-md mx-auto">
-                    {emailDraftNotice[language].description}
+                    {submissionNotice[language].description}
                 </p>
                 <button
                   onClick={() => {
@@ -205,6 +214,7 @@ export default function RepairsPage() {
                   </div>
                 </div>
 
+                {error && <p role="alert" className="text-sm text-red-300">{error}</p>}
                 <div className="pt-4 border-t border-neutral-800">
                   <button
                     type="submit"

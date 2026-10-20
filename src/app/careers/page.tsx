@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { emailDraftNotice, openEmailDraft } from "@/lib/emailDraft";
+import { submissionError, submissionNotice, submitForm } from "@/lib/formSubmission";
 import { SubpageHero } from "@/components/subpage/SubpageHero";
 import { CircularFeatureBlock } from "@/components/subpage/CircularFeatureBlock";
 import { getSourceParagraphs } from "@/components/subpage/SourceCopyPage";
@@ -24,17 +24,29 @@ export default function CareersPage() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [cvFile, setCvFile] = useState<File | null>(null);
+  const [error, setError] = useState("");
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
+      setCvFile(e.target.files[0]);
       setFormData({ ...formData, fileName: e.target.files[0].name });
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    openEmailDraft("IMC Iraq careers application", formData);
-    setSubmitted(true);
+    setSubmitting(true);
+    setError("");
+    try {
+      const { fileName: _fileName, ...fields } = formData;
+      await submitForm("careers", language, fields, cvFile);
+      setSubmitted(true);
+    } catch (cause) {
+      setError(submissionError(cause, language));
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -109,14 +121,15 @@ export default function CareersPage() {
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
                 <h3 className="text-2xl font-bold font-heading text-white">
-                    {emailDraftNotice[language].title}
+                    {submissionNotice[language].title}
                 </h3>
                 <p className="text-neutral-400 text-sm max-w-md mx-auto">
-                    {emailDraftNotice[language].careerDescription}
+                    {submissionNotice[language].careerDescription}
                 </p>
                 <button
                   onClick={() => {
                     setSubmitted(false);
+                    setCvFile(null);
                     setFormData({ name: "", email: "", education: "Bachelors", phone: "", fileName: "" });
                   }}
                   className="px-6 py-2.5 bg-neutral-800 hover:bg-neutral-700 text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-colors"
@@ -211,6 +224,7 @@ export default function CareersPage() {
                   </label>
                 </div>
 
+                {error && <p role="alert" className="text-sm text-red-300">{error}</p>}
                 <div className="pt-4 border-t border-neutral-800">
                   <button
                     type="submit"
