@@ -297,7 +297,7 @@ export default function ContactPage() {
       </section>
 
       {/* 3. Interactive Facilities / Workshops Section */}
-      <section className="py-16 bg-neutral-50 border-t border-neutral-200">
+      {language === "ku" && <section className="py-16 bg-neutral-50 border-t border-neutral-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
             <span className="text-[#E2231B] font-bold text-xs uppercase tracking-wider font-heading">
@@ -385,16 +385,16 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section>}
 
       {/* 4. CTA Stats Banner */}
-      <CtaStatsBanner
+      {language === "ku" && <CtaStatsBanner
         title={t.cta.title}
         desc={t.cta.desc}
         buttonText={t.cta.buttonText}
         bgImage="/uploads/2023/05/engine-technician-shop-800.jpg"
         stats={t.cta.stats}
-      />
+      />}
     </div>
   );
 }

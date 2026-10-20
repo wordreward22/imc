@@ -25,6 +25,7 @@ export default function AboutPage() {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
   const valueIcons = [ThumbsUp, Award, ShieldCheck];
+  const arabicValueTitles = ["الموثوقية", "الجودة", "رضا العملاء"];
 
   return (
     <div className="bg-white min-h-screen">
@@ -95,11 +96,9 @@ export default function AboutPage() {
                     <IconComponent className="w-6 h-6" />
                   </div>
                   <h3 className="text-xl font-bold text-neutral-900 font-heading">
-                    {val.title}
+                    {language === "ar" ? arabicValueTitles[idx] : val.title}
                   </h3>
-                  <p className="text-neutral-600 text-sm leading-relaxed">
-                    {val.desc}
-                  </p>
+                  {language === "ku" && <p className="text-neutral-600 text-sm leading-relaxed">{val.desc}</p>}
                 </div>
               );
             })}

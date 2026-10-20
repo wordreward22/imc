@@ -6,40 +6,42 @@ import Image from "next/image";
 import { ArrowRight, Wrench, FileText, Settings, GraduationCap } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/data/translations";
+import homeSource from "@/data/homeSource.json";
 
 export const ServicesSection: React.FC = () => {
   const { language, isRtl } = useLanguage();
   const t = translations[language];
+  const sourceServices = language === "ku" ? null : homeSource[language].services;
 
   const services = [
     {
       id: "field-service",
-      title: t.fieldService,
-      desc: t.fieldServiceDesc,
+      title: sourceServices?.fieldService.title ?? t.fieldService,
+      desc: sourceServices?.fieldService.description ?? t.fieldServiceDesc,
       image: "/uploads/2023/05/field-service.jpg",
       href: "/repairs",
       icon: Wrench,
     },
     {
       id: "service-contracts",
-      title: t.serviceContracts,
-      desc: t.serviceContractsDesc,
+      title: sourceServices?.serviceContracts.title ?? t.serviceContracts,
+      desc: sourceServices?.serviceContracts.description ?? t.serviceContractsDesc,
       image: "/uploads/2023/05/service-contracts-1.jpeg",
       href: "/preventative-maintenance",
       icon: FileText,
     },
     {
       id: "workshop-repairs",
-      title: t.workshopRepairs,
-      desc: t.workshopRepairsDesc,
+      title: sourceServices?.workshopRepairs.title ?? t.workshopRepairs,
+      desc: sourceServices?.workshopRepairs.description ?? t.workshopRepairsDesc,
       image: "/uploads/2023/05/engine-technician-shop-800.jpg",
       href: "/master-rebuild",
       icon: Settings,
     },
     {
       id: "training",
-      title: t.training,
-      desc: t.trainingDesc,
+      title: sourceServices?.training.title ?? t.training,
+      desc: sourceServices?.training.description ?? t.trainingDesc,
       image: "/uploads/2023/05/engine-closeup-banner.jpg",
       href: "/training",
       icon: GraduationCap,
@@ -51,11 +53,11 @@ export const ServicesSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
           <span className="inline-block px-4 py-1 rounded-full bg-white text-[#E2231B] text-xs font-bold uppercase tracking-widest shadow-sm border border-neutral-200">
-            {language === "en" ? "Always Customer Driven" : language === "ar" ? "خدمة العملاء أولويتنا" : "هەمیشە لە خزمەتی کڕیاردا"}
+            {language === "en" ? "Always Customer Driven" : language === "ar" ? "خدمات الصيانة" : "هەمیشە لە خزمەتی کڕیاردا"}
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 tracking-tight font-heading">
             {language === "ar" ? (
-              <>خدمات <span className="text-[#E2231B]">IMC</span></>
+              <>خدمات <span className="text-[#E2231B]">شركة المعدات العالمية للتجارة العامة</span></>
             ) : language === "ku" ? (
               <>خزمەتگوزارییەکانی <span className="text-[#E2231B]">IMC</span></>
             ) : (

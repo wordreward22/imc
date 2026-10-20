@@ -56,20 +56,20 @@ export default function TrainingPage() {
         subtitle={t.circular.subtitle}
         title={t.circular.title}
         accentWord={t.circular.accentWord}
-        paragraphs={getSourceParagraphs(language, "training").length ? getSourceParagraphs(language, "training") : t.circular.paragraphs}
+        paragraphs={getSourceParagraphs(language, "training").length ? getSourceParagraphs(language, "training").slice(0, 1) : t.circular.paragraphs}
         image="/uploads/2023/05/engine-closeup-banner.jpg"
         badgeTitle={t.circular.badgeTitle}
         badgeText={t.circular.badgeText}
       />
 
       {/* 3. Training Curriculum Modules Grid */}
-      <AdvantageCardsGrid
+      {language === "ku" && <AdvantageCardsGrid
         subtitle={t.curriculum.subtitle}
         title={t.curriculum.title}
         accentWord={t.curriculum.accentWord}
         watermark={t.curriculum.watermark}
         cards={t.curriculum.cards}
-      />
+      />}
 
       {/* 4. Interactive Training Application Form */}
       <section className="py-20 bg-neutral-900 text-white relative overflow-hidden" dir={isRtl ? "rtl" : "ltr"}>
@@ -217,13 +217,13 @@ export default function TrainingPage() {
       </section>
 
       {/* 5. CTA Stats Banner */}
-      <CtaStatsBanner
+      {language === "ku" && <CtaStatsBanner
         title={t.cta.title}
         desc={t.cta.desc}
         buttonText={t.cta.buttonText}
         bgImage="/uploads/2023/05/engine-closeup-banner.jpg"
         stats={t.cta.stats}
-      />
+      />}
     </div>
   );
 }

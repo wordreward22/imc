@@ -65,20 +65,20 @@ export default function CareersPage() {
         subtitle={t.circular.subtitle}
         title={t.circular.title}
         accentWord={t.circular.accentWord}
-        paragraphs={getSourceParagraphs(language, "careers").length ? getSourceParagraphs(language, "careers") : t.circular.paragraphs}
+        paragraphs={getSourceParagraphs(language, "careers").length ? getSourceParagraphs(language, "careers").slice(0, 1) : t.circular.paragraphs}
         image="/uploads/2023/05/engine-technician-shop-800.jpg"
         badgeTitle={t.circular.badgeTitle}
         badgeText={t.circular.badgeText}
       />
 
       {/* 3. Advantage Cards Grid */}
-      <AdvantageCardsGrid
+      {language === "ku" && <AdvantageCardsGrid
         subtitle={t.advantages.subtitle}
         title={t.advantages.title}
         accentWord={t.advantages.accentWord}
         watermark={t.advantages.watermark}
         cards={t.advantages.cards}
-      />
+      />}
 
       {/* 4. Interactive Job Application Form */}
       <section className="py-20 bg-neutral-900 text-white relative overflow-hidden" dir={isRtl ? "rtl" : "ltr"}>
@@ -242,13 +242,13 @@ export default function CareersPage() {
       </section>
 
       {/* 5. CTA Stats Banner */}
-      <CtaStatsBanner
+      {language === "ku" && <CtaStatsBanner
         title={t.cta.title}
         desc={t.cta.desc}
         buttonText={t.cta.buttonText}
         bgImage="/uploads/2023/05/engine-technician-shop-800.jpg"
         stats={t.cta.stats}
-      />
+      />}
     </div>
   );
 }

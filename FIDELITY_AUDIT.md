@@ -14,6 +14,9 @@ Compared the `wordreward22/imc` main branch at `48e58d4` with the original WordP
 - Aligned the Services page with the original three service descriptions, Training link, and CTA copy on WordPress, while retaining its modern card layout.
 - Bundled the fonts locally so production builds work without Google Fonts network access.
 - Moved mobile hero arrows below the introductory text to remove a visible overlap.
+- Rechecked the English and Arabic homepages against the exported WordPress pages. The overview, mission, vision, values, all four FAQ questions and answers, and four service card titles and descriptions now render from `src/data/homeSource.json`, generated directly from those exports.
+- Restored the Arabic homepage service and feature labels, and replaced shortened Arabic contact service options and addresses with the original copy.
+- Removed unsupported English and Arabic training curriculum, careers benefits, workshop hours, and numeric CTA claims that did not appear on the corresponding WordPress pages. The functional forms and new visual styling remain. The field-service benefit list now comes from the original page text.
 
 ## Verification
 
@@ -22,6 +25,7 @@ Compared the `wordreward22/imc` main branch at `48e58d4` with the original WordP
 - Visually reviewed representative homepage, product, About, and RTL pages on desktop and mobile. The modern visual style remains.
 - Opened live WordPress product pages by page ID and compared their rendered copy and images to the remake for all available English, Arabic, and Kurdish counterparts. The automated pass found missing badges and contact CTA labels; these were restored. Decorative SVG CSS was excluded from the comparison.
 - Local API checks: without Resend configuration, Contact and a valid Careers submission return `503 MAIL_NOT_CONFIGURED`; an invalid CV returns `400 INVALID_CV`. No email was sent during these checks.
+- Rebuilt after the English and Arabic homepage and short-copy corrections; the production build passes.
 
 ## Source limitations
 
@@ -29,5 +33,6 @@ Compared the `wordreward22/imc` main branch at `48e58d4` with the original WordP
 - The WordPress Kurdish About page is internally inconsistent: it mixes Kurmanji and Sorani and includes extensive Cummins parts content unrelated to the English/Arabic About page. Its content was not copied into the remake; the current Kurdish About page needs native-language editorial review.
 - Browser security policy interrupted a further automated pass over the remaining live WordPress routes. Their exported HTML and saved page data remain available for source checks.
 - Resend has not been configured with a live API key and verified sender yet, so end-to-end delivery cannot be confirmed.
+- The old Arabic Contact page prints `info@imc-iraq.com`, while the remake and the requested Resend destination use `info@imc.iq`. The latter remains the active contact address; the older address has not been verified.
 
-Run `node scripts/build-source-copy.mjs` to regenerate `src/data/sourceCopy.json` from the exported WordPress pages. `scripts/audit-copy.mjs` compares the original text only with the pre-existing translation dictionary and is retained as a baseline for the changes that prompted this audit; it does not account for the new source-backed rendering.
+Run `node scripts/build-source-copy.mjs` and `node scripts/build-home-copy.mjs` to regenerate the source-backed copy from the exported WordPress pages. `scripts/audit-copy.mjs` compares the original text only with the pre-existing translation dictionary and is retained as a baseline for the changes that prompted this audit; it does not account for the new source-backed rendering.

@@ -14,6 +14,11 @@ import { CheckCircle2, Send } from "lucide-react";
 export default function RepairsPage() {
   const { language, isRtl } = useLanguage();
   const t = subpageTranslations[language].repairs;
+  const sourceParagraphs = getSourceParagraphs(language, "repairs");
+  const sourceItems = sourceParagraphs[1]
+    ? [...sourceParagraphs[1].matchAll(/([1-4])\.\s*([^:：]+)[:：]\s*([\s\S]*?)(?=\s+[1-4]\.\s|$)/g)]
+        .map((match) => ({ title: match[2].trim(), desc: match[3].trim() }))
+    : [];
 
   const [formData, setFormData] = useState({
     name: "",
@@ -57,7 +62,7 @@ export default function RepairsPage() {
         subtitle={t.circular.subtitle}
         title={t.circular.title}
         accentWord={t.circular.accentWord}
-        paragraphs={getSourceParagraphs(language, "repairs").length ? getSourceParagraphs(language, "repairs").slice(0, 2) : t.circular.paragraphs}
+        paragraphs={sourceParagraphs.length ? sourceParagraphs.slice(0, 1) : t.circular.paragraphs}
         image="/uploads/2023/05/field-service-e1685022126314-600x473.jpg"
         badgeTitle={t.circular.badgeTitle}
         badgeText={t.circular.badgeText}
@@ -67,9 +72,9 @@ export default function RepairsPage() {
       <MediaFeatureList
         title={t.media.title}
         accentWord={t.media.accentWord}
-        intro={t.media.intro}
+        intro={sourceItems.length ? undefined : t.media.intro}
         image="/uploads/2023/04/2m6wwkx-600x427.jpg"
-        items={t.media.items}
+        items={sourceItems.length ? sourceItems : t.media.items}
       />
 
       {/* 4. Interactive Field Service Request Form */}
@@ -232,13 +237,13 @@ export default function RepairsPage() {
       </section>
 
       {/* 5. CTA Stats Banner */}
-      <CtaStatsBanner
+      {language === "ku" && <CtaStatsBanner
         title={t.cta.title}
         desc={t.cta.desc}
         buttonText={t.cta.buttonText}
         bgImage="/uploads/2023/05/field-service.jpg"
         stats={t.cta.stats}
-      />
+      />}
     </div>
   );
 }
