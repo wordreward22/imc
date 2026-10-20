@@ -1,8 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
+import { emailDraftNotice, openEmailDraft } from "@/lib/emailDraft";
 import { SubpageHero } from "@/components/subpage/SubpageHero";
 import { CircularFeatureBlock } from "@/components/subpage/CircularFeatureBlock";
+import { getSourceParagraphs } from "@/components/subpage/SourceCopyPage";
 import { MediaFeatureList } from "@/components/subpage/MediaFeatureList";
 import { CtaStatsBanner } from "@/components/subpage/CtaStatsBanner";
 import { useLanguage } from "@/context/LanguageContext";
@@ -26,11 +28,8 @@ export default function RepairsPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
-      setSubmitted(true);
-    }, 600);
+    openEmailDraft("IMC Iraq repair request", formData);
+    setSubmitted(true);
   };
 
   return (
@@ -49,7 +48,7 @@ export default function RepairsPage() {
         subtitle={t.circular.subtitle}
         title={t.circular.title}
         accentWord={t.circular.accentWord}
-        paragraphs={t.circular.paragraphs}
+        paragraphs={getSourceParagraphs(language, "repairs").length ? getSourceParagraphs(language, "repairs").slice(0, 2) : t.circular.paragraphs}
         image="/uploads/2023/05/field-service-e1685022126314.jpg"
         badgeTitle={t.circular.badgeTitle}
         badgeText={t.circular.badgeText}
@@ -105,10 +104,10 @@ export default function RepairsPage() {
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
                 <h3 className="text-2xl font-bold font-heading text-white">
-                  {t.form.successTitle}
+                    {emailDraftNotice[language].title}
                 </h3>
                 <p className="text-neutral-400 text-sm max-w-md mx-auto">
-                  {t.form.successDesc}
+                    {emailDraftNotice[language].description}
                 </p>
                 <button
                   onClick={() => {

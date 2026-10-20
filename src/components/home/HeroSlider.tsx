@@ -125,7 +125,7 @@ export const HeroSlider: React.FC = () => {
       })}
 
       {/* Navigation Arrows */}
-      <div className="absolute inset-y-0 right-4 sm:right-8 z-20 flex flex-col justify-center gap-3">
+      <div className={`absolute bottom-20 ${isRtl ? "left-4" : "right-4"} sm:inset-y-0 sm:right-8 sm:left-auto sm:bottom-auto z-20 flex flex-row sm:flex-col sm:justify-center gap-2 sm:gap-3`}>
         <button
           onClick={prevSlide}
           aria-label="Previous Slide"

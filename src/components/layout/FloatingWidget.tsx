@@ -11,7 +11,9 @@ export const FloatingWidget: React.FC = () => {
   const waUrl = `https://wa.me/${phoneRaw}?text=${encodeURIComponent(
     language === "en"
       ? "Hello IMC Iraq, I would like to inquire about Cummins generators and services."
-      : "مرحباً بشركة IMC العراق، أود الاستفسار بخصوص مولدات وخدمات كومنز."
+      : language === "ar"
+      ? "مرحباً بشركة IMC العراق، أود الاستفسار بخصوص مولدات وخدمات كومنز."
+      : "سڵاو IMC عێراق، دەمەوێت دەربارەی مۆلیدە و خزمەتگوزارییەکانی کۆمنز پرسیار بکەم."
   )}`;
 
   return (

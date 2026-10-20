@@ -34,7 +34,7 @@ export const translations = {
     // Hero
     slider1Subtitle: "IMC Iraq",
     slider1Title: "INTERNATIONAL MACHINE CO.",
-    slider1Desc: "Welcome to IMC, the exclusive authorized Cummins distributor worldwide. We are proud to be the leading provider of Cummins generator solutions.",
+    slider1Desc: "Welcome to IMC, the only authorized distributor to sell, distribute and service Cummins products in Iraq. We provide Cummins power system solutions for businesses across Iraq.",
     slider2Subtitle: "IMC Iraq",
     slider2Title: "POWERS INDUSTRIES",
     slider2Desc: "International Machine Co. for General Trading. The only authorized distributor to sell, distribute and service the Cummins products in Iraq.",
@@ -137,7 +137,7 @@ export const translations = {
     getQuote: "أطلب عرض سعر",
 
     // TopBar
-    phone: "220 000 7842 964+",
+    phone: "+964 7842 000 220",
     email: "info@imc.iq",
     address: "بغداد - عويريج / البصرة - حمدان",
     workingHours: "الأحد - الخميس: 8:00 ص - 5:00 م",
@@ -248,7 +248,7 @@ export const translations = {
     getQuote: "داواکاری پیشاندانی نرخ",
 
     // TopBar
-    phone: "220 000 7842 964+",
+    phone: "+964 7842 000 220",
     email: "info@imc.iq",
     address: "بەغدا - عەویریج / بەسڕە - حەمدان",
     workingHours: "یەکشەممە - پێنجشەممە: 8:00 بەیانی - 5:00 ئێوارە",

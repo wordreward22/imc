@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { getSourceCopy, SourceCopyPage } from "@/components/subpage/SourceCopyPage";
 import Image from "next/image";
 import { ShieldCheck, ChevronRight, Play, CheckCircle2 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
@@ -21,6 +22,10 @@ export default function CumminsKitPage() {
   const [videoOpen, setVideoOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<number>(0);
 
+  if (getSourceCopy(language, "cumminsKit")) {
+    return <SourceCopyPage pageKey="cumminsKit" hero={t.hero} image="/uploads/2023/05/genuine-parts-box-800x400-1-600x400.jpg" />;
+  }
+
   return (
     <div className="bg-white min-h-screen pb-28">
       {/* 1. Page Hero Banner */}
@@ -29,7 +34,7 @@ export default function CumminsKitPage() {
         title={t.hero.title}
         accentWord={t.hero.accentWord}
         watermark={t.hero.watermark}
-        bgImage="/uploads/2023/04/slider-img-1-1.jpg"
+        bgImage="/uploads/2023/05/genuine-parts-box-800x400-1-600x400.jpg"
       />
 
       {/* 2. Section 1: Pre-Packaged Kits Grid */}
@@ -133,7 +138,7 @@ export default function CumminsKitPage() {
         title={t.cta.title}
         desc={t.cta.desc}
         buttonText={t.cta.buttonText}
-        bgImage="/uploads/2023/04/slider-img-1-1.jpg"
+        bgImage="/uploads/2023/05/genuine-parts-box-800x400-1-600x400.jpg"
         stats={t.cta.stats}
       />
 

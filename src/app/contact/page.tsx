@@ -1,8 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
+import { emailDraftNotice, openEmailDraft } from "@/lib/emailDraft";
 import { SubpageHero } from "@/components/subpage/SubpageHero";
 import { CtaStatsBanner } from "@/components/subpage/CtaStatsBanner";
+import { getSourceParagraphs } from "@/components/subpage/SourceCopyPage";
 import { useLanguage } from "@/context/LanguageContext";
 import { subpageTranslations } from "@/data/subpageTranslations";
 import {
@@ -32,11 +34,8 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
-      setSubmitted(true);
-    }, 600);
+    openEmailDraft("IMC Iraq contact request", formData);
+    setSubmitted(true);
   };
 
   return (
@@ -86,7 +85,7 @@ export default function ContactPage() {
                 </h2>
 
                 <p className="text-neutral-600 text-sm sm:text-base leading-relaxed">
-                  {t.narrative.desc}
+                  {getSourceParagraphs(language, "contact")[0] ?? t.narrative.desc}
                 </p>
               </div>
 
@@ -171,10 +170,10 @@ export default function ContactPage() {
                       <CheckCircle2 className="w-8 h-8" />
                     </div>
                     <h3 className="text-2xl font-bold font-heading text-white">
-                      {t.form.successTitle}
+                      {emailDraftNotice[language].title}
                     </h3>
                     <p className="text-neutral-400 text-sm max-w-md mx-auto">
-                      {t.form.successDesc}
+                      {emailDraftNotice[language].description}
                     </p>
                     <button
                       onClick={() => {

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { getSourceCopy, SourceCopyPage } from "@/components/subpage/SourceCopyPage";
 import { useLanguage } from "@/context/LanguageContext";
 import { subpageTranslations } from "@/data/subpageTranslations";
 import { SubpageHero } from "@/components/subpage/SubpageHero";
@@ -12,6 +13,10 @@ import { CtaStatsBanner } from "@/components/subpage/CtaStatsBanner";
 export default function RenewablePowerPage() {
   const { language } = useLanguage();
   const t = subpageTranslations[language].renewablePower;
+
+  if (getSourceCopy(language, "renewablePower")) {
+    return <SourceCopyPage pageKey="renewablePower" hero={t.hero} image="/uploads/2023/06/solar-farm-rocky-mount_hero.jpg" />;
+  }
 
   return (
     <div className="bg-white min-h-screen pb-28">

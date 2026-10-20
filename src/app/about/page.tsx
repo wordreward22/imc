@@ -5,6 +5,7 @@ import Image from "next/image";
 import { SubpageHero } from "@/components/subpage/SubpageHero";
 import { CircularFeatureBlock } from "@/components/subpage/CircularFeatureBlock";
 import { VideoModal } from "@/components/subpage/VideoModal";
+import { getSourceParagraphs } from "@/components/subpage/SourceCopyPage";
 import { useLanguage } from "@/context/LanguageContext";
 import { subpageTranslations } from "@/data/subpageTranslations";
 import {
@@ -20,6 +21,7 @@ import {
 export default function AboutPage() {
   const { language, isRtl } = useLanguage();
   const t = subpageTranslations[language].about;
+  const aboutParagraphs = getSourceParagraphs(language, "about");
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
   const valueIcons = [ThumbsUp, Award, ShieldCheck];
@@ -36,15 +38,17 @@ export default function AboutPage() {
       />
 
       {/* 2. Mission & Vision Circular Feature Block */}
+      <div id="mission" className="scroll-mt-24">
       <CircularFeatureBlock
         subtitle={t.circular.subtitle}
         title={t.circular.title}
         accentWord={t.circular.accentWord}
-        paragraphs={t.circular.paragraphs}
+        paragraphs={aboutParagraphs.length ? aboutParagraphs.slice(0, 2) : t.circular.paragraphs}
         image="/uploads/2023/03/slider-img-2.jpeg"
         badgeTitle={t.circular.badgeTitle}
         badgeText={t.circular.badgeText}
       />
+      </div>
 
       {/* 3. Our Values Section */}
       <section className="py-20 bg-neutral-50 relative overflow-hidden border-y border-neutral-200">
@@ -104,7 +108,7 @@ export default function AboutPage() {
       </section>
 
       {/* 4. Cummins History & Cummins Values */}
-      <section className="py-20 bg-white">
+      <section id="cummins-history" className="py-20 bg-white scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Left Column: Image with Play Trigger */}
@@ -156,14 +160,14 @@ export default function AboutPage() {
                   <h3 className="text-lg font-bold text-neutral-900 font-heading mb-1">
                     {t.cummins.historyTitle}
                   </h3>
-                  <p>{t.cummins.historyDesc}</p>
+                  <p>{aboutParagraphs[2] ?? t.cummins.historyDesc}</p>
                 </div>
 
                 <div className="pt-2 border-t border-neutral-100">
                   <h3 className="text-lg font-bold text-neutral-900 font-heading mb-1">
                     {t.cummins.valuesTitle}
                   </h3>
-                  <p>{t.cummins.valuesDesc}</p>
+                  <p>{aboutParagraphs[3] ?? t.cummins.valuesDesc}</p>
                 </div>
               </div>
 
@@ -182,7 +186,7 @@ export default function AboutPage() {
       </section>
 
       {/* 5. Alkan Holding History */}
-      <section className="py-20 bg-[#111111] text-white relative overflow-hidden border-t border-neutral-800">
+      <section id="alkan-history" className="py-20 bg-[#111111] text-white relative overflow-hidden border-t border-neutral-800 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Left Narrative */}
@@ -199,12 +203,10 @@ export default function AboutPage() {
               </h2>
 
               <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
-                {t.alkan.p1}
+                {aboutParagraphs[4] ?? t.alkan.p1}
               </p>
 
-              <p className="text-neutral-400 text-sm sm:text-base leading-relaxed">
-                {t.alkan.p2}
-              </p>
+              {!aboutParagraphs.length && <p className="text-neutral-400 text-sm sm:text-base leading-relaxed">{t.alkan.p2}</p>}
 
               <div className="pt-2 flex flex-wrap items-center gap-4">
                 <button

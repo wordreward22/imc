@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { getSourceCopy, SourceCopyPage } from "@/components/subpage/SourceCopyPage";
 import { useLanguage } from "@/context/LanguageContext";
 import { subpageTranslations } from "@/data/subpageTranslations";
 import { SubpageHero } from "@/components/subpage/SubpageHero";
@@ -12,6 +13,10 @@ import { CtaStatsBanner } from "@/components/subpage/CtaStatsBanner";
 export default function OilsPage() {
   const { language } = useLanguage();
   const t = subpageTranslations[language].oils;
+
+  if (getSourceCopy(language, "oils")) {
+    return <SourceCopyPage pageKey="oils" hero={t.hero} image="/uploads/2023/06/us_dtc_atf_bottles_393x250.webp" />;
+  }
 
   return (
     <div className="bg-white min-h-screen pb-28">

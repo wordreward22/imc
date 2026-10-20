@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { emailDraftNotice, openEmailDraft } from "@/lib/emailDraft";
 import { X, CheckCircle, Send } from "lucide-react";
 import { useQuote } from "@/context/QuoteContext";
 import { useLanguage } from "@/context/LanguageContext";
@@ -38,11 +39,8 @@ export const QuoteModal: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
-      setSubmitted(true);
-    }, 800);
+    openEmailDraft("IMC Iraq quote request", { product: productChoice, ...formData });
+    setSubmitted(true);
   };
 
   return (
@@ -87,18 +85,10 @@ export const QuoteModal: React.FC = () => {
                 <CheckCircle className="w-10 h-10" />
               </div>
               <h4 className="text-2xl font-bold text-neutral-900">
-                {language === "en"
-                  ? "Quote Request Received!"
-                  : language === "ar"
-                  ? "تم استلام طلب عرض السعر بنجاح!"
-                  : "داواکارییەکەت بە سەرکەوتوویی وەرگیرا!"}
+                {emailDraftNotice[language].title}
               </h4>
               <p className="text-neutral-600 text-sm max-w-md mx-auto">
-                {language === "en"
-                  ? "Thank you for reaching out to IMC Iraq. Our technical sales team will review your specifications and contact you promptly with official Cummins pricing."
-                  : language === "ar"
-                  ? "شكراً لتواصلك مع IMC العراق. سيقوم فريق المبيعات الفني بمراجعة متطلباتك والتواصل معك فوراً بعرض السعر الرسمي."
-                  : "سوپاس بۆ پەیوەندیکردنت. تیمی فرۆشتنی ئێمە بە زووترین کات پەیوەندیت پێوە دەکەن."}
+                {emailDraftNotice[language].description}
               </p>
               <button
                 onClick={closeQuote}
