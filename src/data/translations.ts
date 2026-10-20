@@ -34,7 +34,7 @@ export const translations = {
     // Hero
     slider1Subtitle: "IMC Iraq",
     slider1Title: "INTERNATIONAL MACHINE CO.",
-    slider1Desc: "Welcome to IMC, the exclusive authorized Cummins distributor worldwide. We are proud to be the leading provider of Cummins generator solutions.",
+    slider1Desc: "Welcome to IMC, the only authorized distributor to sell, distribute and service Cummins products in Iraq. We provide Cummins power system solutions for businesses across Iraq.",
     slider2Subtitle: "IMC Iraq",
     slider2Title: "POWERS INDUSTRIES",
     slider2Desc: "International Machine Co. for General Trading. The only authorized distributor to sell, distribute and service the Cummins products in Iraq.",
@@ -114,22 +114,22 @@ export const translations = {
     // Navigation
     home: "الرئيسية",
     aboutUs: "من نحن",
-    missionVision: "الرسالة، الرؤية والقيم",
-    cumminsHistory: "تاريخ كومنز",
+    missionVision: "مهمتنا، رؤيتنا وقيمنا",
+    cumminsHistory: "تاريخ كمنز",
     alkanHistory: "تاريخ ألكان القابضة",
-    careers: "الوظائف",
+    careers: "فرص عمل",
     powerSystem: "أنظمة الطاقة",
     generators: "مولدات الطاقة",
-    renewablePower: "الطاقة المتجددة",
-    productSupport: "دعم المنتجات",
+    renewablePower: "طاقة متجددة",
+    productSupport: "دعم المنتج",
     spareParts: "قطع الغيار",
     cumminsKit: "مجموعات كومنز",
-    service: "الخدمات",
-    fieldService: "الخدمة الميدانية",
-    workshopRepairs: "إصلاحات الورشة",
+    service: "الصيانة",
+    fieldService: "الصيانة الخارجية",
+    workshopRepairs: "ورش الإصلاح",
     serviceContracts: "عقود الصيانة",
     training: "التدريب",
-    cumminsFiltration: "فلاتر كومنز",
+    cumminsFiltration: "فلاتر كمنز",
     fleetGuard: "فليت جارد",
     oils: "الزيوت",
     engines: "المحركات",
@@ -137,31 +137,31 @@ export const translations = {
     getQuote: "أطلب عرض سعر",
 
     // TopBar
-    phone: "220 000 7842 964+",
+    phone: "+964 7842 000 220",
     email: "info@imc.iq",
     address: "بغداد - عويريج / البصرة - حمدان",
     workingHours: "الأحد - الخميس: 8:00 ص - 5:00 م",
 
     // Hero
-    slider1Subtitle: "أى إم سى العراق",
+    slider1Subtitle: "موزع معتمد",
     slider1Title: "شركة المعدات العالمية للتجارة العامة",
-    slider1Desc: "مرحباً بكم في IMC، الموزع المعتمد الحصري لكومنز في العراق. نحن فخورون بكوننا المزود الرائد لحلول توليد الطاقة.",
-    slider2Subtitle: "أى إم سى العراق",
-    slider2Title: "ندعم الصناعات حول العالم",
-    slider2Desc: "الموزع الوحيد المعتمد لبيع وتوزيع وصيانة منتجات كومنز في جميع أنحاء العراق.",
+    slider1Desc: "الموزع الوحيد المعتمد لبيع وتوزيع وخدمة منتجات كمنز في العراق",
+    slider2Subtitle: "شركة المعدات العالمية للتجارة العامة",
+    slider2Title: "نمد صناعات العالم بالطاقة",
+    slider2Desc: "شركة المعدات العالمية للتجارة العامة الموزع الوحيد المعتمد لبيع وتوزيع وخدمة منتجات كمنز في العراق",
     exploreProducts: "استكشف المولدات",
 
     // Feature Cards
     powerGenTitle: "مولدات الطاقة",
     powerGenDesc: "مجموعة شاملة من مولدات الديزل التجارية والصناعية المعتمدة من كومنز.",
-    cumminsKitTitle: "مجموعات كومنز",
+    cumminsKitTitle: "قطع كمنز المعتمدة",
     cumminsKitDesc: "قطع غيار أصلية 100% وأطقم صيانة شاملة لضمان أقصى موثوقية.",
-    imcServicesTitle: "خدمات IMC",
+    imcServicesTitle: "خدمات الشركة",
     imcServicesDesc: "صيانة معتمدة، إعادة بناء كاملة، ودعم ميداني طارئ على مدار الساعة.",
 
     // Company Overview
-    badgeTitle: "البائع المعتمد الحائز على جوائز من كومنز",
-    overviewTitle: "ندعم الصناعات حول العالم",
+    badgeTitle: "تاجر معتمد من كمنز",
+    overviewTitle: "نمد صناعات العالم بالطاقة",
     overviewDesc: "شركة IMC هي الموزع الوحيد المعتمد لبيع وتوزيع وخدمة منتجات كومنز في العراق، وتوفر مجموعة متكاملة من حلول أنظمة الطاقة لمختلف التطبيقات والشركات.",
     mission: "الرسالة",
     missionDesc: "توفير أعلى مستويات الجودة وأكثر محركات وحلول طاقة كومنز موثوقية لعملائنا في جميع أنحاء العراق.",
@@ -173,8 +173,8 @@ export const translations = {
     customerDriven: "IMC تضع العميل أولاً دائماً",
 
     // Services
-    servicesSubtitle: "خدمات IMC",
-    servicesHeadline: "دعم موثوق ومعتمد من خبراء كومنز",
+    servicesSubtitle: "خدمات الصيانة",
+    servicesHeadline: "نهتم بتقديم افضل الخدمات",
     fieldServiceDesc: "خيارات خدمة ميدانية موثوقة لمولدات كومنز، مع استجابة سريعة وتشخيص دقيق وصيانة وقائية وإصلاحات فورية.",
     serviceContractsDesc: "توفر عقود الصيانة راحة البال من خلال الصيانة الدورية والاستجابة ذات الأولوية وقطع الغيار الأصلية.",
     workshopRepairsDesc: "تجسد إصلاحات الورشة التزامنا بالاحترافية والتميز مع فريق من الفنيين المهرة وأحدث المعدات المتخصصة.",
@@ -183,7 +183,7 @@ export const translations = {
 
     // FAQs
     faqSubtitle: "الأسئلة الشائعة",
-    faqTitle: "الأسئلة المتكررة",
+    faqTitle: "الأسئلة الشائعة",
     faq1Q: "لماذا تشتري قطع غيار كومنز الأصلية؟",
     faq1A: "يحاول العديد من المصنعين تقليد قطع كومنز بأسعار أرخص، لكن هذه القطع غير الأصلية لا تطابق المواصفات الهندسية الدقيقة وتؤدي إلى تلف المحركات.",
     faq2Q: "ما الذي يميز عملكم في قطع الغيار؟",
@@ -248,7 +248,7 @@ export const translations = {
     getQuote: "داواکاری پیشاندانی نرخ",
 
     // TopBar
-    phone: "220 000 7842 964+",
+    phone: "+964 7842 000 220",
     email: "info@imc.iq",
     address: "بەغدا - عەویریج / بەسڕە - حەمدان",
     workingHours: "یەکشەممە - پێنجشەممە: 8:00 بەیانی - 5:00 ئێوارە",

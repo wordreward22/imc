@@ -6,47 +6,50 @@ import Link from "next/link";
 import { Wrench, FileText, Settings, GraduationCap, ArrowRight } from "lucide-react";
 import { SubpageHero } from "@/components/subpage/SubpageHero";
 import { CtaStatsBanner } from "@/components/subpage/CtaStatsBanner";
+import { getSourceParagraphs } from "@/components/subpage/SourceCopyPage";
 import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/data/translations";
+import homeSource from "@/data/homeSource.json";
 import { subpageTranslations } from "@/data/subpageTranslations";
 
 export default function ServicesPage() {
   const { language, isRtl } = useLanguage();
   const t = translations[language];
+  const sourceServices = language === "ku" ? null : homeSource[language].services;
   const ctaData = subpageTranslations[language].repairs.cta;
 
   const services = [
     {
-      title: t.fieldService,
-      desc: t.fieldServiceDesc,
+      title: sourceServices?.fieldService.title ?? t.fieldService,
+      desc: sourceServices?.fieldService.description ?? t.fieldServiceDesc,
       href: "/repairs",
       image: "/uploads/2023/05/field-service.jpg",
       icon: Wrench,
       pillar: language === "ar" ? "الركيزة الخدمية الأولى" : language === "ku" ? "کۆڵەکەی یەکەمی خزمەتگوزاری" : "Service Pillar 1",
     },
     {
-      title: t.serviceContracts,
-      desc: t.serviceContractsDesc,
+      title: sourceServices?.serviceContracts.title ?? t.serviceContracts,
+      desc: sourceServices?.serviceContracts.description ?? t.serviceContractsDesc,
       href: "/preventative-maintenance",
       image: "/uploads/2023/05/service-contracts-1.jpeg",
       icon: FileText,
       pillar: language === "ar" ? "الركيزة الخدمية الثانية" : language === "ku" ? "کۆڵەکەی دووەمی خزمەتگوزاری" : "Service Pillar 2",
     },
     {
-      title: t.workshopRepairs,
-      desc: t.workshopRepairsDesc,
+      title: sourceServices?.workshopRepairs.title ?? t.workshopRepairs,
+      desc: sourceServices?.workshopRepairs.description ?? t.workshopRepairsDesc,
       href: "/master-rebuild",
       image: "/uploads/2023/05/engine-technician-shop-800.jpg",
       icon: Settings,
       pillar: language === "ar" ? "الركيزة الخدمية الثالثة" : language === "ku" ? "کۆڵەکەی سێیەمی خزمەتگوزاری" : "Service Pillar 3",
     },
     {
-      title: t.training,
-      desc: t.trainingDesc,
+      title: sourceServices?.training.title ?? t.training,
+      desc: sourceServices?.training.description ?? t.trainingDesc,
       href: "/training",
-      image: "/uploads/2023/05/engine-closeup-banner.jpg",
+      image: "/uploads/2023/05/engine-technician-shop-800.jpg",
       icon: GraduationCap,
-      pillar: language === "ar" ? "الركيزة الخدمية الرابعة" : language === "ku" ? "کۆڵەکەی چوارەمی خزمەتگوزاری" : "Service Pillar 4",
+      pillar: language === "ar" ? "التدريب" : language === "ku" ? "ڕاهێنان" : "Training",
     },
   ];
 
@@ -143,10 +146,10 @@ export default function ServicesPage() {
       {/* 3. CTA Stats Banner */}
       <CtaStatsBanner
         title={ctaData.title}
-        desc={ctaData.desc}
+        desc={getSourceParagraphs(language, "services")[0] ?? ctaData.desc}
         buttonText={ctaData.buttonText}
         bgImage="/uploads/2023/05/engine-technician-shop-800.jpg"
-        stats={ctaData.stats}
+        stats={[]}
       />
     </div>
   );

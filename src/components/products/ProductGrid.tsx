@@ -123,7 +123,7 @@ export const ProductGrid: React.FC<ProductGridProps> = ({ products }) => {
             }}
             className="text-xs font-bold text-[#E2231B] underline hover:text-[#9E0202]"
           >
-            {language === "en" ? "Reset Filters" : "إعادة ضبط التصفية"}
+            {language === "en" ? "Reset Filters" : language === "ar" ? "إعادة ضبط التصفية" : "پاڵاوتنەکان بسڕەوە"}
           </button>
         </div>
       )}

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { submissionError, submissionNotice, submitForm } from "@/lib/formSubmission";
 import { X, CheckCircle, Send } from "lucide-react";
 import { useQuote } from "@/context/QuoteContext";
 import { useLanguage } from "@/context/LanguageContext";
@@ -24,6 +25,7 @@ export const QuoteModal: React.FC = () => {
   });
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     if (selectedProduct) {
@@ -32,17 +34,23 @@ export const QuoteModal: React.FC = () => {
       setProductChoice("");
     }
     setSubmitted(false);
+    setError("");
   }, [selectedProduct, isOpen]);
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
+    setError("");
+    try {
+      await submitForm("quote", language, { product: productChoice, ...formData });
       setSubmitted(true);
-    }, 800);
+    } catch (cause) {
+      setError(submissionError(cause, language));
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -87,18 +95,10 @@ export const QuoteModal: React.FC = () => {
                 <CheckCircle className="w-10 h-10" />
               </div>
               <h4 className="text-2xl font-bold text-neutral-900">
-                {language === "en"
-                  ? "Quote Request Received!"
-                  : language === "ar"
-                  ? "تم استلام طلب عرض السعر بنجاح!"
-                  : "داواکارییەکەت بە سەرکەوتوویی وەرگیرا!"}
+                {submissionNotice[language].title}
               </h4>
               <p className="text-neutral-600 text-sm max-w-md mx-auto">
-                {language === "en"
-                  ? "Thank you for reaching out to IMC Iraq. Our technical sales team will review your specifications and contact you promptly with official Cummins pricing."
-                  : language === "ar"
-                  ? "شكراً لتواصلك مع IMC العراق. سيقوم فريق المبيعات الفني بمراجعة متطلباتك والتواصل معك فوراً بعرض السعر الرسمي."
-                  : "سوپاس بۆ پەیوەندیکردنت. تیمی فرۆشتنی ئێمە بە زووترین کات پەیوەندیت پێوە دەکەن."}
+                {submissionNotice[language].description}
               </p>
               <button
                 onClick={closeQuote}
@@ -246,6 +246,7 @@ export const QuoteModal: React.FC = () => {
                 />
               </div>
 
+              {error && <p role="alert" className="text-sm text-red-700 bg-red-50 rounded-lg p-3">{error}</p>}
               <button
                 type="submit"
                 disabled={submitting}

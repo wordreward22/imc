@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { getSourceCopy, SourceCopyPage } from "@/components/subpage/SourceCopyPage";
 import { useLanguage } from "@/context/LanguageContext";
 import { subpageTranslations } from "@/data/subpageTranslations";
 import { SubpageHero } from "@/components/subpage/SubpageHero";
@@ -12,6 +13,10 @@ import { CtaStatsBanner } from "@/components/subpage/CtaStatsBanner";
 export default function FleetGuardPage() {
   const { language } = useLanguage();
   const t = subpageTranslations[language].fleetGuard;
+
+  if (getSourceCopy(language, "fleetGuard")) {
+    return <SourceCopyPage pageKey="fleetGuard" hero={t.hero} image="/uploads/2023/06/fleetguard.jpg" />;
+  }
 
   return (
     <div className="bg-white min-h-screen pb-28">

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { getSourceCopy, SourceCopyPage } from "@/components/subpage/SourceCopyPage";
 import { useLanguage } from "@/context/LanguageContext";
 import { subpageTranslations } from "@/data/subpageTranslations";
 import { SubpageHero } from "@/components/subpage/SubpageHero";
@@ -11,6 +12,10 @@ import { CtaStatsBanner } from "@/components/subpage/CtaStatsBanner";
 export default function EnginesPage() {
   const { language } = useLanguage();
   const t = subpageTranslations[language].engines;
+
+  if (getSourceCopy(language, "engines")) {
+    return <SourceCopyPage pageKey="engines" hero={t.hero} image="/uploads/2023/05/engine-closeup-banner.jpg" />;
+  }
 
   return (
     <div className="bg-white min-h-screen pb-28">

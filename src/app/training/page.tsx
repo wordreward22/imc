@@ -1,8 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
+import { submissionError, submissionNotice, submitForm } from "@/lib/formSubmission";
 import { SubpageHero } from "@/components/subpage/SubpageHero";
 import { CircularFeatureBlock } from "@/components/subpage/CircularFeatureBlock";
+import { getSourceParagraphs } from "@/components/subpage/SourceCopyPage";
 import { AdvantageCardsGrid } from "@/components/subpage/AdvantageCardsGrid";
 import { CtaStatsBanner } from "@/components/subpage/CtaStatsBanner";
 import { useLanguage } from "@/context/LanguageContext";
@@ -22,14 +24,20 @@ export default function TrainingPage() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
+    setError("");
+    try {
+      await submitForm("training", language, formData);
       setSubmitted(true);
-    }, 600);
+    } catch (cause) {
+      setError(submissionError(cause, language));
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -48,20 +56,20 @@ export default function TrainingPage() {
         subtitle={t.circular.subtitle}
         title={t.circular.title}
         accentWord={t.circular.accentWord}
-        paragraphs={t.circular.paragraphs}
+        paragraphs={getSourceParagraphs(language, "training").length ? getSourceParagraphs(language, "training").slice(0, 1) : t.circular.paragraphs}
         image="/uploads/2023/05/engine-closeup-banner.jpg"
         badgeTitle={t.circular.badgeTitle}
         badgeText={t.circular.badgeText}
       />
 
       {/* 3. Training Curriculum Modules Grid */}
-      <AdvantageCardsGrid
+      {language === "ku" && <AdvantageCardsGrid
         subtitle={t.curriculum.subtitle}
         title={t.curriculum.title}
         accentWord={t.curriculum.accentWord}
         watermark={t.curriculum.watermark}
         cards={t.curriculum.cards}
-      />
+      />}
 
       {/* 4. Interactive Training Application Form */}
       <section className="py-20 bg-neutral-900 text-white relative overflow-hidden" dir={isRtl ? "rtl" : "ltr"}>
@@ -104,10 +112,10 @@ export default function TrainingPage() {
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
                 <h3 className="text-2xl font-bold font-heading text-white">
-                  {t.form.successTitle}
+                    {submissionNotice[language].title}
                 </h3>
                 <p className="text-neutral-400 text-sm max-w-md mx-auto">
-                  {t.form.successDesc}
+                    {submissionNotice[language].description}
                 </p>
                 <button
                   onClick={() => {
@@ -191,6 +199,7 @@ export default function TrainingPage() {
                   />
                 </div>
 
+                {error && <p role="alert" className="text-sm text-red-300">{error}</p>}
                 <div className="pt-4 border-t border-neutral-800">
                   <button
                     type="submit"
@@ -208,13 +217,13 @@ export default function TrainingPage() {
       </section>
 
       {/* 5. CTA Stats Banner */}
-      <CtaStatsBanner
+      {language === "ku" && <CtaStatsBanner
         title={t.cta.title}
         desc={t.cta.desc}
         buttonText={t.cta.buttonText}
         bgImage="/uploads/2023/05/engine-closeup-banner.jpg"
         stats={t.cta.stats}
-      />
+      />}
     </div>
   );
 }

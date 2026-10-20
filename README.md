@@ -61,3 +61,9 @@ npm run build
 npm run start
 ```
 Runs the optimized production build on port 3000.
+
+### Form delivery
+
+The quote, contact, careers, field service, and training forms submit to the Next.js server route at `/api/submit`. Careers applications include the selected CV as an email attachment. The browser shows success only after Resend accepts the request.
+
+Copy `.env.example` to `.env.local` and set `RESEND_API_KEY` and `IMC_FROM_EMAIL` to an address on a domain verified in Resend. Set `IMC_TO_EMAIL` if requests should go somewhere other than `info@imc.iq`. Add the same environment variables to the production Next.js host. Without the key and verified sender, the forms show a delivery error and do not claim to have sent the request. The key must remain server-side.

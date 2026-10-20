@@ -1,8 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
+import { submissionError, submissionNotice, submitForm } from "@/lib/formSubmission";
 import { SubpageHero } from "@/components/subpage/SubpageHero";
 import { CircularFeatureBlock } from "@/components/subpage/CircularFeatureBlock";
+import { getSourceParagraphs } from "@/components/subpage/SourceCopyPage";
 import { AdvantageCardsGrid } from "@/components/subpage/AdvantageCardsGrid";
 import { CtaStatsBanner } from "@/components/subpage/CtaStatsBanner";
 import { useLanguage } from "@/context/LanguageContext";
@@ -22,20 +24,29 @@ export default function CareersPage() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [cvFile, setCvFile] = useState<File | null>(null);
+  const [error, setError] = useState("");
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
+      setCvFile(e.target.files[0]);
       setFormData({ ...formData, fileName: e.target.files[0].name });
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
+    setError("");
+    try {
+      const { fileName: _fileName, ...fields } = formData;
+      await submitForm("careers", language, fields, cvFile);
       setSubmitted(true);
-    }, 600);
+    } catch (cause) {
+      setError(submissionError(cause, language));
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -54,20 +65,20 @@ export default function CareersPage() {
         subtitle={t.circular.subtitle}
         title={t.circular.title}
         accentWord={t.circular.accentWord}
-        paragraphs={t.circular.paragraphs}
+        paragraphs={getSourceParagraphs(language, "careers").length ? getSourceParagraphs(language, "careers").slice(0, 1) : t.circular.paragraphs}
         image="/uploads/2023/05/engine-technician-shop-800.jpg"
         badgeTitle={t.circular.badgeTitle}
         badgeText={t.circular.badgeText}
       />
 
       {/* 3. Advantage Cards Grid */}
-      <AdvantageCardsGrid
+      {language === "ku" && <AdvantageCardsGrid
         subtitle={t.advantages.subtitle}
         title={t.advantages.title}
         accentWord={t.advantages.accentWord}
         watermark={t.advantages.watermark}
         cards={t.advantages.cards}
-      />
+      />}
 
       {/* 4. Interactive Job Application Form */}
       <section className="py-20 bg-neutral-900 text-white relative overflow-hidden" dir={isRtl ? "rtl" : "ltr"}>
@@ -110,14 +121,15 @@ export default function CareersPage() {
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
                 <h3 className="text-2xl font-bold font-heading text-white">
-                  {t.form.successTitle}
+                    {submissionNotice[language].title}
                 </h3>
                 <p className="text-neutral-400 text-sm max-w-md mx-auto">
-                  {t.form.successDesc}
+                    {submissionNotice[language].careerDescription}
                 </p>
                 <button
                   onClick={() => {
                     setSubmitted(false);
+                    setCvFile(null);
                     setFormData({ name: "", email: "", education: "Bachelors", phone: "", fileName: "" });
                   }}
                   className="px-6 py-2.5 bg-neutral-800 hover:bg-neutral-700 text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-colors"
@@ -212,6 +224,7 @@ export default function CareersPage() {
                   </label>
                 </div>
 
+                {error && <p role="alert" className="text-sm text-red-300">{error}</p>}
                 <div className="pt-4 border-t border-neutral-800">
                   <button
                     type="submit"
@@ -229,13 +242,13 @@ export default function CareersPage() {
       </section>
 
       {/* 5. CTA Stats Banner */}
-      <CtaStatsBanner
+      {language === "ku" && <CtaStatsBanner
         title={t.cta.title}
         desc={t.cta.desc}
         buttonText={t.cta.buttonText}
         bgImage="/uploads/2023/05/engine-technician-shop-800.jpg"
         stats={t.cta.stats}
-      />
+      />}
     </div>
   );
 }

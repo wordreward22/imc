@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { getSourceCopy, SourceCopyPage } from "@/components/subpage/SourceCopyPage";
 import { useLanguage } from "@/context/LanguageContext";
 import { subpageTranslations } from "@/data/subpageTranslations";
 import { SubpageHero } from "@/components/subpage/SubpageHero";
@@ -12,6 +13,10 @@ import { CtaStatsBanner } from "@/components/subpage/CtaStatsBanner";
 export default function PreventativeMaintenancePage() {
   const { language } = useLanguage();
   const t = subpageTranslations[language].preventativeMaintenance;
+
+  if (getSourceCopy(language, "preventativeMaintenance")) {
+    return <SourceCopyPage pageKey="preventativeMaintenance" hero={t.hero} image="/uploads/2023/05/service-contracts-2.jpeg" />;
+  }
 
   return (
     <div className="bg-white min-h-screen pb-28">

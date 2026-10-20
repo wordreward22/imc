@@ -1,8 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
+import { submissionError, submissionNotice, submitForm } from "@/lib/formSubmission";
 import { SubpageHero } from "@/components/subpage/SubpageHero";
 import { CtaStatsBanner } from "@/components/subpage/CtaStatsBanner";
+import { getSourceParagraphs } from "@/components/subpage/SourceCopyPage";
 import { useLanguage } from "@/context/LanguageContext";
 import { subpageTranslations } from "@/data/subpageTranslations";
 import {
@@ -29,14 +31,20 @@ export default function ContactPage() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
+    setError("");
+    try {
+      await submitForm("contact", language, formData);
       setSubmitted(true);
-    }, 600);
+    } catch (cause) {
+      setError(submissionError(cause, language));
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -86,7 +94,7 @@ export default function ContactPage() {
                 </h2>
 
                 <p className="text-neutral-600 text-sm sm:text-base leading-relaxed">
-                  {t.narrative.desc}
+                  {getSourceParagraphs(language, "contact")[0] ?? t.narrative.desc}
                 </p>
               </div>
 
@@ -171,10 +179,10 @@ export default function ContactPage() {
                       <CheckCircle2 className="w-8 h-8" />
                     </div>
                     <h3 className="text-2xl font-bold font-heading text-white">
-                      {t.form.successTitle}
+                      {submissionNotice[language].title}
                     </h3>
                     <p className="text-neutral-400 text-sm max-w-md mx-auto">
-                      {t.form.successDesc}
+                      {submissionNotice[language].description}
                     </p>
                     <button
                       onClick={() => {
@@ -269,6 +277,7 @@ export default function ContactPage() {
                       />
                     </div>
 
+                    {error && <p role="alert" className="text-sm text-red-300">{error}</p>}
                     <div className="pt-2 border-t border-neutral-800">
                       <button
                         type="submit"
@@ -288,7 +297,7 @@ export default function ContactPage() {
       </section>
 
       {/* 3. Interactive Facilities / Workshops Section */}
-      <section className="py-16 bg-neutral-50 border-t border-neutral-200">
+      {language === "ku" && <section className="py-16 bg-neutral-50 border-t border-neutral-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
             <span className="text-[#E2231B] font-bold text-xs uppercase tracking-wider font-heading">
@@ -376,16 +385,16 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section>}
 
       {/* 4. CTA Stats Banner */}
-      <CtaStatsBanner
+      {language === "ku" && <CtaStatsBanner
         title={t.cta.title}
         desc={t.cta.desc}
         buttonText={t.cta.buttonText}
         bgImage="/uploads/2023/05/engine-technician-shop-800.jpg"
         stats={t.cta.stats}
-      />
+      />}
     </div>
   );
 }

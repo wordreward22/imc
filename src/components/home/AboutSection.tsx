@@ -6,25 +6,27 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/data/translations";
+import homeSource from "@/data/homeSource.json";
 
 export const AboutSection: React.FC = () => {
   const { language, isRtl } = useLanguage();
   const t = translations[language];
+  const source = language === "ku" ? null : homeSource[language];
 
   const [activeTab, setActiveTab] = useState<"mission" | "vision" | "values">("mission");
 
   const tabContent = {
     mission: {
       title: t.mission,
-      desc: t.missionDesc,
+      desc: source?.mission ?? t.missionDesc,
     },
     vision: {
       title: t.vision,
-      desc: t.visionDesc,
+      desc: source?.vision ?? t.visionDesc,
     },
     values: {
       title: t.values,
-      desc: t.valuesDesc,
+      desc: source?.values ?? t.valuesDesc,
     },
   };
 
@@ -88,7 +90,7 @@ export const AboutSection: React.FC = () => {
                 {language === "en" ? (
                   <>Powers <span className="text-[#E2231B]">Industries</span> Around the World</>
                 ) : language === "ar" ? (
-                  <>ندعم <span className="text-[#E2231B]">الصناعات</span> حول العالم</>
+                  <>نمد <span className="text-[#E2231B]">صناعات العالم</span> بالطاقة</>
                 ) : (
                   <>پشتیوانی <span className="text-[#E2231B]">پیشەسازییەکان</span> لە جیهاندا</>
                 )}
@@ -96,7 +98,7 @@ export const AboutSection: React.FC = () => {
             </div>
 
             <p className="text-[#666666] text-sm sm:text-base leading-relaxed">
-              {t.overviewDesc}
+              {source?.overview ?? t.overviewDesc}
             </p>
 
             {/* Tabs: Mission, Vision, Values */}

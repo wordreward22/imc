@@ -5,17 +5,19 @@ import Link from "next/link";
 import { ChevronDown, HelpCircle, PhoneCall } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/data/translations";
+import homeSource from "@/data/homeSource.json";
 
 export const FaqSection: React.FC = () => {
   const { language, isRtl } = useLanguage();
   const t = translations[language];
 
-  const faqs = [
+  const fallbackFaqs = [
     { q: t.faq1Q, a: t.faq1A },
     { q: t.faq2Q, a: t.faq2A },
     { q: t.faq3Q, a: t.faq3A },
     { q: t.faq4Q, a: t.faq4A },
   ];
+  const faqs = language === "ku" ? fallbackFaqs : homeSource[language].faq.map(({ question, answer }) => ({ q: question, a: answer }));
 
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
