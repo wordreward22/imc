@@ -17,6 +17,7 @@ Compared the `wordreward22/imc` main branch at `48e58d4` with the original WordP
 - Rechecked the English and Arabic homepages against the exported WordPress pages. The overview, mission, vision, values, all four FAQ questions and answers, and four service card titles and descriptions now render from `src/data/homeSource.json`, generated directly from those exports.
 - Restored the Arabic homepage service and feature labels, and replaced shortened Arabic contact service options and addresses with the original copy.
 - Removed unsupported English and Arabic training curriculum, careers benefits, workshop hours, and numeric CTA claims that did not appear on the corresponding WordPress pages. The functional forms and new visual styling remain. The field-service benefit list now comes from the original page text.
+- Read the Revolution Slider rows and navigation menu items in the local SQL export. Restored the Arabic hero slide wording and menu labels. The first English slider's original “worldwide” distributor claim was kept corrected to “in Iraq” because the original English second slide and company overview both specify Iraq.
 
 ## Verification
 
@@ -36,3 +37,4 @@ Compared the `wordreward22/imc` main branch at `48e58d4` with the original WordP
 - The old Arabic Contact page prints `info@imc-iraq.com`, while the remake and the requested Resend destination use `info@imc.iq`. The latter remains the active contact address; the older address has not been verified.
 
 Run `node scripts/build-source-copy.mjs` and `node scripts/build-home-copy.mjs` to regenerate the source-backed copy from the exported WordPress pages. `scripts/audit-copy.mjs` compares the original text only with the pre-existing translation dictionary and is retained as a baseline for the changes that prompted this audit; it does not account for the new source-backed rendering.
+`scripts/inspect-slider-copy.mjs` reads the local SQL dump when given its path and lists the original Revolution Slider text layers.
