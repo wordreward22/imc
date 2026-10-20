@@ -15,9 +15,27 @@ export default function PowerGenerationPage() {
     <div className="bg-neutral-50 min-h-screen pb-24">
       {/* Page Hero Banner */}
       <SubpageHero
-        subtitle="Genuine innovation. Genuine expertise."
-        title="Power"
-        accentWord="Generation"
+        subtitle={
+          language === "ar"
+            ? "ابتكار أصيل وخبرة هندسية معتمدة"
+            : language === "ku"
+            ? "داهێنانی ڕاستەقینە، شارەزایی بێ وێنە"
+            : "Genuine innovation. Genuine expertise."
+        }
+        title={
+          language === "ar"
+            ? "توليد"
+            : language === "ku"
+            ? "بەرهەمهێنانی"
+            : "Power"
+        }
+        accentWord={
+          language === "ar"
+            ? "الطاقة"
+            : language === "ku"
+            ? "وزە"
+            : "Generation"
+        }
         watermark="Cummins"
         bgImage="/uploads/2023/05/imc-bg-slider.jpeg"
       />

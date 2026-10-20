@@ -3,44 +3,50 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Wrench, ShieldCheck, FileText, Settings, GraduationCap, ArrowRight } from "lucide-react";
+import { Wrench, FileText, Settings, GraduationCap, ArrowRight } from "lucide-react";
 import { SubpageHero } from "@/components/subpage/SubpageHero";
 import { CtaStatsBanner } from "@/components/subpage/CtaStatsBanner";
 import { useLanguage } from "@/context/LanguageContext";
-import { useQuote } from "@/context/QuoteContext";
+import { translations } from "@/data/translations";
+import { subpageTranslations } from "@/data/subpageTranslations";
 
 export default function ServicesPage() {
-  const { language } = useLanguage();
-  const { openQuote } = useQuote();
+  const { language, isRtl } = useLanguage();
+  const t = translations[language];
+  const ctaData = subpageTranslations[language].repairs.cta;
 
   const services = [
     {
-      title: "Field Service",
-      desc: "Reliable field service options for Cummins generators, providing prompt response, expert diagnosis, preventive maintenance, on-site repairs, and technical support to ensure optimal performance and minimize downtime.",
+      title: t.fieldService,
+      desc: t.fieldServiceDesc,
       href: "/repairs",
       image: "/uploads/2023/05/field-service.jpg",
       icon: Wrench,
+      pillar: language === "ar" ? "الركيزة الخدمية الأولى" : language === "ku" ? "کۆڵەکەی یەکەمی خزمەتگوزاری" : "Service Pillar 1",
     },
     {
-      title: "Service Contracts",
-      desc: "Service contracts for Cummins generators deliver peace of mind through scheduled maintenance, priority response, on-site repairs, and the use of genuine Cummins parts, guaranteeing uninterrupted power and optimal performance for customer business.",
+      title: t.serviceContracts,
+      desc: t.serviceContractsDesc,
       href: "/preventative-maintenance",
       image: "/uploads/2023/05/service-contracts-1.jpeg",
       icon: FileText,
+      pillar: language === "ar" ? "الركيزة الخدمية الثانية" : language === "ku" ? "کۆڵەکەی دووەمی خزمەتگوزاری" : "Service Pillar 2",
     },
     {
-      title: "Workshop Repairs",
-      desc: "Workshop repairs for Cummins generators exemplify our commitment to professionalism and excellence. With our team of highly skilled technicians and access to a wide range of specialized tools and equipment, we deliver expert diagnosis, repairs using genuine parts and stringent quality assurance.",
+      title: t.workshopRepairs,
+      desc: t.workshopRepairsDesc,
       href: "/master-rebuild",
       image: "/uploads/2023/05/engine-technician-shop-800.jpg",
       icon: Settings,
+      pillar: language === "ar" ? "الركيزة الخدمية الثالثة" : language === "ku" ? "کۆڵەکەی سێیەمی خزمەتگوزاری" : "Service Pillar 3",
     },
     {
-      title: "Training",
-      desc: "We believe that knowledge and skills are key to maximizing the performance and efficiency of your Cummins generators. That’s why we are proud to offer a range of comprehensive training programs. Apply now to boost your technical skills.",
+      title: t.training,
+      desc: t.trainingDesc,
       href: "/training",
       image: "/uploads/2023/05/engine-closeup-banner.jpg",
       icon: GraduationCap,
+      pillar: language === "ar" ? "الركيزة الخدمية الرابعة" : language === "ku" ? "کۆڵەکەی چوارەمی خزمەتگوزاری" : "Service Pillar 4",
     },
   ];
 
@@ -50,7 +56,7 @@ export default function ServicesPage() {
       <SubpageHero
         subtitle="IMC Iraq"
         title="IMC"
-        accentWord="Services"
+        accentWord={language === "ar" ? "الخدمات" : language === "ku" ? "خزمەتگوزارییەکان" : "Services"}
         watermark="IMC Iraq"
         bgImage="/uploads/2023/05/field-service.jpg"
       />
@@ -61,7 +67,7 @@ export default function ServicesPage() {
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
             <div className="flex items-center justify-center gap-3">
               <span className="text-[#E2231B] font-bold text-xs uppercase tracking-wider font-heading">
-                High Quality Services
+                {t.servicesSubtitle}
               </span>
               <svg
                 width="24"
@@ -70,28 +76,13 @@ export default function ServicesPage() {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  d="M0 2H24"
-                  stroke="#E2231B"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M6 6H24"
-                  stroke="#E2231B"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M12 10H24"
-                  stroke="#E2231B"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                />
+                <path d="M0 2H24" stroke="#E2231B" strokeWidth="2.5" strokeLinecap="round" />
+                <path d="M6 6H24" stroke="#E2231B" strokeWidth="2.5" strokeLinecap="round" />
+                <path d="M12 10H24" stroke="#E2231B" strokeWidth="2.5" strokeLinecap="round" />
               </svg>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-neutral-900 tracking-tight font-heading uppercase">
-              Always <span className="text-[#E2231B]">Customer Driven</span>
+              {t.servicesHeadline}
             </h2>
             <div className="w-16 h-1 bg-[#E2231B] mx-auto rounded-full mt-3" />
           </div>
@@ -113,12 +104,12 @@ export default function ServicesPage() {
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                      <div className="absolute top-4 right-4 w-12 h-12 rounded-2xl bg-black/80 backdrop-blur-md text-[#E2231B] flex items-center justify-center border border-white/10 shadow-lg">
+                      <div className={`absolute top-4 ${isRtl ? "left-4" : "right-4"} w-12 h-12 rounded-2xl bg-black/80 backdrop-blur-md text-[#E2231B] flex items-center justify-center border border-white/10 shadow-lg`}>
                         <Icon className="w-6 h-6" />
                       </div>
-                      <div className="absolute bottom-4 left-6">
+                      <div className={`absolute bottom-4 ${isRtl ? "right-6 text-right" : "left-6 text-left"}`}>
                         <span className="text-xs font-bold uppercase tracking-wider text-[#E2231B] block">
-                          Service Pillar {idx + 1}
+                          {item.pillar}
                         </span>
                         <h3 className="text-2xl font-bold text-white font-heading uppercase">
                           {item.title}
@@ -138,8 +129,8 @@ export default function ServicesPage() {
                       href={item.href}
                       className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#E2231B] hover:text-[#9E0202] transition-colors group-hover:translate-x-1 duration-200"
                     >
-                      <span>Explore {item.title}</span>
-                      <ArrowRight className="w-4 h-4" />
+                      <span>{item.title}</span>
+                      <ArrowRight className={`w-4 h-4 ${isRtl ? "rotate-180" : ""}`} />
                     </Link>
                   </div>
                 </div>
@@ -151,22 +142,11 @@ export default function ServicesPage() {
 
       {/* 3. CTA Stats Banner */}
       <CtaStatsBanner
-        title="Request A Quote"
-        desc="The Genuine Cummins parts that you buy from a Cummins distributor or authorized dealer are built to our exact standards, meeting or exceeding original specifications on your QSK engine."
-        buttonText="Request A Quote"
+        title={ctaData.title}
+        desc={ctaData.desc}
+        buttonText={ctaData.buttonText}
         bgImage="/uploads/2023/05/engine-technician-shop-800.jpg"
-        stats={[
-          {
-            number: "300+",
-            label: "Genuine overhaul kit components tested through lab analysis",
-            icon: "pin",
-          },
-          {
-            number: "100+",
-            label: "Years of perfecting the design and manufacturing of Genuine Cummins parts",
-            icon: "globe",
-          },
-        ]}
+        stats={ctaData.stats}
       />
     </div>
   );

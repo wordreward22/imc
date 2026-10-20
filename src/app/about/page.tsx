@@ -6,64 +6,44 @@ import { SubpageHero } from "@/components/subpage/SubpageHero";
 import { CircularFeatureBlock } from "@/components/subpage/CircularFeatureBlock";
 import { VideoModal } from "@/components/subpage/VideoModal";
 import { useLanguage } from "@/context/LanguageContext";
+import { subpageTranslations } from "@/data/subpageTranslations";
 import {
   ShieldCheck,
-  Target,
-  Eye,
   Award,
   Play,
   Users,
   Building2,
   Calendar,
   ThumbsUp,
-  Sparkles,
 } from "lucide-react";
 
 export default function AboutPage() {
-  const { language } = useLanguage();
+  const { language, isRtl } = useLanguage();
+  const t = subpageTranslations[language].about;
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
-  const valuesList = [
-    {
-      icon: ThumbsUp,
-      title: "Customer Satisfaction",
-      desc: "Delivering exceptional responsiveness, personalized technical support, and reliable power solutions that build enduring client partnerships across Iraq.",
-    },
-    {
-      icon: Award,
-      title: "Quality",
-      desc: "Providing uncompromised Cummins power generation systems, genuine OEM parts, and factory-trained engineering standards to ensure flawless operation.",
-    },
-    {
-      icon: ShieldCheck,
-      title: "Integrity",
-      desc: "Holding ourselves to the highest ethical and corporate governance benchmarks, providing transparent advisory and reliable service you can depend on.",
-    },
-  ];
+  const valueIcons = [ThumbsUp, Award, ShieldCheck];
 
   return (
     <div className="bg-white min-h-screen">
       {/* 1. Subpage Hero */}
       <SubpageHero
-        subtitle="IMC Iraq"
-        title="About"
-        accentWord="us"
-        watermark="IMC Iraq"
+        subtitle={t.hero.subtitle}
+        title={t.hero.title}
+        accentWord={t.hero.accentWord}
+        watermark={t.hero.watermark}
         bgImage="/uploads/2023/05/engine-technician-shop-800.jpg"
       />
 
       {/* 2. Mission & Vision Circular Feature Block */}
       <CircularFeatureBlock
-        subtitle="IMC Iraq"
-        title="Our Mission &"
-        accentWord="Vision"
-        paragraphs={[
-          "Our Mission: To provide the highest quality and most reliable Cummins engines and power solutions to our customers throughout Iraq.",
-          "Our Vision: To be the top preferred dealer through exceptional customer service, technical expertise, and innovative solutions.",
-        ]}
+        subtitle={t.circular.subtitle}
+        title={t.circular.title}
+        accentWord={t.circular.accentWord}
+        paragraphs={t.circular.paragraphs}
         image="/uploads/2023/03/slider-img-2.jpeg"
-        badgeTitle="Cummins Authorized Distributor"
-        badgeText="Only buy Genuine Cummins parts and accessories from Cummins distributors or Cummins authorized dealer locations"
+        badgeTitle={t.circular.badgeTitle}
+        badgeText={t.circular.badgeText}
       />
 
       {/* 3. Our Values Section */}
@@ -71,7 +51,7 @@ export default function AboutPage() {
         {/* Subtle Watermark */}
         <div className="absolute top-8 inset-x-0 flex items-center justify-center pointer-events-none select-none overflow-hidden opacity-5">
           <span className="text-[120px] sm:text-[180px] font-black uppercase text-neutral-900 tracking-widest font-heading">
-            IMC
+            {t.values.watermark}
           </span>
         </div>
 
@@ -79,7 +59,7 @@ export default function AboutPage() {
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
             <div className="flex items-center justify-center gap-3">
               <span className="text-[#E2231B] font-bold text-xs uppercase tracking-wider font-heading">
-                Core Principles
+                {t.values.subtitle}
               </span>
               <svg
                 width="24"
@@ -88,35 +68,20 @@ export default function AboutPage() {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  d="M0 2H24"
-                  stroke="#E2231B"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M6 6H24"
-                  stroke="#E2231B"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M12 10H24"
-                  stroke="#E2231B"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                />
+                <path d="M0 2H24" stroke="#E2231B" strokeWidth="2.5" strokeLinecap="round" />
+                <path d="M6 6H24" stroke="#E2231B" strokeWidth="2.5" strokeLinecap="round" />
+                <path d="M12 10H24" stroke="#E2231B" strokeWidth="2.5" strokeLinecap="round" />
               </svg>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-neutral-900 tracking-tight font-heading uppercase">
-              Our <span className="text-[#E2231B]">Values</span>
+              {t.values.title} <span className="text-[#E2231B]">{t.values.accentWord}</span>
             </h2>
             <div className="w-16 h-1 bg-[#E2231B] mx-auto rounded-full mt-3" />
           </div>
 
           <div className="flex flex-wrap justify-center gap-8">
-            {valuesList.map((val, idx) => {
-              const IconComponent = val.icon;
+            {t.values.items.map((val, idx) => {
+              const IconComponent = valueIcons[idx % valueIcons.length];
               return (
                 <div
                   key={idx}
@@ -163,10 +128,10 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-400 block">
-                      Watch Video
+                      {t.cummins.videoBadge}
                     </span>
                     <span className="text-xs sm:text-sm font-bold text-white uppercase font-heading">
-                      Powering A World That&apos;s Always On
+                      {t.cummins.videoSubtitle}
                     </span>
                   </div>
                 </button>
@@ -177,32 +142,28 @@ export default function AboutPage() {
             <div className="lg:col-span-6 space-y-6">
               <div className="flex items-center gap-3">
                 <span className="text-[#E2231B] font-bold text-xs uppercase tracking-wider font-heading">
-                  Since 1919
+                  {t.cummins.subtitle}
                 </span>
                 <div className="w-8 h-0.5 bg-[#E2231B]" />
               </div>
 
               <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 tracking-tight font-heading uppercase">
-                Cummins <span className="text-[#E2231B]">History</span> &amp; Values
+                {t.cummins.title} <span className="text-[#E2231B]">{t.cummins.accentWord}</span>
               </h2>
 
               <div className="space-y-4 text-neutral-600 text-sm sm:text-base leading-relaxed">
                 <div>
                   <h3 className="text-lg font-bold text-neutral-900 font-heading mb-1">
-                    Cummins History
+                    {t.cummins.historyTitle}
                   </h3>
-                  <p>
-                    Since 1919, Cummins has turned challenges into opportunities, always looking for new solutions to power a more prosperous world. Discover a company founded on unwavering values and willing to solve problems for our customers, communities and environment, to make the world a better place.
-                  </p>
+                  <p>{t.cummins.historyDesc}</p>
                 </div>
 
                 <div className="pt-2 border-t border-neutral-100">
                   <h3 className="text-lg font-bold text-neutral-900 font-heading mb-1">
-                    Cummins Values
+                    {t.cummins.valuesTitle}
                   </h3>
-                  <p>
-                    Cummins is synonymous with integrity, diversity and inclusion, teamwork, excellence and caring for others. These values are deeply rooted in our history, our culture and the people we employ around the world. Values are the backbone of our company. We stand tall because of them – even when standing for what is right comes at a cost.
-                  </p>
+                  <p>{t.cummins.valuesDesc}</p>
                 </div>
               </div>
 
@@ -212,7 +173,7 @@ export default function AboutPage() {
                   className="inline-flex items-center gap-3 px-7 py-3.5 bg-[#E2231B] hover:bg-[#9E0202] text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-colors shadow-lg shadow-red-600/20 group"
                 >
                   <Play className="w-4 h-4 fill-current group-hover:scale-110 transition-transform" />
-                  <span>Watch Cummins Story</span>
+                  <span>{t.cummins.watchButton}</span>
                 </button>
               </div>
             </div>
@@ -228,21 +189,21 @@ export default function AboutPage() {
             <div className="lg:col-span-7 space-y-6">
               <div className="flex items-center gap-3">
                 <span className="text-[#E2231B] font-bold text-xs uppercase tracking-wider font-heading">
-                  Our Group History
+                  {t.alkan.subtitle}
                 </span>
                 <div className="w-8 h-0.5 bg-[#E2231B]" />
               </div>
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight font-heading uppercase">
-                ALKAN HOLDING <span className="text-[#E2231B]">HISTORY</span>
+                {t.alkan.title} <span className="text-[#E2231B]">{t.alkan.accentWord}</span>
               </h2>
 
               <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
-                Alkan Holding Proudly Celebrated its 49th Anniversary in 2023 Under the Leadership of Khaled Nosseir. Alkan Group successfully operates a wide range of business lines, covering a variety of business activities, owns different companies, and runs through local subsidiaries and branches in 17 countries across the Middle East and Africa.
+                {t.alkan.p1}
               </p>
 
               <p className="text-neutral-400 text-sm sm:text-base leading-relaxed">
-                With more than 6000 professionals employed, Alkan Holding is actively engaged in multiple business fields, including Communication &amp; Information Technology, Real Estate, Manufacturing, Trade &amp; Distribution, Aviation, Travel &amp; Tourism, Textile &amp; Cotton Trade.
+                {t.alkan.p2}
               </p>
 
               <div className="pt-2 flex flex-wrap items-center gap-4">
@@ -251,7 +212,7 @@ export default function AboutPage() {
                   className="inline-flex items-center gap-3 px-7 py-3.5 bg-[#E2231B] hover:bg-[#9E0202] text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-colors shadow-lg shadow-red-600/30 group"
                 >
                   <Play className="w-4 h-4 fill-current group-hover:scale-110 transition-transform" />
-                  <span>Watch Alkan Video</span>
+                  <span>{t.alkan.videoButton}</span>
                 </button>
               </div>
             </div>
@@ -279,10 +240,10 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-6">
                   <span className="text-xs font-bold uppercase tracking-wider text-[#E2231B] block">
-                    IMC Iraq
+                    {t.alkan.badgeTag}
                   </span>
                   <span className="text-sm font-bold text-white uppercase font-heading">
-                    Cummins Authorized Distributor
+                    {t.alkan.badgeTitle}
                   </span>
                 </div>
               </div>
@@ -301,10 +262,10 @@ export default function AboutPage() {
                 <Calendar className="w-6 h-6" />
               </div>
               <div className="text-4xl sm:text-5xl font-black text-white font-heading">
-                49<span className="text-[#E2231B]">+</span>
+                {t.counters.c1Number}
               </div>
               <div className="text-neutral-400 text-xs sm:text-sm font-bold uppercase tracking-wider">
-                Years of Experience
+                {t.counters.c1Label}
               </div>
             </div>
 
@@ -314,10 +275,10 @@ export default function AboutPage() {
                 <Users className="w-6 h-6" />
               </div>
               <div className="text-4xl sm:text-5xl font-black text-white font-heading">
-                6000<span className="text-[#E2231B]">+</span>
+                {t.counters.c2Number}
               </div>
               <div className="text-neutral-400 text-xs sm:text-sm font-bold uppercase tracking-wider">
-                Employees
+                {t.counters.c2Label}
               </div>
             </div>
 
@@ -327,10 +288,10 @@ export default function AboutPage() {
                 <Building2 className="w-6 h-6" />
               </div>
               <div className="text-4xl sm:text-5xl font-black text-white font-heading">
-                17<span className="text-[#E2231B]">+</span>
+                {t.counters.c3Number}
               </div>
               <div className="text-neutral-400 text-xs sm:text-sm font-bold uppercase tracking-wider">
-                Subsidiaries &amp; Countries
+                {t.counters.c3Label}
               </div>
             </div>
           </div>
