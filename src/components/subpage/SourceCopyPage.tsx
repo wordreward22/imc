@@ -63,6 +63,81 @@ function Body({ blocks }: { blocks: Block[] }) {
   </div>;
 }
 
+function GenuineDifference({ section }: { section: Section }) {
+  const lead = section.body.find((block) => block.kind === "paragraph");
+  const claims = section.body.filter((block) => block.kind === "label");
+  const topics = section.body.filter((block) => block.kind === "listItem");
+  const explanation = section.body.filter((block) => block.kind === "paragraph" && block !== lead);
+  return <section className="bg-neutral-50 py-16 sm:py-24">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="max-w-3xl mb-10 sm:mb-14">
+        <span className="inline-block w-11 h-1 bg-[#E2231B] mb-5" aria-hidden="true" />
+        <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-neutral-900 leading-tight mb-5">{section.heading}</h2>
+        {lead && <p className="text-lg sm:text-xl text-neutral-600 leading-relaxed">{lead.text}</p>}
+      </div>
+      {claims.length > 0 && <div className={`grid ${claims.length > 3 ? "md:grid-cols-2 lg:grid-cols-4" : "md:grid-cols-3"} border-y border-neutral-300 mb-12 sm:mb-16`}>
+        {claims.map((claim, index) => <div key={index} className="py-6 md:py-8 md:px-7 first:md:ps-0 border-b last:border-b-0 md:border-b-0 md:border-e last:md:border-e-0 border-neutral-300">
+          <span className="block text-[#E2231B] text-xs font-bold tracking-widest mb-3" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+          <p className="font-heading font-bold text-neutral-900 text-base sm:text-lg leading-snug">{claim.text}</p>
+        </div>)}
+      </div>}
+      <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] gap-10 lg:gap-16 items-start">
+        {topics.length > 0 && <div className="bg-[#181818] rounded-2xl p-6 sm:p-8 text-white lg:sticky lg:top-24">
+          <ul className="divide-y divide-white/15">
+            {topics.map((topic, index) => <li key={index} className="flex gap-4 py-4 first:pt-0 last:pb-0">
+              <span className="text-[#FF4B44] text-xs font-bold pt-1" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+              <span className="font-heading font-semibold leading-snug">{topic.text}</span>
+            </li>)}
+          </ul>
+        </div>}
+        <div className="grid gap-0 min-w-0">
+          {explanation.map((block, index) => <p key={index} className="py-6 first:pt-0 border-b last:border-b-0 border-neutral-200 text-neutral-600 text-base leading-8 max-w-3xl">{block.text}</p>)}
+        </div>
+      </div>
+    </div>
+  </section>;
+}
+
+function MaintenanceContracts({ section, image, language }: { section: Section; image: string | null; language: Language }) {
+  const blocks = section.body;
+  const labelIndex = blocks.findIndex((block) => block.kind === "label");
+  const firstParagraph = blocks.find((block) => block.kind === "paragraph");
+  const finalParagraph = [...blocks].reverse().find((block) => block.kind === "paragraph");
+  const offerings = language === "en"
+    ? blocks.filter((block) => block.kind === "listItem")
+    : blocks.filter((block) => block.kind === "paragraph" && block !== firstParagraph && block !== finalParagraph).slice(-5);
+  const inspection = blocks.slice(labelIndex + 1).filter((block) => block.kind === "paragraph" && block !== finalParagraph && !offerings.includes(block));
+  const inspectionLabels = blocks.slice(labelIndex).filter((block) => block.kind === "label");
+  return <section className="bg-neutral-50 py-16 sm:py-24">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="grid lg:grid-cols-2 gap-9 lg:gap-16 items-center mb-14 sm:mb-20">
+        <div className="max-w-xl">
+          <span className="inline-block w-11 h-1 bg-[#E2231B] mb-5" aria-hidden="true" />
+          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-neutral-900 leading-tight mb-6">{section.heading}</h2>
+          {firstParagraph && <p className="text-neutral-600 text-base sm:text-lg leading-8">{firstParagraph.text}</p>}
+        </div>
+        {image && <div className="relative min-h-64 sm:min-h-80 overflow-hidden rounded-2xl bg-neutral-100">
+          <Image src={image} alt={section.heading} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+        </div>}
+      </div>
+      <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] items-start gap-5 lg:gap-10 mb-12 sm:mb-16">
+        <div className="border-s-4 border-[#E2231B] ps-6 py-2">
+          {inspectionLabels[0] && <h3 className="font-heading font-bold text-xl sm:text-2xl mb-5">{inspectionLabels[0].text}</h3>}
+          {inspectionLabels.length > 1 && <ul className="space-y-3">{inspectionLabels.slice(1).map((block, index) => <li key={index} className="flex gap-3 text-neutral-600 text-sm leading-6"><span className="text-[#E2231B]" aria-hidden="true">•</span>{block.text}</li>)}</ul>}
+        </div>
+        <div className="rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8"><Body blocks={inspection} /></div>
+      </div>
+      {offerings.length > 0 && <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-px bg-neutral-200 border border-neutral-200 rounded-2xl overflow-hidden mb-10 sm:mb-14">
+        {offerings.map((block, index) => <div key={index} className={`bg-white p-6 sm:p-8 min-w-0 ${index < 3 ? "lg:col-span-2" : "lg:col-span-3"}`}>
+          <span className="block text-[#E2231B] text-xs font-bold tracking-widest mb-4" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+          <p className="text-neutral-800 text-sm sm:text-base leading-7 font-medium">{block.text}</p>
+        </div>)}
+      </div>}
+      {finalParagraph && finalParagraph !== firstParagraph && <p className="max-w-4xl border-s-4 border-[#E2231B] ps-6 text-neutral-600 text-base sm:text-lg leading-8">{finalParagraph.text}</p>}
+    </div>
+  </section>;
+}
+
 function groupContent(sections: Section[], pageKey: string): ContentGroup[] {
   const groups: ContentGroup[] = [];
   const featureCounts: Record<string, number> = { fleetGuard: 4, oils: 4, masterRebuild: 5 };
@@ -146,6 +221,12 @@ export function SourceCopyPage({ pageKey, hero, image }: { pageKey: string; hero
       const sectionImage = media[index] || null;
       const hasExtendedBody = Boolean(sectionImage && section.body.length > 5);
       if (section.body.length === 0 && index === groups.length - 1) return null;
+      if (pageKey === "cumminsKit" && section.body.filter((block) => block.kind === "listItem").length >= 3 && section.body.filter((block) => block.kind === "paragraph").length >= 4) {
+        return <GenuineDifference key={`${section.heading}-${index}`} section={section} />;
+      }
+      if (pageKey === "preventativeMaintenance" && section.body.some((block) => block.kind === "label") && section.body.filter((block) => block.kind === "paragraph").length >= 2) {
+        return <MaintenanceContracts key={`${section.heading}-${index}`} section={section} image={sectionImage} language={language} />;
+      }
       return <section key={`${section.heading}-${index}`} className={index % 2 ? "bg-white" : "bg-neutral-50"}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
           <div className={sectionImage ? "grid gap-8 lg:gap-14 items-start lg:grid-cols-2" : "max-w-4xl"}>
