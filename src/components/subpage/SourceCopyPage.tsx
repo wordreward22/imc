@@ -16,6 +16,7 @@ type SourcePages = Record<Language, Record<string, SourcePage | undefined>>;
 type Section = { heading: string; eyebrow?: string; body: Block[] };
 type ContentGroup = { kind: "section"; section: Section } | { kind: "cards"; heading?: string; sections: Section[] };
 type Hero = { subtitle: string; title: string; accentWord: string; watermark: string };
+const authorizationHeading = /authorized|distribut|المعتمد|المعتمدة|دابین|بریکار/i;
 
 export function getSourceCopy(language: Language, pageKey: string): SourcePage | undefined {
   const page = (sourceCopy as SourcePages)[language][pageKey];
@@ -29,26 +30,32 @@ export function getSourceParagraphs(language: Language, pageKey: string): string
 function organizeBlocks(blocks: Block[], title: string) {
   const sections: Section[] = [];
   let eyebrow = "";
-  for (const block of blocks) {
+  for (let index = 0; index < blocks.length; index++) {
+    const block = blocks[index];
     if (block.kind === "heading") {
       if (block.text.trim().toLocaleLowerCase() === title.trim().toLocaleLowerCase() && sections.length < 2) continue;
       sections.push({ heading: block.text, eyebrow: eyebrow || undefined, body: [] });
       eyebrow = "";
     } else if (block.kind === "label" && !sections.length) {
       eyebrow = block.text;
+    } else if (block.kind === "label" && sections.length && blocks[index + 1]?.kind === "heading" && (authorizationHeading.test(sections[sections.length - 1].heading) || sections[sections.length - 1].body.at(-1)?.kind === "paragraph")) {
+      eyebrow = block.text;
     } else {
       if (!sections.length) sections.push({ heading: title, body: [] });
+      if (block.kind === "paragraph" && authorizationHeading.test(sections[sections.length - 1].heading)) {
+        sections.push({ heading: title, body: [] });
+      }
       sections[sections.length - 1].body.push(block);
     }
   }
-  const introIndex = sections.findIndex((section) => section.body.some((block) => block.kind === "paragraph"));
+  const introIndex = sections.findIndex((section) => !authorizationHeading.test(section.heading) && section.body.some((block) => block.kind === "paragraph"));
   const intro = sections[introIndex >= 0 ? introIndex : 0];
-  return { intro, rest: sections.slice(introIndex >= 0 ? introIndex + 1 : 1) };
+  return { intro, rest: sections.filter((section, index) => index !== (introIndex >= 0 ? introIndex : 0) && (index > introIndex || authorizationHeading.test(section.heading) || section.body.length > 0)) };
 }
 
 function Body({ blocks }: { blocks: Block[] }) {
   return <div className="space-y-4 text-neutral-600 text-sm sm:text-base leading-7 sm:leading-8">
-    {blocks.map((block, index) => block.kind === "listItem" ? (
+    {blocks.filter((block) => block.text.trim() !== "IMC Iraq Fleetguard").map((block, index) => block.kind === "listItem" ? (
       <p key={index} className="flex gap-3"><span className="text-[#E2231B] font-bold" aria-hidden="true">•</span><span>{block.text}</span></p>
     ) : block.kind === "label" ? (
       <p key={index} className="font-semibold text-neutral-800">{block.text}</p>
@@ -96,8 +103,7 @@ export function SourceCopyPage({ pageKey, hero, image }: { pageKey: string; hero
     : { ...hero, title: originalHeading, accentWord: "" };
   const { intro, rest } = organizeBlocks(page.blocks, page.title);
   const quoteHeading = /quote|اقتباس|عرض سعر|داوا|نرخ/i;
-  const authHeading = /authorized|distribut|المعتمد|المعتمدة|دابین|بریکار/i;
-  const authorization = rest.find((section) => authHeading.test(section.heading));
+  const authorization = rest.find((section) => authorizationHeading.test(section.heading));
   const quote = rest.find((section) => quoteHeading.test(section.heading));
   const content = rest.filter((section) => section !== authorization && section !== quote);
   const groups = groupContent(content, pageKey);
@@ -128,8 +134,8 @@ export function SourceCopyPage({ pageKey, hero, image }: { pageKey: string; hero
       if (group.kind === "cards") return <section key={`cards-${index}`} className="bg-neutral-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
           {group.heading && <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-neutral-900 mb-9">{group.heading}</h2>}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {group.sections.map((item) => <article key={item.heading} className="rounded-2xl bg-white border border-neutral-200 border-t-4 border-t-[#E2231B] p-6 shadow-sm">
+          <div className={`grid gap-5 ${group.sections.length === 4 ? "md:grid-cols-2" : group.sections.length === 5 ? "md:grid-cols-2 lg:grid-cols-6" : "md:grid-cols-2 lg:grid-cols-3"}`}>
+            {group.sections.map((item, cardIndex) => <article key={item.heading} className={`rounded-2xl bg-white border border-neutral-200 border-t-4 border-t-[#E2231B] p-6 shadow-sm ${group.sections.length === 5 ? (cardIndex < 3 ? "lg:col-span-2" : cardIndex === 4 ? "md:col-span-2 lg:col-span-3" : "lg:col-span-3") : ""}`}>
               <h3 className="font-heading font-bold text-lg text-neutral-900 mb-3">{item.heading}</h3>
               <Body blocks={item.body} />
             </article>)}
@@ -138,20 +144,22 @@ export function SourceCopyPage({ pageKey, hero, image }: { pageKey: string; hero
       </section>;
       const section = group.section;
       const sectionImage = media[index] || null;
+      const hasExtendedBody = Boolean(sectionImage && section.body.length > 5);
       if (section.body.length === 0 && index === groups.length - 1) return null;
       return <section key={`${section.heading}-${index}`} className={index % 2 ? "bg-white" : "bg-neutral-50"}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-          <div className="grid gap-8 lg:gap-14 items-center lg:grid-cols-2">
-            <div className="max-w-xl">
+          <div className={sectionImage ? "grid gap-8 lg:gap-14 items-start lg:grid-cols-2" : "max-w-4xl"}>
+            <div className={sectionImage ? "max-w-xl" : ""}>
               <span className="inline-block w-11 h-1 bg-[#E2231B] mb-5" aria-hidden="true" />
               {section.eyebrow && <p className="text-[#E2231B] text-xs font-bold uppercase tracking-wider mb-3">{section.eyebrow}</p>}
-              <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-neutral-900 leading-tight">{section.heading}</h2>
-              {sectionImage && <div className="mt-6"><Body blocks={section.body} /></div>}
+              <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-neutral-900 leading-tight mb-6">{section.heading}</h2>
+              <Body blocks={hasExtendedBody ? section.body.slice(0, 1) : section.body} />
             </div>
-            {sectionImage ? <div className="relative min-h-64 sm:min-h-80 overflow-hidden rounded-2xl bg-neutral-100">
+            {sectionImage && <div className="relative min-h-64 sm:min-h-80 overflow-hidden rounded-2xl bg-neutral-100">
               <Image src={sectionImage} alt={section.heading} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
-            </div> : <Body blocks={section.body} />}
+            </div>}
           </div>
+          {hasExtendedBody && <div className="max-w-4xl mt-8 sm:mt-10"><Body blocks={section.body.slice(1)} /></div>}
         </div>
       </section>;
     })}
@@ -163,7 +171,7 @@ export function SourceCopyPage({ pageKey, hero, image }: { pageKey: string; hero
     <section className="bg-[#111111] text-white py-14 sm:py-20 border-t-4 border-[#E2231B]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
         <div className="max-w-2xl">
-          <h2 className="text-2xl sm:text-3xl font-extrabold font-heading">{quote?.heading || (content[content.length - 1]?.body.length === 0 ? content[content.length - 1].heading : page.title)}</h2>
+          <h2 className="text-2xl sm:text-3xl font-extrabold font-heading">{quote?.heading || translations[language].getQuote}</h2>
           {quote && <div className="mt-3 [&_div]:text-neutral-300"><Body blocks={quote.body} /></div>}
         </div>
         <div className="flex flex-wrap gap-3">
