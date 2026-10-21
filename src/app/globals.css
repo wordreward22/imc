@@ -60,7 +60,7 @@ body {
 
 @font-face {
   font-family: "IMC Sorani";
-  src: url("/fonts/NotoSansArabic-arabic.woff2") format("woff2");
+  src: url("/fonts/NotoSansArabic-arabic.woff2?v=20261021") format("woff2");
   font-style: normal;
   font-weight: 400 800;
   font-display: swap;
@@ -69,7 +69,7 @@ body {
 
 @font-face {
   font-family: "IMC Sorani";
-  src: url("/fonts/NotoSansArabic-latin.woff2") format("woff2");
+  src: url("/fonts/NotoSansArabic-latin.woff2?v=20261021") format("woff2");
   font-style: normal;
   font-weight: 400 800;
   font-display: swap;
