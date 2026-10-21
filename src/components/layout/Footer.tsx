@@ -176,6 +176,7 @@ export const Footer: React.FC = () => {
                 <div>
                   <p className="text-white font-medium">{t.baghdadOffice}</p>
                   <p className="text-neutral-500 mt-0.5">{t.basraOffice}</p>
+                  <p className="text-neutral-500 mt-0.5">{t.erbilOffice}</p>
                 </div>
               </div>
               <div className="flex items-center gap-2.5">

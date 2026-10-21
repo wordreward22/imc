@@ -28,7 +28,7 @@ export const translations = {
     // TopBar
     phone: "+964 7842 000 220",
     email: "info@imc.iq",
-    address: "Baghdad - Ewairij / Basra - Hamdan",
+    address: "Baghdad - Ewairij / Basra - Hamdan / Erbil",
     workingHours: "Sun - Thu: 8:00 AM - 5:00 PM",
 
     // Hero
@@ -107,6 +107,7 @@ export const translations = {
     officialInfo: "Official Info",
     baghdadOffice: "Baghdad: Ewairij Industrial Zone",
     basraOffice: "Basra: Hamdan Street Branch",
+    erbilOffice: "Erbil Branch",
     rightsReserved: "© 2026 IMC Iraq – All rights reserved.",
   },
 
@@ -139,7 +140,7 @@ export const translations = {
     // TopBar
     phone: "+964 7842 000 220",
     email: "info@imc.iq",
-    address: "بغداد - عويريج / البصرة - حمدان",
+    address: "بغداد - عويريج / البصرة - حمدان / أربيل",
     workingHours: "الأحد - الخميس: 8:00 ص - 5:00 م",
 
     // Hero
@@ -218,6 +219,7 @@ export const translations = {
     officialInfo: "معلومات الاتصال",
     baghdadOffice: "بغداد: المنطقة الصناعية - عويريج",
     basraOffice: "البصرة: فرع شارع حمدان",
+    erbilOffice: "فرع أربيل",
     rightsReserved: "© 2026 أى إم سى العراق – جميع الحقوق محفوظة.",
   },
 
@@ -250,7 +252,7 @@ export const translations = {
     // TopBar
     phone: "+964 7842 000 220",
     email: "info@imc.iq",
-    address: "بەغدا - عەویریج / بەسڕە - حەمدان",
+    address: "بەغدا - عەویریج / بەسڕە - حەمدان / هەولێر",
     workingHours: "یەکشەممە - پێنجشەممە: 8:00 بەیانی - 5:00 ئێوارە",
 
     // Hero
@@ -329,6 +331,7 @@ export const translations = {
     officialInfo: "زانیاری پەیوەندی",
     baghdadOffice: "بەغدا: ناوچەی پیشەسازی عەویریج",
     basraOffice: "بەسڕە: لقی شەقامی حەمدان",
+    erbilOffice: "لقی هەولێر",
     rightsReserved: "© 2026 ئای ئێم سی عێراق – هەموو مافەکان پارێزراون.",
   },
 };

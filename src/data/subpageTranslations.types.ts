@@ -238,8 +238,10 @@ export interface ContactTranslations {
     accentWord: string;
     desc: string;
     officeLabel: string;
+    branchLabel: string;
     baghdadAddress: string;
     basraAddress: string;
+    erbilBranch: string;
     phoneLabel: string;
     phoneValue: string;
     emailLabel: string;

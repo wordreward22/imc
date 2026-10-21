@@ -98,7 +98,7 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              {/* 4 Fancy Contact Cards */}
+              {/* Branches and contact details */}
               <div className="space-y-4">
                 {/* Baghdad Office */}
                 <div className="flex items-start gap-4 p-5 rounded-2xl bg-neutral-50 border border-neutral-200/90 shadow-sm hover:border-[#E2231B]/40 transition-colors">
@@ -126,6 +126,21 @@ export default function ContactPage() {
                     </h3>
                     <p className="text-sm font-bold text-neutral-900 mt-0.5">
                       {t.narrative.basraAddress}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Erbil Branch */}
+                <div className="flex items-start gap-4 p-5 rounded-2xl bg-neutral-50 border border-neutral-200/90 shadow-sm hover:border-[#E2231B]/40 transition-colors">
+                  <div className="w-12 h-12 rounded-xl bg-red-50 text-[#E2231B] flex items-center justify-center flex-shrink-0 border border-red-100">
+                    <MapPin className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-xs font-bold uppercase tracking-wider text-neutral-400">
+                      {t.narrative.branchLabel}
+                    </h3>
+                    <p className="text-sm font-bold text-neutral-900 mt-0.5">
+                      {t.narrative.erbilBranch}
                     </p>
                   </div>
                 </div>
