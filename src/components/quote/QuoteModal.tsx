@@ -56,6 +56,9 @@ export const QuoteModal: React.FC = () => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-fadeIn">
       <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="quote-modal-title"
         className="relative w-full max-w-xl bg-white rounded-2xl shadow-2xl overflow-hidden border border-neutral-200 max-h-[90vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
@@ -63,7 +66,7 @@ export const QuoteModal: React.FC = () => {
         <div className="bg-[#111111] text-white p-5 flex items-center justify-between border-b-2 border-[#E2231B]">
           <div className="flex items-center gap-2.5">
             <div>
-              <h3 className="font-bold text-lg text-white">
+              <h3 id="quote-modal-title" className="font-bold text-lg text-white">
                 {language === "en"
                   ? "Request an Official Quote"
                   : language === "ar"

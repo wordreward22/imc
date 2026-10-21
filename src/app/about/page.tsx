@@ -207,15 +207,6 @@ export default function AboutPage() {
 
               {!aboutParagraphs.length && <p className="text-neutral-400 text-sm sm:text-base leading-relaxed">{t.alkan.p2}</p>}
 
-              <div className="pt-2 flex flex-wrap items-center gap-4">
-                <button
-                  onClick={() => setActiveVideo("https://www.youtube.com/watch?v=QrZOzLDVVAs")}
-                  className="inline-flex items-center gap-3 px-7 py-3.5 bg-[#E2231B] hover:bg-[#9E0202] text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-colors shadow-lg shadow-red-600/30 group"
-                >
-                  <Play className="w-4 h-4 fill-current group-hover:scale-110 transition-transform" />
-                  <span>{t.alkan.videoButton}</span>
-                </button>
-              </div>
             </div>
 
             {/* Right Visual Card with Logo */}

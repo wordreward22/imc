@@ -7,6 +7,7 @@ import { Product } from "@/data/products";
 import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/data/translations";
 import { useQuote } from "@/context/QuoteContext";
+import { ProductDetailsModal } from "./ProductDetailsModal";
 
 interface ProductCardProps {
   product: Product;
@@ -18,6 +19,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const { openQuote } = useQuote();
 
   const [imageError, setImageError] = useState(false);
+  const [detailsOpen, setDetailsOpen] = useState(false);
 
   const imgSrc =
     !imageError && product.images && product.images.length > 0 && product.images[0]
@@ -28,7 +30,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
   return (
     <div className="group bg-white rounded-2xl overflow-hidden border border-neutral-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between hover:border-[#E2231B]">
-      <div>
+      <button type="button" onClick={() => setDetailsOpen(true)} aria-label={language === "en" ? `View full specifications for ${product.name}` : language === "ar" ? `عرض المواصفات الكاملة لـ ${product.name}` : `بینینی تایبەتمەندییە تەواوەکانی ${product.name}`} className="block w-full text-start focus-visible:outline-2 focus-visible:outline-[#E2231B]">
         {/* Generator Image Header */}
         <div className="relative h-56 w-full bg-neutral-50 p-6 flex items-center justify-center overflow-hidden border-b border-neutral-200">
           <div className="relative w-full h-full group-hover:scale-105 transition-transform duration-500">
@@ -50,7 +52,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         </div>
 
         {/* Product Info */}
-        <div className="p-5 space-y-4">
+          <div className="p-5 space-y-4">
           <div>
             <span className="text-[11px] font-bold uppercase tracking-wider text-[#E2231B]">
               Cummins Power Generation
@@ -58,6 +60,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             <h3 className="text-xl font-bold text-neutral-900 group-hover:text-[#E2231B] transition-colors font-heading mt-0.5">
               {product.name}
             </h3>
+            <span className="inline-block mt-2 text-xs font-bold text-[#E2231B]">{language === "en" ? "View full specifications" : language === "ar" ? "عرض المواصفات الكاملة" : "بینینی تایبەتمەندییە تەواوەکان"}</span>
           </div>
 
           {/* Key Spec Grid */}
@@ -88,7 +91,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             )}
           </div>
         </div>
-      </div>
+      </button>
 
       {/* Action Footer */}
       <div className="p-5 pt-0">
@@ -99,6 +102,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           <span>{t.requestQuoteForThis}</span>
         </button>
       </div>
+      {detailsOpen && <ProductDetailsModal product={product} onClose={() => setDetailsOpen(false)} />}
     </div>
   );
 };
