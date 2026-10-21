@@ -58,13 +58,32 @@ body {
   text-align: right;
 }
 
-/* Tailwind's Latin font classes override the inherited RTL font on descendants. */
-html[lang="ku"] body,
-html[lang="ku"] :is(.font-sans, .font-heading, .font-arabic) {
-  font-family: var(--font-cairo), Tahoma, sans-serif;
+@font-face {
+  font-family: "IMC Sorani";
+  src: url("/fonts/NotoSansArabic-arabic.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-08FF, U+200C-200E, U+FB50-FDFF, U+FE70-FEFC;
 }
 
-html[lang="ku"] :is(.tracking-tight, .tracking-wide, .tracking-wider, .tracking-widest) {
+@font-face {
+  font-family: "IMC Sorani";
+  src: url("/fonts/NotoSansArabic-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215;
+}
+
+/* Tailwind's Latin font classes override the inherited RTL font on descendants. */
+html[lang="ckb"] body,
+html[lang="ckb"] :is(.font-sans, .font-heading, .font-arabic) {
+  font-family: "IMC Sorani", Tahoma, sans-serif;
+  font-synthesis-weight: none;
+}
+
+html[lang="ckb"] :is(.tracking-tight, .tracking-wide, .tracking-wider, .tracking-widest) {
   letter-spacing: normal;
 }
 

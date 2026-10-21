@@ -35,7 +35,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
     localStorage.setItem("imc_lang", lang);
     if (typeof document !== "undefined") {
       document.documentElement.dir = lang === "en" ? "ltr" : "rtl";
-      document.documentElement.lang = lang;
+      document.documentElement.lang = lang === "ku" ? "ckb" : lang;
     }
   };
 
@@ -45,7 +45,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
   useEffect(() => {
     if (typeof document !== "undefined") {
       document.documentElement.dir = direction;
-      document.documentElement.lang = language;
+      document.documentElement.lang = language === "ku" ? "ckb" : language;
     }
   }, [direction, language]);
 
