@@ -1,23 +1,15 @@
-# cPanel upload
+# Deploy IMC from GitHub `main`
 
-1. In cPanel, set the domain's document root to the folder where IMC should appear. Keep PHP enabled (8.1 or newer) with the cURL extension.
-2. Upload and extract `imc-cpanel-upload.zip` **inside that document root**. `index.html`, `_next/`, `uploads/`, and `api/` should appear directly in it.
-3. Visit the homepage and an inner page such as `/power-generation/`. Check English, Arabic, and Kurdish.
-4. To enable the forms, put `imc-config.php` in the directory directly above the document root. Start from `deploy/imc-config.example.php`, then enter `resend_api_key` and a verified `from_email`. Keep it outside the web-accessible folder.
-5. Set PHP `upload_max_filesize` to at least `10M` and `post_max_size` to at least `14M`, then test a contact request and a careers CV upload. Check that the messages arrive at `info@imc.iq`.
+The `main` branch contains both the editable TypeScript source and the ready-to-serve `site/` directory. The production website needs PHP 8.1+ with cURL, but **does not need Node.js**. Node.js is only used when changing the site locally and rebuilding `site/`.
 
-The website itself runs from static files. The PHP file at `/api/submit.php` handles the five forms and sends them through Resend. No Node.js service, database, or build step is needed **on cPanel**. Rebuild on your own computer after future source changes, then replace the deployed files. The Resend configuration stays in place because it is outside the document root.
+## cPanel
 
-## Deploy from GitHub instead of uploading the ZIP
+1. Clone `https://github.com/wordreward22/imc.git` with cPanel Git Version Control into a new directory outside the public document root, such as `/home/ACCOUNT/imc-repo`.
+2. Set the IMC domain's document root to the checkout's `site` directory, such as `/home/ACCOUNT/imc-repo/site`. Its `index.html`, `_next/`, `uploads/`, and `api/` must be directly under that root.
+3. Keep PHP enabled for the domain. Visit the homepage and an inner page such as `/power-generation/` and check the language switcher.
+4. To enable forms, copy [`deploy/imc-config.example.php`](deploy/imc-config.example.php) to `imc-config.php` **one directory above the Git checkout**, such as `/home/ACCOUNT/imc-config.php`. Add the Resend API key and a sender verified in Resend. The config stays outside the document root and the Git checkout.
+5. Set PHP `upload_max_filesize` to at least `10M` and `post_max_size` to at least `14M`. Test a contact request and careers CV upload, then confirm delivery to `info@imc.iq`.
 
-The [`codex/cpanel-ready`](https://github.com/wordreward22/imc/tree/codex/cpanel-ready) branch contains the **built website files at the repository root**. The `codex/cpanel-static-deploy` branch contains editable TypeScript source. Select `codex/cpanel-ready` when hosting the website; cPanel does not need to run `npm` or Node.js.
+For future updates, pull `main` in cPanel. The tracked `site/` folder is already built; cPanel does not run `npm`. If you edit the TypeScript source locally, run `npm run build:site`, commit the changed source and `site/` files, and push them to `main`.
 
-In cPanel Git Version Control, clone `https://github.com/wordreward22/imc.git` into a new empty directory, then use **Manage → Checked-Out Branch** to select `codex/cpanel-ready`. Set the IMC domain's document root to that checkout directory. Its `index.html` and route folders will then be directly under the document root. cPanel [supports switching the checked-out branch](https://docs.cpanel.net/cpanel/files/git-version-control/#manage-repositories). If the account requires the Git checkout to remain outside the document root, cPanel's **Pull or Deploy** option requires a `.cpanel.yml` with the account's actual document-root path; add that after the hosting path is known. The Resend config still belongs one directory above the document root.
-
-After future source edits, rebuild and republish the built files to `codex/cpanel-ready` before pulling updates on cPanel. Updating the TypeScript source branch alone does not update the live files.
-
-To make a fresh ZIP on Windows:
-
-```powershell
-.\scripts\package-cpanel.ps1
-```
+Forms require the private Resend configuration. Without it, the pages still work and forms explain that submissions are not configured.

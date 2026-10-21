@@ -124,8 +124,8 @@ if ($type === 'careers') {
     error_response(400, 'UNEXPECTED_FILE');
 }
 
-// Keep this file one directory above the site's document root.
-$configFile = dirname(__DIR__, 2) . '/imc-config.php';
+// The site/ directory is the document root. Keep credentials outside its Git checkout.
+$configFile = dirname(__DIR__, 3) . '/imc-config.php';
 $config = is_file($configFile) ? require $configFile : [];
 $apiKey = is_array($config) ? ($config['resend_api_key'] ?? '') : '';
 $from = is_array($config) ? ($config['from_email'] ?? '') : '';

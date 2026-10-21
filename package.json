@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev -p 3000",
     "build": "next build",
+    "build:site": "next build && node scripts/build-site.mjs",
     "start": "next start -p 3000",
     "lint": "next lint"
   },
