@@ -17,12 +17,12 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-[#1f1f1f]">
           {/* Col 1: About Brand */}
           <div className="space-y-4">
-            <div className="relative h-14 w-44">
+            <div className="relative h-16 w-48 rounded-lg bg-white p-2 shadow-sm">
               <Image
                 src="/uploads/2023/02/imc-logo-3d.png"
                 alt="IMC Iraq - Authorized Cummins Seller"
                 fill
-                className="object-contain brightness-110"
+                className="object-contain p-2"
               />
             </div>
             <p className="text-white text-sm font-semibold font-heading">

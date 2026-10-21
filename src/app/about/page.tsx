@@ -220,10 +220,10 @@ export default function AboutPage() {
 
             {/* Right Visual Card with Logo */}
             <div className="lg:col-span-5 space-y-6">
-              <div className="relative h-64 sm:h-72 rounded-3xl overflow-hidden border border-neutral-800 bg-neutral-900/60 flex items-center justify-center p-8">
-                <div className="relative w-48 h-20">
+              <div className="relative h-64 sm:h-72 rounded-3xl overflow-hidden border border-neutral-200 bg-white shadow-xl flex items-center justify-center p-8">
+                <div className="relative w-56 h-28 sm:w-64 sm:h-32">
                   <Image
-                    src="/uploads/2023/05/holding-White-1.png"
+                    src="/uploads/2023/02/alkan_logo.png"
                     alt="Alkan Holding"
                     fill
                     className="object-contain"

@@ -38,8 +38,8 @@ export const AboutSection: React.FC = () => {
           <div className="relative">
             <div className="relative h-[420px] sm:h-[480px] w-full rounded-2xl overflow-hidden shadow-xl border-4 border-white">
               <Image
-                src="/uploads/2023/03/slider-img-2.jpeg"
-                alt="IMC Cummins Iraq Facility"
+                src="/uploads/2023/05/imc-slider-2.jpeg"
+                alt="Cummins generators in a power facility"
                 fill
                 className="object-cover object-center"
               />

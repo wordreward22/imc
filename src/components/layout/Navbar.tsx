@@ -160,7 +160,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-[65px] bg-white border-b border-neutral-200 shadow-2xl max-h-[85vh] overflow-y-auto p-4 animate-fadeIn">
+        <div className="lg:hidden absolute inset-x-0 top-full bg-white border-b border-neutral-200 shadow-2xl max-h-[calc(100dvh-8rem)] overflow-y-auto p-4 animate-fadeIn">
           <div className="flex flex-col space-y-2">
             {navLinks.map((link) => (
               <div key={link.title} className="border-b border-neutral-100 pb-2">

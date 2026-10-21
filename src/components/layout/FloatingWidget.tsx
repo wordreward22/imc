@@ -18,21 +18,21 @@ export const FloatingWidget: React.FC = () => {
 
   return (
     <div
-      className={`fixed bottom-6 ${
-        isRtl ? "left-6" : "right-6"
-      } z-50 flex items-center gap-2.5`}
+      className={`fixed bottom-4 sm:bottom-6 ${
+        isRtl ? "left-4 sm:left-6" : "right-4 sm:right-6"
+      } z-40 flex items-center gap-2.5`}
     >
       {/* Speech Bubble Tooltip: "Reach us" */}
       <a
         href={waUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="bg-white text-[#222222] text-xs font-semibold px-3 py-1.5 rounded-lg shadow-md border border-neutral-200 hover:text-[#E2231B] transition-colors flex items-center gap-1"
+        className="hidden sm:flex bg-white text-[#222222] text-xs font-semibold px-3 py-1.5 rounded-lg shadow-md border border-neutral-200 hover:text-[#E2231B] transition-colors items-center gap-1"
       >
         <span>{language === "en" ? "Reach us" : language === "ar" ? "تواصل معنا" : "پەیوەندیمان پێوە بکەن"}</span>
       </a>
 
-      {/* Circular Black Button with Red Badge 1 */}
+      {/* Compact contact shortcut */}
       <a
         href={waUrl}
         target="_blank"
@@ -41,10 +41,6 @@ export const FloatingWidget: React.FC = () => {
         className="relative w-12 h-12 rounded-full bg-[#000000] hover:bg-[#E2231B] text-white flex items-center justify-center shadow-xl transition-transform hover:scale-110 active:scale-95"
       >
         <MessageSquare className="w-5 h-5 fill-current" />
-        {/* Red notification badge '1' */}
-        <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-[#E2231B] text-white text-[10px] font-bold flex items-center justify-center border border-white">
-          1
-        </span>
       </a>
     </div>
   );
