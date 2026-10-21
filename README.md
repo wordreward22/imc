@@ -1,69 +1,26 @@
-# IMC Iraq — 1:1 Pure TypeScript Modern Remake
+# IMC Iraq website
 
-A 1:1 high-performance TypeScript remake of [http://imc.local](http://imc.local) (**IMC Iraq — Award Winning Cummins Authorized Seller**), completely decoupled from WordPress, PHP, and MySQL.
+The site is written in TypeScript with Next.js, React, Tailwind CSS, and Framer Motion. `npm run build` exports static HTML, CSS, JavaScript, and images to `out/`. **The published site does not need Node.js.** It needs ordinary cPanel hosting with PHP 8.1+ and the PHP cURL extension for the forms.
 
-Built with **Next.js 15 (App Router) + TypeScript + Tailwind CSS + Framer Motion + Lucide Icons**.
+## Local development
 
----
-
-## ⚡ What Changed vs. WordPress?
-
-| Feature | Old WordPress Site (`imc.local`) | New TypeScript App (`IMC`) |
-| :--- | :--- | :--- |
-| **Engine / Runtime** | PHP 8.2 + MySQL + Nginx | **Next.js 15 + TypeScript** |
-| **Performance** | Sluggish TTFB (~800ms+), heavy plugins | **Instant Sub-50ms static delivery** |
-| **Slider** | Revolution Slider (heavy jQuery / Flash legacy) | **Lightweight Framer Motion Hero Slider** |
-| **Generator Catalog** | WooCommerce (27 products, slow SQL queries) | **Static Typed Catalog with Instant Client-side Filtering** |
-| **Multilingual** | Fragmented page duplications | **Unified Context (English LTR, Arabic RTL, Kurdish RTL)** |
-| **Quote System** | YITH Request a Quote plugin | **Interactive Floating & Modal Quote Flow with Pre-fill** |
-| **Live Chat** | Chaty plugin | **Custom Direct WhatsApp & Phone Action Widget** |
-| **Asset Delivery** | Dynamic local WordPress uploads | **Local static WebP / PNG / JPG assets in `public/`** |
-
----
-
-## 🚀 Key Features
-
-1. **Multilingual Architecture (`English`, `العربية`, `کوردی`)**:
-   - Complete RTL mirroring for Arabic and Kurdish.
-   - Preserves standard Iraqi Cummins terminologies across all 3 languages.
-2. **27 Cummins Generator Models**:
-   - Filterable by Standby Power (`Under 500 kVA`, `500 - 1500 kVA`, `Over 1500 kVA`).
-   - Real-time search across model numbers (e.g. `C44D5L`, `C3500D5`, `C2500D5A`) and engine families (`QSK`, `KTA`, `B-Series`).
-   - Detailed specification sheets: *Standby rating, Prime rating, Engine model, Dry weight, Frequency, Dimensions*.
-3. **Interactive "Request a Quote" System**:
-   - Pre-selects the clicked generator model from the catalog.
-   - Comprehensive form for company info, province/city, required kVA, and project notes.
-4. **Complete Services & Support Hub**:
-   - Field Service & 24/7 Mobile Dispatch (`/repairs`)
-   - Certified Master Rebuild Center (`/master-rebuild`)
-   - Preventative Maintenance Contracts & SLAs (`/preventative-maintenance`)
-   - Technical Training Academy (`/training`)
-   - Fleetguard Heavy Filtration (`/fleet-guard`)
-   - Valvoline & Cummins Premium Oils (`/oils`)
-   - Industrial Engine Platforms (`/engines`)
-   - Renewable & Hybrid Microgrids (`/renewable-power`)
-   - Careers Application (`/careers`)
-   - Contact & Branch Directory (`/contact`)
-
----
-
-## 📦 Getting Started
-
-### 1. Start Development Server
 ```bash
+npm install
 npm run dev
 ```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### 2. Production Build
+The development server shows the pages, but the forms require the PHP endpoint. Use a local PHP server rooted at the exported `out/` directory to test submissions.
+
+## Build and upload to cPanel
+
 ```bash
 npm run build
-npm run start
 ```
-Runs the optimized production build on port 3000.
 
-### Form delivery
+Upload the **contents of `out/`**, including the `api/` directory, into the domain's document root (usually `public_html`). Uploading the `out` folder itself would put the site under `/out/` and break its absolute asset URLs. The domain should point to this document root. The exported route folders contain `index.html`, so `/about/`, `/contact/`, and the other page URLs work without a Node service or rewrite rules.
 
-The quote, contact, careers, field service, and training forms submit to the Next.js server route at `/api/submit`. Careers applications include the selected CV as an email attachment. The browser shows success only after Resend accepts the request.
+The site pages work as soon as the files are uploaded. To activate the quote, contact, careers, repairs, and training forms, copy [`deploy/imc-config.example.php`](deploy/imc-config.example.php) to `imc-config.php` in the **directory directly above the document root**. Add the Resend API key and a sender address verified in Resend. For example, if the website files are in `/home/account/public_html`, place the configuration at `/home/account/imc-config.php`. Do not put this file inside `public_html` or commit it to Git.
 
-Copy `.env.example` to `.env.local` and set `RESEND_API_KEY` and `IMC_FROM_EMAIL` to an address on a domain verified in Resend. Set `IMC_TO_EMAIL` if requests should go somewhere other than `info@imc.iq`. Add the same environment variables to the production Next.js host. Without the key and verified sender, the forms show a delivery error and do not claim to have sent the request. The key must remain server-side.
+PHP must permit uploads of at least 10 MB and POST requests of at least 14 MB (`upload_max_filesize` and `post_max_size`). The cURL extension and outbound HTTPS access to `api.resend.com` must be enabled. Without a configured key and sender, the pages work and forms explain that online submissions are unavailable.
+
+See [`CPANEL_DEPLOY.md`](CPANEL_DEPLOY.md) for the upload checklist and how to rebuild later.

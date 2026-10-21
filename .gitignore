@@ -10,6 +10,7 @@
 # next.js
 /.next/
 /out/
+/imc-cpanel-upload.zip
 
 # production
 /build

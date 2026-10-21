@@ -10,7 +10,7 @@ export async function submitForm(type: SubmissionType, language: Language, field
   for (const [key, value] of Object.entries(fields)) body.set(key, value);
   if (cv) body.set("cv", cv);
 
-  const response = await fetch("/api/submit", { method: "POST", body });
+  const response = await fetch("/api/submit.php", { method: "POST", body });
   if (!response.ok) {
     const result = await response.json().catch(() => null);
     throw new Error(typeof result?.error === "string" ? result.error : "SUBMISSION_FAILED");
