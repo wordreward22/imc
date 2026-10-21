@@ -58,18 +58,10 @@ body {
   text-align: right;
 }
 
-@font-face {
-  font-family: "Vazirmatn";
-  src: url("/fonts/Vazirmatn-variable.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-}
-
 /* Tailwind's Latin font classes override the inherited RTL font on descendants. */
 html[lang="ku"] body,
 html[lang="ku"] :is(.font-sans, .font-heading, .font-arabic) {
-  font-family: "Vazirmatn", Tahoma, sans-serif;
+  font-family: var(--font-cairo), Tahoma, sans-serif;
 }
 
 html[lang="ku"] :is(.tracking-tight, .tracking-wide, .tracking-wider, .tracking-widest) {
