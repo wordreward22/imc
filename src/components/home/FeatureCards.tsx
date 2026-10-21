@@ -16,21 +16,21 @@ export const FeatureCards: React.FC = () => {
       title: t.powerGenTitle,
       desc: t.powerGenDesc,
       href: "/power-generation",
-      image: "/uploads/2023/05/generator.png",
+      artwork: "generator",
       icon: Settings,
     },
     {
       title: t.cumminsKitTitle,
       desc: t.cumminsKitDesc,
       href: "/cummins-kit",
-      image: "/uploads/2023/05/genuine-parts-box-800x400-1.jpg",
+      artwork: "parts",
       icon: SlidersHorizontal,
     },
     {
       title: t.imcServicesTitle,
       desc: t.imcServicesDesc,
       href: "/imc-services",
-      image: "/uploads/2023/05/field-service.jpg",
+      artwork: "services",
       icon: Wrench,
     },
   ];
@@ -54,13 +54,14 @@ export const FeatureCards: React.FC = () => {
                   <div className="w-12 h-12 rounded-xl bg-red-50 text-[#E2231B] flex items-center justify-center group-hover:bg-[#E2231B] group-hover:text-white transition-colors duration-300">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <div className="relative w-20 h-16 opacity-85 group-hover:opacity-100 transition-all">
-                    <Image
-                      src={card.image}
-                      alt={card.title}
-                      fill
-                      className="object-contain"
-                    />
+                  <div className="relative w-20 h-16 flex items-center justify-center text-neutral-900 opacity-85 group-hover:opacity-100 transition-all" aria-hidden="true">
+                    {card.artwork === "generator" ? (
+                      <Image src="/uploads/2023/05/Generator-Icon.svg" alt="" fill className="object-contain" />
+                    ) : (
+                      <span className={`${card.artwork === "parts" ? "imc-fa-solid" : "imc-fa-brands"} text-[3.25rem] leading-none`}>
+                        {card.artwork === "parts" ? "\uf1de" : "\uf198"}
+                      </span>
+                    )}
                   </div>
                 </div>
 

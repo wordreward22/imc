@@ -14,7 +14,11 @@ export const metadata: Metadata = {
   description:
     "International Machine Co. (IMC Iraq) is the exclusive authorized Cummins distributor in Iraq for diesel generators, genuine spare parts, and certified maintenance.",
   icons: {
-    icon: "/uploads/2023/02/imc-logo-3d.png",
+    icon: [
+      { url: "/uploads/2025/04/cropped-cropped-favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/uploads/2025/04/cropped-cropped-favicon-192x192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: "/uploads/2025/04/cropped-cropped-favicon-180x180.png",
   },
 };
 

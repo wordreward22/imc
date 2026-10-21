@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "IMC Font Awesome Solid";
+  src: url("/fonts/fa-solid-900.woff2") format("woff2");
+  font-weight: 900;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "IMC Font Awesome Brands";
+  src: url("/fonts/fa-brands-400.woff2") format("woff2");
+  font-weight: 400;
+  font-display: block;
+}
+
+.imc-fa-solid { font-family: "IMC Font Awesome Solid"; font-weight: 900; }
+.imc-fa-brands { font-family: "IMC Font Awesome Brands"; font-weight: 400; }
+
 :root {
   --cummins-red: #E2231B;
   --cummins-red-dark: #9E0202;
