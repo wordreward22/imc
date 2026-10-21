@@ -120,12 +120,12 @@ function MaintenanceContracts({ section, image, language }: { section: Section; 
           <Image src={image} alt={section.heading} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
         </div>}
       </div>
-      <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] items-start gap-5 lg:gap-10 mb-12 sm:mb-16">
-        <div className="border-s-4 border-[#E2231B] ps-6 py-2">
-          {inspectionLabels[0] && <h3 className="font-heading font-bold text-xl sm:text-2xl mb-5">{inspectionLabels[0].text}</h3>}
-          {inspectionLabels.length > 1 && <ul className="space-y-3">{inspectionLabels.slice(1).map((block, index) => <li key={index} className="flex gap-3 text-neutral-600 text-sm leading-6"><span className="text-[#E2231B]" aria-hidden="true">•</span>{block.text}</li>)}</ul>}
+      <div className="rounded-2xl border border-neutral-200 bg-white p-6 sm:p-9 mb-12 sm:mb-16">
+        {inspectionLabels[0] && <h3 className="font-heading font-bold text-xl sm:text-2xl border-s-4 border-[#E2231B] ps-4 mb-7">{inspectionLabels[0].text}</h3>}
+        {inspectionLabels.length > 1 && <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-7">{inspectionLabels.slice(1).map((block, index) => <li key={index} className="flex gap-3 text-neutral-700 text-sm leading-6"><span className="text-[#E2231B]" aria-hidden="true">•</span>{block.text}</li>)}</ul>}
+        <div className={inspection.length > 1 ? "grid md:grid-cols-2 gap-6 lg:gap-10" : "max-w-4xl"}>
+          {inspection.map((block, index) => <p key={index} className="text-neutral-600 text-sm sm:text-base leading-7 sm:leading-8">{block.text}</p>)}
         </div>
-        <div className="rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8"><Body blocks={inspection} /></div>
       </div>
       {offerings.length > 0 && <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-px bg-neutral-200 border border-neutral-200 rounded-2xl overflow-hidden mb-10 sm:mb-14">
         {offerings.map((block, index) => <div key={index} className={`bg-white p-6 sm:p-8 min-w-0 ${index < 3 ? "lg:col-span-2" : "lg:col-span-3"}`}>
