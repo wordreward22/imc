@@ -45,7 +45,7 @@ export default function AboutPage() {
         title={t.circular.title}
         accentWord={t.circular.accentWord}
         paragraphs={aboutParagraphs.length ? aboutParagraphs.slice(0, 2) : t.circular.paragraphs}
-        image="/uploads/2023/03/WhatsApp-Image-2023-02-21-at-1.12.54-PM-800x530.jpeg"
+        image="/uploads/2023/05/engine-technician-shop-800.jpg"
         badgeTitle={t.circular.badgeTitle}
         badgeText={t.circular.badgeText}
       />
